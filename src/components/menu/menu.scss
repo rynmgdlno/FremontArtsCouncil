@@ -1,5 +1,9 @@
 .menu {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   margin-left: 3em;
+
+  .entry {
+    margin-right: 2em;
+  }
 }

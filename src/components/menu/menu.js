@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 import MenuItem from '../menu-item/menu-item'
 import CustomButton from '../custom-button/custom-button'
@@ -8,13 +8,28 @@ import menuTree from '../../generative-assets/menu'
 import './menu.scss'
 
 const Menu = () => {
-  // console.log(menuTree)
+  const [ menuToggle, setMenuToggle ] = useState(null)
+  const toggleMenu = (id) => {
+    if (menuToggle != null && menuToggle === id) {
+      setMenuToggle(null)
+    } else {
+      setMenuToggle(id)
+    }
+    console.log(menuToggle)
+  }
+
   return (
     <div className='menu'>
       {menuTree.map((menuEntry) => (
-        <div key={menuEntry.id}>
-          <CustomButton>{menuEntry.name}</CustomButton>
-          <MenuItem subMenu={menuEntry.subMenu}></MenuItem>
+        <div className='entry' key={menuEntry.id}>
+          <CustomButton onClick={() => toggleMenu(menuEntry.id)}>{menuEntry.name}</CustomButton>
+          <div>
+            {
+              menuToggle === menuEntry.id ? 
+              <MenuItem subMenu={menuEntry.subMenu}></MenuItem>
+              : ''
+            }
+          </div>
         </div>
       ))}
     </div>

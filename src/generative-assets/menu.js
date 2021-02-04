@@ -171,7 +171,7 @@ const menuTree = [
       {
         id: 4,
         name: 'Community Meetings',
-        link: '/meetings'
+        link: '/community-meetings'
       }
     ]
   }
