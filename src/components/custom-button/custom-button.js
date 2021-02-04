@@ -1,12 +1,11 @@
-import React from 'react'
+import React from 'react';
 
 import './custom-button.scss'
 
-const CustomButton = () => {
+const CustomButton = ({ children, ...props  }) => {
+
   return (
-    <div>
-      <p>Custom Button</p>
-    </div>
+    <button type='button' {...props}>{children}</button>
   )
 }
 

@@ -1,7 +1,6 @@
 import React from 'react'
 import { Route, HashRouter } from 'react-router-dom'
 
-// Pages
 import Home from './pages/home/home'
 import Mission from './pages/mission/mission'
 import Story from './pages/story/story'
@@ -29,7 +28,7 @@ import Donate from './pages/donate/donate'
 import Volunteer from './pages/volunteer/volunteer'
 import SponsorUs from './pages/sponsor-us/sponsor-us'
 import Meetings from './pages/meetings/meetings'
-// Components
+
 import Container from './components/container/container'
 
 import './App.css';
@@ -47,23 +46,23 @@ const App = () => {
       <Route exact path='/sponsors' render={(props) => <Container {...props} page={Sponsors}/>} />
       <Route exact path='/latest' render={(props) => <Container {...props} page={Latest}/>} />
       <Route exact path='/press' render={(props) => <Container {...props} page={Press}/>} />
-      <Route exact path='/upcomingevents' render={(props) => <Container {...props} page={UpcomingEvents}/>} />
+      <Route exact path='/upcoming-events' render={(props) => <Container {...props} page={UpcomingEvents}/>} />
       <Route exact path='/solstice' render={(props) => <Container {...props} page={Solstice}/>} />
       <Route exact path='/luminata' render={(props) => <Container {...props} page={Luminata}/>} />
       <Route exact path='/trolloween' render={(props) => <Container {...props} page={Trolloween}/>} />
-      <Route exact path='/winterfeast' render={(props) => <Container {...props} page={WinterFeast}/>} />
-      <Route exact path='/mayday' render={(props) => <Container {...props} page={MayDay}/>} />
+      <Route exact path='/winter-feast' render={(props) => <Container {...props} page={WinterFeast}/>} />
+      <Route exact path='/may-day' render={(props) => <Container {...props} page={MayDay}/>} />
       <Route exact path='/parade' render={(props) => <Container {...props} page={Parade}/>} />
       <Route exact path='/participate' render={(props) => <Container {...props} page={Participate}/>} />
       <Route exact path='/gallery' render={(props) => <Container {...props} page={Gallery}/>} />
       <Route exact path='/workshops' render={(props) => <Container {...props} page={Workshops}/>} />
-      <Route exact path='/teachaworkshop' render={(props) => <Container {...props} page={Teach}/>} />
+      <Route exact path='/teach-a-workshop' render={(props) => <Container {...props} page={Teach}/>} />
       <Route exact path='/artists' render={(props) => <Container {...props} page={Artists}/>} />
       <Route exact path='/membership' render={(props) => <Container {...props} page={Membership}/>} />
       <Route exact path='/donate' render={(props) => <Container {...props} page={Donate}/>} />
       <Route exact path='/volunteer' render={(props) => <Container {...props} page={Volunteer}/>} />
-      <Route exact path='/sponsorus' render={(props) => <Container {...props} page={SponsorUs}/>} />
-      <Route exact path='/communitymeetings' render={(props) => <Container {...props} page={Meetings}/>} />
+      <Route exact path='/sponsor-us' render={(props) => <Container {...props} page={SponsorUs}/>} />
+      <Route exact path='/community-meetings' render={(props) => <Container {...props} page={Meetings}/>} />
     </HashRouter>
   );
 }
