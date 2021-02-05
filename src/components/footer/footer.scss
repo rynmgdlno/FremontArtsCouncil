@@ -1,0 +1,16 @@
+@use '../../global/global-styles.scss';
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  background-color: global-styles.$blue;
+
+  .about-us {
+    margin-left: global-styles.$window-margin;
+  }
+
+}
+  .footer-form-container {
+    width: 27vw;
+    margin-right: global-styles.$window-margin;
+  }
