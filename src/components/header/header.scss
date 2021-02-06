@@ -1,13 +1,21 @@
+@use '../../global/global-styles.scss';
+
 .header {
   display: flex;
   flex-direction: column;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(7,127,164,0.8057598039215687) 50%, rgba(255,255,255,1) 100%);
 
   .top-bar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0 3em 0 3em;
+    margin: 0 global-styles.$window-margin;
+  }
+
+  .border {
+    margin-top: 5px;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(7,127,164,0.8) 50%, rgba(255,255,255,1) 100%);
   }
 }
 

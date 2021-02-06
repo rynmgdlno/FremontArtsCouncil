@@ -31,7 +31,7 @@ import Meetings from './pages/meetings/meetings'
 
 import Container from './components/container/container'
 
-import './App.css';
+import './App.scss';
 
 const App = () => {
   return (

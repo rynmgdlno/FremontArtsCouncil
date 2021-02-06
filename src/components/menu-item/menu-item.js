@@ -9,7 +9,9 @@ const MenuItem = ({ subMenu }) => {
   return (
     <div className='sub-menu'>
       {subMenu.map((item) => (
-        <Link key={item.id} to={`${item.link}`}><p>{item.name}</p></Link>
+        <div className='sub-menu-item'>
+          <Link key={item.id} to={`${item.link}`}><p>{item.name}</p></Link>
+        </div>
       ))}
     </div>
   )

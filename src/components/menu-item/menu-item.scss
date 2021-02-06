@@ -1,3 +1,23 @@
-// .sub-menu {
-  // display: none;
-// }
+@use '../../global/global-styles.scss';
+
+.sub-menu {
+  position: absolute;
+  top: 10px;
+}
+
+.sub-menu-item {
+  transition: all 50ms;
+  display: flex;
+  align-items: center;
+  width: 14rem;
+  height: 3rem;
+  padding-left: 1.5rem;
+  background-color: white;
+  border: 1px solid global-styles.$light-grey;
+  border-top: none;
+  font-size: 13px;
+}
+
+.sub-menu-item:hover {
+  font-size: 16px;
+}

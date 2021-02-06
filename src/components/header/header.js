@@ -14,11 +14,12 @@ const Header = () => {
       <div className='top-bar'>
         <Link to='/'><Logo /></Link>
         <div className='header-button-container'>
-          <CustomButton>Donate</CustomButton>
-          <CustomButton>Volunteer</CustomButton>
+          <CustomButton className='custom-button medium-emphasis-button donate-button'>Donate</CustomButton>
+          <CustomButton className='custom-button medium-emphasis-button volunteer-button'>Volunteer</CustomButton>
         </div>
       </div>
       <Menu />
+      <div className='border'></div>
     </div>
   )
 }

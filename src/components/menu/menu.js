@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 
 import MenuItem from '../menu-item/menu-item'
 import CustomButton from '../custom-button/custom-button'
+import Highlight from '../../component-svgs/highlight'
 
 import menuTree from '../../generative-assets/menu'
 
@@ -22,8 +23,9 @@ const Menu = () => {
     <div className='menu'>
       {menuTree.map((menuEntry) => (
         <div className='entry' key={menuEntry.id}>
-          <CustomButton onClick={() => toggleMenu(menuEntry.id)}>{menuEntry.name}</CustomButton>
-          <div>
+          <CustomButton className='custom-button low-emphasis-button' onClick={() => toggleMenu(menuEntry.id)}>{menuEntry.name}</CustomButton>
+          {/* <Highlight /> */}
+          <div className='sub-menu-container'>
             {
               menuToggle === menuEntry.id ? 
               <MenuItem subMenu={menuEntry.subMenu}></MenuItem>

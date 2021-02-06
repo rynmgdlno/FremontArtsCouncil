@@ -9,6 +9,15 @@
     margin-left: global-styles.$window-margin;
   }
 
+  a {
+    transition: all .1s ease-in-out;
+    color: white;
+  }
+
+  a:hover {
+    color: global-styles.$yellow;;
+  }
+
 }
   .footer-form-container {
     width: 27vw;

@@ -1,9 +1,32 @@
+@use '../../global/global-styles.scss';
+
 .menu {
   display: flex;
   align-items: flex-start;
-  margin-left: 3em;
+  margin-left: global-styles.$window-margin;
+  margin-top: 2rem;
+
+  a {
+    transition: all .1s ease-in-out;
+    color: global-styles.$grey;
+  }
+
+  a:hover {
+    // color: global-styles.$green;
+    color: global-styles.$blue;
+  }
 
   .entry {
     margin-right: 2em;
+    position: relative;
+
+    .highlight {
+      position: absolute;
+      top: 10px;
+    }
   }
+}
+
+.sub-menu-container {
+  position: relative;
 }
