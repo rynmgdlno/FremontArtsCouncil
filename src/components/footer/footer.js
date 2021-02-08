@@ -1,6 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+import Facebook from '../../component-svgs/facebook'
+import Instagram from '../../component-svgs/instagram'
+
 import './footer.scss'
 
 const Footer = () => {
@@ -25,7 +28,14 @@ const Footer = () => {
       </div>
       <div className='footer-form-container'>
         <h4>Footer Form</h4>
-        <h5>Social Links</h5>
+        <div className='socials'>
+          <a href="https://www.facebook.com">
+            <Facebook className='social-icon' />
+          </a>
+          <a href="https://www.instagram.com">
+            <Instagram className='social-icon' />
+          </a>
+        </div>
       </div>
     </div>
   )

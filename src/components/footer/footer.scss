@@ -15,11 +15,25 @@
   }
 
   a:hover {
-    color: global-styles.$yellow;;
+    color: global-styles.$yellow;
+    ;
   }
 
 }
-  .footer-form-container {
-    width: 27vw;
-    margin-right: global-styles.$window-margin;
+
+.footer-form-container {
+  width: 27vw;
+  margin-right: global-styles.$window-margin;
+
+  .socials {
+    display: flex;
+    justify-content: flex-end;
+    margin-left: auto;
+
+    .social-icon {
+      width: 35px;
+      margin-left: 1.5rem;
+    }
   }
+
+}
