@@ -25,15 +25,15 @@ const Home = () => {
         <div className='leader-image'></div>
       </div>
       <div className='hero-links'>
-        <div className='hero-card events'><Link to='/upcoming-events'>
-          <h2>Events</h2>
-        </Link></div>
-        <div className='hero-card workshops'><Link to='/workshops'>
-          <h2>Workshops</h2>
-        </Link></div>
-        <div className='hero-card news'><Link to='/latest'>
-          <h2>News</h2>
-        </Link></div>
+        <Link className='hero-card events' to='/upcoming-events'><div>
+          <h2 className='card-container'>Events</h2>
+        </div></Link>
+        <Link className='hero-card workshops' to='/workshops'><div>
+          <h2 className='card-container'>Workshops</h2>
+        </div></Link>
+        <Link className='hero-card news' to='/latest'><div>
+          <h2 className='card-container'>News</h2>
+        </div></Link>
       </div>
       <div className='upcoming'>
 
@@ -44,11 +44,11 @@ const Home = () => {
       <div className='sponsors'>
         <h3>Our Sponsors</h3>
         <div className='sponsors-logos'>
-          <img className='tpn-logo-image' alt='sponsor logo' src={tpn} />
-          <img className='nash-logo-image' alt='sponsor logo' src={nash} />
-          <img className='four-logo-image' alt='sponsor logo' src={fourLogo} />
-          <img className='cheer-logo-image' alt='sponsor logo' src={cheer} />
-          <img className='mipops-logo-image' alt='sponsor logo' src={mipops} />
+          <a href="https://www.tpnevents.com"><img className='tpn-logo-image' alt='sponsor logo' src={tpn} /></a>
+          <a href="https://nwartstream.org"><img className='nash-logo-image' alt='sponsor logo' src={nash} /></a>
+          <a href="https://www.4culture.org"><img className='four-logo-image' alt='sponsor logo' src={fourLogo} /></a>
+          <a href="https://www.cheerseattle.org"><img className='cheer-logo-image' alt='sponsor logo' src={cheer} /></a>
+          <a href="https://www.mipops.org"><img className='mipops-logo-image' alt='sponsor logo' src={mipops} /></a>
         </div>
       </div>
     </div>
