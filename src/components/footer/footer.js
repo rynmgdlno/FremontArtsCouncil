@@ -29,12 +29,8 @@ const Footer = () => {
       <div className='footer-form-container'>
         <h4>Footer Form</h4>
         <div className='socials'>
-          <a href="https://www.facebook.com">
-            <Facebook className='social-icon' />
-          </a>
-          <a href="https://www.instagram.com">
-            <Instagram className='social-icon' />
-          </a>
+          <a href="https://www.facebook.com"><Facebook className='social-icon' /></a>
+          <a href="https://www.instagram.com"><Instagram className='social-icon' /></a>
         </div>
       </div>
     </div>

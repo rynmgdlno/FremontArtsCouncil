@@ -29,11 +29,23 @@
 }
 
 .donate-button {
+  transition: all .2s ease-in-out;
   border-color: global-styles.$blue;
   color: global-styles.$blue;
 }
 
 .volunteer-button {
+  transition: all .2s ease-in-out;
   border-color: global-styles.$green;
   color: global-styles.$green;
+}
+
+.volunteer-button:hover {
+  background-color: global-styles.$green;
+  color: white;
+}
+
+.donate-button:hover {
+  background-color: global-styles.$blue;
+  color: white;
 }
