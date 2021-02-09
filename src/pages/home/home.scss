@@ -14,41 +14,61 @@
 .hero-links {
   margin-top: 4rem;
   height: 600px;
-  width: 100vw;
-  display: flex;
-  flex-direction: column-reverse;
-  flex-wrap: wrap-reverse;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 1rem;
+  grid-template-areas:
+    'events workshops'
+    'events news';
 
-  .hero-card {
-    // max-width: 600px;
-    height: 20vw;
-    flex-grow: 1;
-    // display: flex;
-    // flex: 1 1 280px;
-    // align-items: center;
-    // justify-content: center;
+  .events-area {
+    grid-area: events;
+  }
 
-    .card-title {
+  .news-area {
+    grid-area: news;
+  }
+
+  .workshops-area {
+    grid-area: workshops;
+  }
+
+
+  .card-container {
+    background-color: blue;
+    overflow: hidden;
+
+    .card {
+      transition: all 4s ease-in-out;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
       color: white;
     }
-  }
 
-  .events {
-    grid-area: events;
-    background-image: url('../../images/homepage/hero/events.png');
-    background-size: cover;
-  }
-  
-  .workshops {
-    grid-area: workshops;
-    background-image: url('../../images/homepage/hero/workshops.png');
-    background-size: cover;
-  }
-  
-  .news {
-    grid-area: news;
-    background-image: url('../../images/homepage/hero/news.png');
-    background-size: cover;
+    .card:hover {
+      transform: scale(1.1);
+    }
+
+    .events {
+      background-image: url('../../images/homepage/hero/events.png');
+      background-size: cover;
+    }
+    
+
+    .workshops {
+      // grid-area: workshops;
+      background-image: url('../../images/homepage/hero/workshops.png');
+      background-size: cover;
+    }
+    .news {
+      // grid-area: news;
+      background-image: url('../../images/homepage/hero/news.png');
+      background-size: cover;
+    }
+
   }
 }
 
