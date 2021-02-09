@@ -31,8 +31,13 @@
     margin-left: auto;
 
     .social-icon {
+      transition: all .4s ease-in-out;
       width: 35px;
       margin-left: 1.5rem;
+    }
+
+    .social-icon:hover {
+      transform: scale(1.2);
     }
   }
 

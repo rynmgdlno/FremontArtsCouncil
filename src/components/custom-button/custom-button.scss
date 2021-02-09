@@ -9,14 +9,20 @@
 }
 
 .low-emphasis-button {
-  background: white;
+  transition: all .2s ease-in-out;
+  background: rgba(255, 255, 255, 0);
   padding: 0;
   margin: 0;
   border: none;
 }
 
+.low-emphasis-button:hover {
+  color: global-styles.$purple;
+  transform: scale(1.05);
+}
+
 .medium-emphasis-button {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0);
   border: 2px solid;
   border-radius: 12px;
   height: 3rem;

@@ -1,17 +1,33 @@
-import React from 'react'
-import {Link} from 'react-router-dom'
-
-// import CustomButton from '../custom-button/custom-button'
+import React, { useEffect, useRef } from 'react'
+import { Link } from 'react-router-dom'
 
 import './menu-item.scss'
 
-const MenuItem = ({ subMenu }) => {
+const MenuItem = ({ subMenu, menuToggle, setMenuToggle }) => {
+  const dropdownRef = useRef(null)
+
+  useEffect(() => {
+    const pageClick = (e) => {
+      if (dropdownRef.current !== null && !dropdownRef.current.contains(e.target)) {
+        setMenuToggle(null)
+      }
+    }
+    if (menuToggle) {
+      window.addEventListener('click', pageClick);
+    }
+    return () => {
+      window.removeEventListener('click', pageClick);
+    }
+  }, [menuToggle, setMenuToggle])
+
   return (
-    <div className='sub-menu'>
+    <div className='sub-menu' ref={dropdownRef}>
       {subMenu.map((item) => (
-        <div className='sub-menu-item'>
-          <Link key={item.id} to={`${item.link}`}><p>{item.name}</p></Link>
-        </div>
+        <Link key={item.id} to={`${item.link}`}>
+          <div className='sub-menu-item'>
+            <p>{item.name}</p>
+          </div>
+        </Link>
       ))}
     </div>
   )
