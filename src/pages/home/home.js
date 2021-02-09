@@ -25,17 +25,21 @@ const Home = () => {
         <div className='leader-image'></div>
       </div>
       <div className='hero-links'>
-          <Link className='hero-card events' to='/upcoming-events'>
-            <div>
-              <h2 className='card-title'>Events</h2>
-            </div>
-          </Link>
-        <Link className='hero-card workshops' to='/workshops'><div>
-          <h2 className='card-title'>Workshops</h2>
-        </div></Link>
-        <Link className='hero-card news' to='/latest'><div>
-          <h2 className='card-title'>News</h2>
-        </div></Link>
+        <Link className='hero-card news' to='/latest'>
+          <div>
+            <h2 className='card-title'>Events</h2>
+          </div>
+        </Link>
+        <Link className='hero-card workshops' to='/workshops'>
+          <div>
+            <h2 className='card-title'>Events</h2>
+          </div>
+        </Link>
+        <Link className='hero-card events' to='/upcoming-events'>
+          <div>
+            <h2 className='card-title'>Events</h2>
+          </div>
+        </Link>
       </div>
       <div className='upcoming'>
 
