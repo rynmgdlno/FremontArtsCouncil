@@ -6,7 +6,7 @@
 }
 
 .sub-menu-item {
-  transition: all 50ms;
+  transition: all .2s ease-in-out;
   display: flex;
   align-items: center;
   width: 14rem;
@@ -15,9 +15,21 @@
   background-color: white;
   border: 1px solid global-styles.$light-grey;
   border-top: none;
-  font-size: 13px;
 }
 
-.sub-menu-item:hover {
-  font-size: 16px;
+.sub-menu-item {
+  p {
+      transition: all .2s ease-in-out;
+      font-size: 13px;
+      color: global-styles.$light-grey;
+    }
+  }
+  
+  .sub-menu-item:hover {
+    p {
+      transform: scale(1.1);
+      color: global-styles.$blue;
+  }
 }
+
+
