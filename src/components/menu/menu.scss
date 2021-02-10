@@ -1,28 +1,34 @@
 @use '../../global/global-styles.scss';
 
 .menu {
-  display: flex;
-  align-items: flex-start;
-  margin-left: global-styles.$window-margin;
-  margin-top: 2rem;
-
-  // a {
-  //   transition: all .2s ease-in-out;
-  //   color: global-styles.$grey;
-  //   font-size: 13px;
-  // }
-  
-  // a:hover {
-  //   // color: global-styles.$green;
-  //   color: global-styles.$green;
-  // }
-
-  .entry {
-    margin-right: 2em;
-    position: relative;
-  }
+  display: none;
 }
 
-.sub-menu-container {
-  position: relative;
+@media screen and (min-width: 767px) {
+  .menu {
+    display: flex;
+    align-items: flex-start;
+    margin-left: global-styles.$window-margin;
+    margin-top: 2rem;
+  
+    // a {
+    //   transition: all .2s ease-in-out;
+    //   color: global-styles.$grey;
+    //   font-size: 13px;
+    // }
+    
+    // a:hover {
+    //   // color: global-styles.$green;
+    //   color: global-styles.$green;
+    // }
+  
+    .entry {
+      margin-right: 2em;
+      position: relative;
+    }
+  }
+  
+  .sub-menu-container {
+    position: relative;
+  }
 }

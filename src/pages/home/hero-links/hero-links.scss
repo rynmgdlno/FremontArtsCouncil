@@ -1,0 +1,82 @@
+// Hero Links Mobile
+.hero-links {
+  display: flex;
+  flex-direction: column-reverse;
+  
+  .card-container {
+    height: 16rem;
+    overflow: hidden;
+    margin-bottom: 10px;
+
+    .card {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      color: white;
+    }
+
+    .events {
+      background-image: url('../../../images/homepage/hero/events.png');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .workshops {
+      background-image: url('../../../images/homepage/hero/workshops.png');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .news {
+      background-image: url('../../../images/homepage/hero/news.png');
+      background-size: cover;
+      background-position: center;
+    }
+  }
+}
+
+// Hero Links Desktop + Tablet
+@media screen and (min-width: 768px) {
+  .hero-links {
+    height: 600px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1rem;
+    grid-template-areas:
+      'events workshops'
+      'events news';
+
+    .events-area {
+      grid-area: events;
+    }
+
+    .news-area {
+      grid-area: news;
+    }
+
+    .workshops-area {
+      grid-area: workshops;
+    }
+
+    .card-container {
+      height: auto;
+      overflow: hidden;
+      margin: 0;
+
+      .card {
+        transition: all 4s ease-in-out;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        color: white;
+      }
+
+      .card:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+}

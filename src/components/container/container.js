@@ -14,7 +14,7 @@ const Container = (props) => {
         <Page />
       </div>
       <div className='footer'>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </div>
   )
