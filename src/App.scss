@@ -3,6 +3,9 @@
 body {
   margin: 0;
   font-family: 'Quicksand', sans-serif;
+  // background-color: global-styles.$blue;
+  display: flex;
+  justify-content: center;
 }
 
 code {

@@ -1,8 +1,10 @@
 .main-container {
-  .header {
-    margin-top: 1rem;
+  background-color: white;
+  
+  .page-container {
+    margin-top: 5rem;
   }
-
+  
   .footer {
     color: white;
   }
@@ -10,18 +12,13 @@
 
 @media screen and (min-width: 767px) {
   .main-container {
-  
-    .header {
-      width: 100%;
-      margin-top: 3rem;
+    max-width: 1440px;
+    .page-container {
+      margin-top: 7rem;
     }
   
-    // .page-container {
-      // height: 70vh;
-    // }
-  
     .footer {
-      // height: 15vh;
+      height: 15vh;
     }
   }
 }
