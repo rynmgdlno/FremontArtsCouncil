@@ -1,13 +1,16 @@
 @use '../../global/global-styles.scss';
 
 .header {
+
   .top-bar {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     margin-top: 0;
+    margin-left: global-styles.$window-margin-mobile;
+    margin-right: global-styles.$window-margin-mobile;
   }
   .header-button-container {
-    display: none;
+    display: flex;
   }
 
   .border {
@@ -26,7 +29,7 @@
     .top-bar {
       justify-content: space-between;
       align-items: center;
-      margin: 0 global-styles.$window-margin;
+      margin: 0  global-styles.$window-margin;
     }
   
     .border {
@@ -38,5 +41,6 @@
   
   .header-button-container {
     display: flex;
+    margin-right: global-styles.$window-margin;
   }
 }
