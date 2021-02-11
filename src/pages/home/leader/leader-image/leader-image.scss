@@ -1,0 +1,35 @@
+.leader-image {
+  position: absolute;
+  right: -6rem;
+  bottom: -6rem;
+  z-index: -1;
+
+  .astronut {
+    position: absolute;
+    bottom: 0;
+    right: 7rem;
+  }
+
+  .orange {
+
+  }
+
+  .purple {
+    position: absolute;
+    bottom: 1rem;
+    right: 16rem;
+  }
+  .yellow {
+    position: absolute;
+    bottom: 1rem;
+    right: 11rem;
+    z-index: -1;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .leader-image {
+    transform: scale(.5);
+    bottom: -9rem;
+  }
+}

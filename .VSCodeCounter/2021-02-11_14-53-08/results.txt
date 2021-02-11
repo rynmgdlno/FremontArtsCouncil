@@ -1,0 +1,187 @@
+Date : 2021-02-11 14:53:08
+Directory : /Volumes/Workspace/Web Dev/FremontArtsCouncil
+Total : 105 files,  38358 codes, 91 comments, 360 blanks, all 38809 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| JSON       |          3 |     36,788 |          0 |          3 |     36,791 |
+| JavaScript |         53 |        972 |         11 |        184 |      1,167 |
+| SCSS       |         44 |        496 |         30 |        136 |        662 |
+| XML        |          2 |         45 |          0 |          1 |         46 |
+| Markdown   |          1 |         38 |          0 |         33 |         71 |
+| HTML       |          1 |         19 |         27 |          3 |         49 |
+| CSS        |          1 |          0 |         23 |          0 |         23 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++-----------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                                  | files      | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                                     |        105 |     38,358 |         91 |        360 |     38,809 |
+| assets                                                                                                                |          1 |         44 |          0 |          1 |         45 |
+| assets/images                                                                                                         |          1 |         44 |          0 |          1 |         45 |
+| public                                                                                                                |          2 |         44 |         27 |          4 |         75 |
+| src                                                                                                                   |         99 |      1,469 |         64 |        320 |      1,853 |
+| src/component-svgs                                                                                                    |          4 |         86 |          0 |          9 |         95 |
+| src/components                                                                                                        |         16 |        395 |          9 |         88 |        492 |
+| src/components/container                                                                                              |          2 |         40 |          0 |          8 |         48 |
+| src/components/custom-button                                                                                          |          2 |         56 |          0 |         13 |         69 |
+| src/components/footer                                                                                                 |          4 |         97 |          0 |         22 |        119 |
+| src/components/footer/footer-form                                                                                     |          2 |          0 |          0 |          2 |          2 |
+| src/components/header                                                                                                 |          2 |         81 |          0 |         15 |         96 |
+| src/components/logo                                                                                                   |          2 |         10 |          0 |          4 |         14 |
+| src/components/menu                                                                                                   |          2 |         51 |          9 |         14 |         74 |
+| src/components/menu-item                                                                                              |          2 |         60 |          0 |         12 |         72 |
+| src/generative-assets                                                                                                 |          1 |        179 |          0 |          1 |        180 |
+| src/global                                                                                                            |          1 |         10 |          3 |          2 |         15 |
+| src/hooks                                                                                                             |          1 |         33 |          0 |         10 |         43 |
+| src/pages                                                                                                             |         68 |        619 |         21 |        182 |        822 |
+| src/pages/artists                                                                                                     |          2 |         10 |          0 |          4 |         14 |
+| src/pages/board                                                                                                       |          2 |         10 |          0 |          4 |         14 |
+| src/pages/commitment                                                                                                  |          2 |         10 |          0 |          4 |         14 |
+| src/pages/contact                                                                                                     |          2 |         10 |          0 |          4 |         14 |
+| src/pages/donate                                                                                                      |          2 |         10 |          0 |          4 |         14 |
+| src/pages/gallery                                                                                                     |          2 |         10 |          0 |          4 |         14 |
+| src/pages/home                                                                                                        |         16 |        359 |         21 |         78 |        458 |
+| src/pages/home/get-inspired                                                                                           |          2 |         15 |          0 |          4 |         19 |
+| src/pages/home/get-involved                                                                                           |          4 |         92 |          0 |         17 |        109 |
+| src/pages/home/get-involved/card                                                                                      |          2 |         19 |          0 |          5 |         24 |
+| src/pages/home/hero-links                                                                                             |          2 |         93 |          2 |         16 |        111 |
+| src/pages/home/leader                                                                                                 |          2 |         31 |          0 |          7 |         38 |
+| src/pages/home/our-sponsors                                                                                           |          2 |         79 |          0 |         17 |         96 |
+| src/pages/home/upcoming-events-workshops                                                                              |          2 |         19 |          0 |          5 |         24 |
+| src/pages/latest                                                                                                      |          2 |         10 |          0 |          4 |         14 |
+| src/pages/luminata                                                                                                    |          2 |         10 |          0 |          4 |         14 |
+| src/pages/mayday                                                                                                      |          2 |         10 |          0 |          4 |         14 |
+| src/pages/meetings                                                                                                    |          2 |         10 |          0 |          4 |         14 |
+| src/pages/membership                                                                                                  |          2 |         10 |          0 |          4 |         14 |
+| src/pages/mission                                                                                                     |          2 |         10 |          0 |          4 |         14 |
+| src/pages/parade                                                                                                      |          2 |         10 |          0 |          4 |         14 |
+| src/pages/participate                                                                                                 |          2 |         10 |          0 |          4 |         14 |
+| src/pages/press                                                                                                       |          2 |         10 |          0 |          4 |         14 |
+| src/pages/solstice                                                                                                    |          2 |         10 |          0 |          4 |         14 |
+| src/pages/sponsor-us                                                                                                  |          2 |         10 |          0 |          4 |         14 |
+| src/pages/sponsors                                                                                                    |          2 |         10 |          0 |          4 |         14 |
+| src/pages/story                                                                                                       |          2 |         10 |          0 |          4 |         14 |
+| src/pages/teach                                                                                                       |          2 |         10 |          0 |          4 |         14 |
+| src/pages/troll                                                                                                       |          2 |         10 |          0 |          4 |         14 |
+| src/pages/trolloween                                                                                                  |          2 |         10 |          0 |          4 |         14 |
+| src/pages/upcoming-events                                                                                             |          2 |         10 |          0 |          4 |         14 |
+| src/pages/volunteer                                                                                                   |          2 |         10 |          0 |          4 |         14 |
+| src/pages/winter-feast                                                                                                |          2 |         10 |          0 |          4 |         14 |
+| src/pages/workshops                                                                                                   |          2 |         10 |          0 |          4 |         14 |
++-----------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++-----------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                                                                              | language   | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/README.md                                                               | Markdown   |         38 |          0 |         33 |         71 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/assets/images/Logo.svg                                                  | XML        |         44 |          0 |          1 |         45 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/package-lock.json                                                       | JSON       |     36,719 |          0 |          1 |     36,720 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/package.json                                                            | JSON       |         44 |          0 |          1 |         45 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/public/index.html                                                       | HTML       |         19 |         27 |          3 |         49 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/public/manifest.json                                                    | JSON       |         25 |          0 |          1 |         26 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/App.js                                                              | JavaScript |         65 |          0 |          6 |         71 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/App.scss                                                            | SCSS       |         49 |          1 |         14 |         64 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/App.test.js                                                         | JavaScript |          7 |          0 |          2 |          9 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/component-svgs/facebook.js                                          | JavaScript |          8 |          0 |          2 |         10 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/component-svgs/highlight.js                                         | JavaScript |         20 |          0 |          2 |         22 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/component-svgs/instagram.js                                         | JavaScript |          8 |          0 |          2 |         10 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/component-svgs/logo.js                                              | JavaScript |         50 |          0 |          3 |         53 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/components/container/container.js                                   | JavaScript |         19 |          0 |          4 |         23 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/components/container/container.scss                                 | SCSS       |         21 |          0 |          4 |         25 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/components/custom-button/custom-button.js                           | JavaScript |          8 |          0 |          4 |         12 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/components/custom-button/custom-button.scss                         | SCSS       |         48 |          0 |          9 |         57 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/components/footer/footer-form/footer-form.js                        | JavaScript |          0 |          0 |          1 |          1 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/components/footer/footer-form/footer-form.scss                      | SCSS       |          0 |          0 |          1 |          1 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/components/footer/footer.js                                         | JavaScript |         36 |          0 |          4 |         40 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/components/footer/footer.scss                                       | SCSS       |         61 |          0 |         16 |         77 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/components/header/header.js                                         | JavaScript |         40 |          0 |          9 |         49 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/components/header/header.scss                                       | SCSS       |         41 |          0 |          6 |         47 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/components/logo/logo.js                                             | JavaScript |         10 |          0 |          3 |         13 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/components/logo/logo.scss                                           | SCSS       |          0 |          0 |          1 |          1 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/components/menu-item/menu-item.js                                   | JavaScript |         31 |          0 |          5 |         36 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/components/menu-item/menu-item.scss                                 | SCSS       |         29 |          0 |          7 |         36 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/components/menu/menu.js                                             | JavaScript |         32 |          0 |          7 |         39 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/components/menu/menu.scss                                           | SCSS       |         19 |          9 |          7 |         35 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/generative-assets/menu.js                                           | JavaScript |        179 |          0 |          1 |        180 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/global/global-styles.scss                                           | SCSS       |         10 |          3 |          2 |         15 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/hooks/scrollHook.js                                                 | JavaScript |         33 |          0 |         10 |         43 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/index.css                                                           | CSS        |          0 |         23 |          0 |         23 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/index.js                                                            | JavaScript |         12 |          3 |          3 |         18 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/logo.svg                                                            | XML        |          1 |          0 |          0 |          1 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/pages/artists/artists.js                                            | JavaScript |         10 |          0 |          3 |         13 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/pages/artists/artists.scss                                          | SCSS       |          0 |          0 |          1 |          1 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/pages/board/board.js                                                | JavaScript |         10 |          0 |          3 |         13 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/pages/board/board.scss                                              | SCSS       |          0 |          0 |          1 |          1 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/pages/commitment/commitment.js                                      | JavaScript |         10 |          0 |          3 |         13 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/pages/commitment/commitment.scss                                    | SCSS       |          0 |          0 |          1 |          1 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/pages/contact/contact.js                                            | JavaScript |         10 |          0 |          3 |         13 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/pages/contact/contact.scss                                          | SCSS       |          0 |          0 |          1 |          1 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/pages/donate/donate.js                                              | JavaScript |         10 |          0 |          3 |         13 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/pages/donate/donate.scss                                            | SCSS       |          0 |          0 |          1 |          1 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/pages/gallery/gallery.js                                            | JavaScript |         10 |          0 |          3 |         13 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/pages/gallery/gallery.scss                                          | SCSS       |          0 |          0 |          1 |          1 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/pages/home/get-inspired/get-inspired.js                             | JavaScript |         10 |          0 |          4 |         14 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/pages/home/get-inspired/get-inspired.scss                           | SCSS       |          5 |          0 |          0 |          5 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/pages/home/get-involved/card/card.js                                | JavaScript |         19 |          0 |          4 |         23 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/pages/home/get-involved/card/card.scss                              | SCSS       |          0 |          0 |          1 |          1 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/pages/home/get-involved/get-involved.js                             | JavaScript |         20 |          0 |          5 |         25 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/pages/home/get-involved/get-involved.scss                           | SCSS       |         53 |          0 |          7 |         60 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/pages/home/hero-links/hero-links.js                                 | JavaScript |         25 |          0 |          4 |         29 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/pages/home/hero-links/hero-links.scss                               | SCSS       |         68 |          2 |         12 |         82 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/pages/home/home.js                                                  | JavaScript |         21 |          4 |          7 |         32 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/pages/home/home.scss                                                | SCSS       |          9 |         15 |          5 |         29 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/pages/home/leader/leader.js                                         | JavaScript |         14 |          0 |          3 |         17 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/pages/home/leader/leader.scss                                       | SCSS       |         17 |          0 |          4 |         21 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/pages/home/our-sponsors/our-sponsors.js                             | JavaScript |         22 |          0 |          4 |         26 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/pages/home/our-sponsors/our-sponsors.scss                           | SCSS       |         57 |          0 |         13 |         70 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/pages/home/upcoming-events-workshops/upcoming-events-workshops.js   | JavaScript |         10 |          0 |          4 |         14 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/pages/home/upcoming-events-workshops/upcoming-events-workshops.scss | SCSS       |          9 |          0 |          1 |         10 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/pages/latest/latest.js                                              | JavaScript |         10 |          0 |          3 |         13 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/pages/latest/latest.scss                                            | SCSS       |          0 |          0 |          1 |          1 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/pages/luminata/luminata.js                                          | JavaScript |         10 |          0 |          3 |         13 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/pages/luminata/luminata.scss                                        | SCSS       |          0 |          0 |          1 |          1 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/pages/mayday/mayday.js                                              | JavaScript |         10 |          0 |          3 |         13 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/pages/mayday/mayday.scss                                            | SCSS       |          0 |          0 |          1 |          1 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/pages/meetings/meetings.js                                          | JavaScript |         10 |          0 |          3 |         13 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/pages/meetings/meetings.scss                                        | SCSS       |          0 |          0 |          1 |          1 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/pages/membership/membership.js                                      | JavaScript |         10 |          0 |          3 |         13 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/pages/membership/membership.scss                                    | SCSS       |          0 |          0 |          1 |          1 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/pages/mission/mission.js                                            | JavaScript |         10 |          0 |          3 |         13 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/pages/mission/mission.scss                                          | SCSS       |          0 |          0 |          1 |          1 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/pages/parade/parade.js                                              | JavaScript |         10 |          0 |          3 |         13 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/pages/parade/parade.scss                                            | SCSS       |          0 |          0 |          1 |          1 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/pages/participate/participate.js                                    | JavaScript |         10 |          0 |          3 |         13 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/pages/participate/participate.scss                                  | SCSS       |          0 |          0 |          1 |          1 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/pages/press/press.js                                                | JavaScript |         10 |          0 |          3 |         13 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/pages/press/press.scss                                              | SCSS       |          0 |          0 |          1 |          1 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/pages/solstice/solstice.js                                          | JavaScript |         10 |          0 |          3 |         13 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/pages/solstice/solstice.scss                                        | SCSS       |          0 |          0 |          1 |          1 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/pages/sponsor-us/sponsor-us.js                                      | JavaScript |         10 |          0 |          3 |         13 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/pages/sponsor-us/sponsor-us.scss                                    | SCSS       |          0 |          0 |          1 |          1 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/pages/sponsors/sponsors.js                                          | JavaScript |         10 |          0 |          3 |         13 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/pages/sponsors/sponsors.scss                                        | SCSS       |          0 |          0 |          1 |          1 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/pages/story/story.js                                                | JavaScript |         10 |          0 |          3 |         13 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/pages/story/story.scss                                              | SCSS       |          0 |          0 |          1 |          1 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/pages/teach/teach.js                                                | JavaScript |         10 |          0 |          3 |         13 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/pages/teach/teach.scss                                              | SCSS       |          0 |          0 |          1 |          1 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/pages/troll/troll.js                                                | JavaScript |         10 |          0 |          3 |         13 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/pages/troll/troll.scss                                              | SCSS       |          0 |          0 |          1 |          1 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/pages/trolloween/trolloween.js                                      | JavaScript |         10 |          0 |          3 |         13 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/pages/trolloween/trolloween.scss                                    | SCSS       |          0 |          0 |          1 |          1 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/pages/upcoming-events/upcoming-events.js                            | JavaScript |         10 |          0 |          3 |         13 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/pages/upcoming-events/upcoming-events.scss                          | SCSS       |          0 |          0 |          1 |          1 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/pages/volunteer/volunteer.js                                        | JavaScript |         10 |          0 |          3 |         13 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/pages/volunteer/volunteer.scss                                      | SCSS       |          0 |          0 |          1 |          1 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/pages/winter-feast/winter-feast.js                                  | JavaScript |         10 |          0 |          3 |         13 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/pages/winter-feast/winter-feast.scss                                | SCSS       |          0 |          0 |          1 |          1 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/pages/workshops/workshops.js                                        | JavaScript |         10 |          0 |          3 |         13 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/pages/workshops/workshops.scss                                      | SCSS       |          0 |          0 |          1 |          1 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/reportWebVitals.js                                                  | JavaScript |         12 |          0 |          2 |         14 |
+| /Volumes/Workspace/Web Dev/FremontArtsCouncil/src/setupTests.js                                                       | JavaScript |          1 |          4 |          1 |          6 |
+| Total                                                                                                                 |            |     38,358 |         91 |        360 |     38,809 |
++-----------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+

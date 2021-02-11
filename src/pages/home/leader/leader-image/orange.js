@@ -1,0 +1,11 @@
+import React from 'react'
+
+const Orange = ({ className }) => {
+  return (
+    <svg className={className} width="256" height="301" viewBox="0 0 256 301" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M61.3075 54.6327L101.72 24.9139L150.858 8.59923L183.463 0.480215L205.2 12.3523L214.002 25.7564L254.415 47.8157L270.717 69.6452L279.06 91.3981L291 158.265L259.16 231.566L223.187 268.025L179.713 296.059L116.798 300.578L85.7233 283.651L21.5074 231.336L4.01981e-05 189.439L3.5973 130.998L32.6055 77.8409L61.3075 54.6327Z" fill="#EC9028" fill-opacity="0.8" />
+    </svg>
+  )
+}
+
+export default Orange

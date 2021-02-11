@@ -1,0 +1,12 @@
+import React from 'react'
+
+const Yellow = ({ className }) => {
+  return (
+    <svg  className={className} width="173" height="231" viewBox="0 0 173 231" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M79.4912 0.585938L0 77.2112L32.7193 145.295L98.193 230.427L173 187.861L79.4912 0.585938Z" fill="#E5BC37" fill-opacity="0.68" />
+    </svg>
+
+  )
+}
+
+export default Yellow

@@ -2,6 +2,7 @@
 .hero-links {
   display: flex;
   flex-direction: column-reverse;
+  z-index: 1;
   
   .card-container {
     height: 16rem;
