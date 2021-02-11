@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { useMediaPredicate } from 'react-media-hook'
 import Hamburger from 'hamburger-react'
 
-import {useScrollPosition} from '../../hooks/scrollHook'
+import { useScrollPosition } from '../../hooks/scrollHook'
 
 import Logo from '../../component-svgs/logo'
 import Menu from "../menu/menu";
@@ -18,8 +18,8 @@ const Header = () => {
   const isMobile = useMediaPredicate('(max-width: 767px)')
 
   useScrollPosition(({ prevPos, currPos }) => {
-    const isScrolled = currPos.y > prevPos.y 
-    if (isScrolled !== headerSizeOnScroll ) setHeaderSize(isScrolled)
+    const isScrolled = currPos.y > prevPos.y
+    if (isScrolled !== headerSizeOnScroll) setHeaderSize(isScrolled)
     console.log(currPos.y)
   }, [headerSizeOnScroll])
 
@@ -28,17 +28,19 @@ const Header = () => {
       <div className='top-bar'>
         <Link to='/'><Logo /></Link>
         {
-          isMobile ? <Hamburger toggled={isOpen} toggle={setOpen} /> :
-        <div className='header-button-container'>
-          <Link to='/donate'>
-            <CustomButton className='custom-button medium-emphasis-button donate-button'>Donate</CustomButton>
-          </Link>
-          <Link to='volunteer'>
-            <CustomButton className='custom-button medium-emphasis-button volunteer-button'>Volunteer</CustomButton>
-          </Link>
-        </div>
+          isMobile ?
+            <Hamburger toggled={isOpen} toggle={setOpen} color='#ef303a' size={26}/>
+            :
+            <div className='header-button-container'>
+              <Link to='/donate'>
+                <CustomButton className='custom-button medium-emphasis-button donate-button'>Donate</CustomButton>
+              </Link>
+              <Link to='volunteer'>
+                <CustomButton className='custom-button medium-emphasis-button volunteer-button'>Volunteer</CustomButton>
+              </Link>
+            </div>
         }
-        
+
       </div>
       <Menu />
       <div className='border'></div>
