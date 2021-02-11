@@ -1,19 +1,29 @@
+// @use '../../../global/global-styles.scss';
 @use '../../global/global-styles.scss';
 
 .home {
   display: flex;
   flex-direction: column;
+
+  // .home-section {
+  //   margin-left: global-styles.$window-margin-mobile;
+  //   margin-right: global-styles.$window-margin-mobile;
+  //   margin-top: 2rem;
+  //   margin-bottom: 3rem;
+  // }
 }
 
-// .leader {
-//   margin-left: global-styles.$window-margin;
-//   margin-right: global-styles.$window-margin;
-//   margin-top: 6rem;
+@media screen and (min-width: 767px) {
+  .home {
 
-//   .leader-text {
-//     width: 70%;
-//   }
+    // .home-section {
+    //   margin-left: global-styles.$window-margin;
+    //   margin-right: global-styles.$window-margin;
+    //   margin-top: 6rem;
 
-// }
-
-// 
+    //   .home-section-text {
+    //     width: 70%;
+    //   }
+    // }
+  }
+}
