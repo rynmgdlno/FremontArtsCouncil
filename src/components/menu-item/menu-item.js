@@ -23,9 +23,9 @@ const MenuItem = ({ isMobile, title, subMenu, menuToggle, setMenuToggle }) => {
 
   return (
     <div className='sub-menu' ref={dropdownRef}>
-      {/* {
+      {
         isMobile && <h3>{title}</h3>
-      } */}
+      }
       {subMenu.map((item) => (
         <Link key={item.id} to={`${item.link}`}>
           <div className='sub-menu-item'>
