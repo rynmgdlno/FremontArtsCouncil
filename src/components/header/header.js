@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useMediaPredicate } from 'react-media-hook'
-import Hamburger from 'hamburger-react'
+import { CSSTransition } from 'react-transition-group'
 
 import { useScrollPosition } from '../../hooks/scrollHook'
 
+import Hamburger from 'hamburger-react'
 import Logo from '../../component-svgs/logo'
 import Menu from "../menu/menu";
 import CustomButton from "../custom-button/custom-button";
@@ -17,10 +18,11 @@ const Header = () => {
 
   const isMobile = useMediaPredicate('(max-width: 767px)')
 
+  // const animate = isOpen ? 'open' : null
+
   useScrollPosition(({ prevPos, currPos }) => {
     const isScrolled = currPos.y > prevPos.y
     if (isScrolled !== headerSizeOnScroll) setHeaderSize(isScrolled)
-    console.log(currPos.y)
   }, [headerSizeOnScroll])
 
   return (
@@ -29,7 +31,17 @@ const Header = () => {
         <Link to='/'><Logo /></Link>
         {
           isMobile ?
-            <Hamburger toggled={isOpen} toggle={setOpen} color='#ef303a' size={26}/>
+            <div>
+              <Hamburger toggled={isOpen} toggle={setOpen} color='#ef303a' size={26} />
+              <CSSTransition
+                in={isOpen}
+                timeout={300}
+                classNames='menu-transitions'
+                unmountOnExit
+              >
+                <Menu isMobile={isMobile}/>
+              </CSSTransition>
+            </div>
             :
             <div className='header-button-container'>
               <Link to='/donate'>
@@ -42,7 +54,9 @@ const Header = () => {
         }
 
       </div>
-      <Menu />
+      {
+        !isMobile && <Menu /> 
+      }
       <div className='border'></div>
     </div>
   )

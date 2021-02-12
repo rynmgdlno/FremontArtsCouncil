@@ -1,35 +1,50 @@
 @use '../../global/global-styles.scss';
 
 .sub-menu {
-  position: absolute;
-  top: 10px;
-}
-
-.sub-menu-item {
-  transition: all .2s ease-in-out;
+  // position: fixed;
+  // top: 95px;
   display: flex;
-  align-items: center;
-  width: 14rem;
-  height: 3rem;
-  padding-left: 1.5rem;
-  background-color: white;
-  border: 1px solid global-styles.$light-grey;
-  border-top: none;
-}
+  flex-direction: column;
+  // align-items: center;
+  // justify-content: center;
 
-.sub-menu-item {
-  p {
+  .sub-menu-item {
+    p {
       transition: all .2s ease-in-out;
-      font-size: 13px;
-      color: global-styles.$light-grey;
+      font-size: 18px;
+      color: global-styles.$grey;
     }
   }
-  
+
   .sub-menu-item:hover {
     p {
       transform: scale(1.1);
       color: global-styles.$blue;
+    }
   }
 }
 
+@media screen and (min-width: 767px) {
+  .sub-menu {
+    position: absolute;
+    top: 7px;
 
+    .sub-menu-item {
+      transition: all .2s ease-in-out;
+      display: flex;
+      align-items: center;
+      width: 14rem;
+      height: 3rem;
+      padding-left: 1.5rem;
+      background-color: white;
+      border: 1px solid global-styles.$light-grey;
+      border-top: none;
+    }
+
+    .sub-menu-item {
+      p {
+        font-size: 13px;
+      }
+    }
+  }
+}

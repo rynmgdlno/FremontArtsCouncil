@@ -1,34 +1,71 @@
 @use '../../global/global-styles.scss';
 
 .menu {
-  display: none;
+  position: absolute;
+  top: 75px;
+  left: 0;
+  width: 100vw;
+  height: calc(100vh - 50px);
+  padding-top: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 1);
+  // justify-content: center;
+
+  .low-emphasis-button {
+    font-size: 30px;
+    font-weight: 200;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid global-styles.$blue;
+  }
+
+  .entry {
+    text-align: center;
+  }
 }
 
 @media screen and (min-width: 767px) {
   .menu {
-    display: flex;
+    position: static;
+    flex-direction: row;
     align-items: flex-start;
     margin-left: global-styles.$window-margin;
     margin-top: 2rem;
-  
-    // a {
-    //   transition: all .2s ease-in-out;
-    //   color: global-styles.$grey;
-    //   font-size: 13px;
-    // }
-    
-    // a:hover {
-    //   // color: global-styles.$green;
-    //   color: global-styles.$green;
-    // }
-  
+    padding-top: 0;
+    height: auto;
+
+    .low-emphasis-button {
+      font-size: 20px;
+      background: rgba(255, 255, 255, 0);
+      padding: 0;
+      margin: 0;
+      border: none;
+    }
+
     .entry {
       margin-right: 2em;
       position: relative;
+      text-align: left;
     }
   }
-  
+
   .sub-menu-container {
     position: relative;
   }
+}
+
+.menu-transitions-enter {
+  right: -100%;
+}
+.menu-transitions-enter-active {
+  right: 0;
+  transition: all 200ms ease-in-out;
+}
+.menu-transitions-exit {
+  right: 0;
+}
+.menu-transitions-exit-active {
+  right: -100%;
+  transition: all .2s ease-in-out;
 }

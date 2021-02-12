@@ -45,3 +45,18 @@
     display: flex;
   }
 }
+
+.menu-transitions-enter {
+  left: -100%;
+}
+.menu-transitions-enter-active {
+  left: 0;
+  transition: all 200ms ease-in-out;
+}
+.menu-transitions-exit {
+  left: 0;
+}
+.menu-transitions-exit-active {
+  left: -100%;
+  transition: all .2s ease-in-out;
+}
