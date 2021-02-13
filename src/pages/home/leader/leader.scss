@@ -5,11 +5,12 @@
   margin-right: global-styles.$window-margin-mobile;
   margin-top: 2rem;
   margin-bottom: 3rem;
+  // width: 100%;
   position: relative;
   z-index: 0;
 }
 
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 769px) {
   .leader {
     margin-left: global-styles.$window-margin;
     margin-right: global-styles.$window-margin;

@@ -16,7 +16,7 @@ const Header = () => {
   const [isOpen, setOpen] = useState(false)
   const [headerSizeOnScroll, setHeaderSize] = useState(true)
 
-  const isMobile = useMediaPredicate('(max-width: 767px)')
+  const isMobile = useMediaPredicate('(max-width: 769px)')
 
   // const animate = isOpen ? 'open' : null
 
