@@ -10,34 +10,34 @@
   .sponsors-logos {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    // justify-content: space-between;
     align-items: center;
     margin-left: global-styles.$window-margin-mobile;
     margin-right: global-styles.$window-margin-mobile;
 
     .tpn-logo-image {
       width: 119px;
-      height: 119px;
+      // height: 119px;
     }
 
     .nash-logo-image {
       width: 339px;
-      height: 69px;
+      // height: 69px;
     }
 
     .four-logo-image {
       width: 117px;
-      height: 117px;
+      // height: 117px;
     }
 
     .cheer-logo-image {
       width: 142px;
-      height: 91px;
+      // height: 91px;
     }
 
     .mipops-logo-image {
       width: 184px;
-      height: 50px;
+      // height: 50px;
     }
 
     .sponsor-link {
@@ -54,17 +54,21 @@
 
     .sponsors-logos {
       flex-direction: row;
+      justify-content: center;
+      flex-wrap: wrap;
       margin-left: global-styles.$window-margin;
       margin-right: global-styles.$window-margin;
 
       .sponsor-link {
         transition: all .4s ease-in-out;
-        transform: scale(1);
+        transform: scale(.7);
       }
 
       .sponsor-link:hover {
-        transform: scale(1.2);
+        transform: scale(.9);
       }
     }
   }
+
+
 }
