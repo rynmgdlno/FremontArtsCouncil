@@ -1,38 +1,60 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
-// import { CSSTransition } from 'react-transition-group'
+import { CSSTransition } from 'react-transition-group'
+import CustomButton from '../custom-button/custom-button'
 
 import './menu-item.scss'
 
 const MenuItem = ({ isMobile, title, subMenu, menuToggle, setMenuToggle }) => {
   const dropdownRef = useRef(null)
+  const [isOpen, setIsOpen] = useState(false)
 
   useEffect(() => {
     const pageClick = (e) => {
       if (dropdownRef.current !== null && !dropdownRef.current.contains(e.target)) {
-        setMenuToggle(null)
+        setIsOpen(false)
       }
     }
-    if (menuToggle) {
+    if (isOpen) {
       window.addEventListener('click', pageClick);
     }
     return () => {
       window.removeEventListener('click', pageClick);
     }
-  }, [menuToggle, setMenuToggle])
+  }, [isOpen, setIsOpen])
 
   return (
     <div className='sub-menu' ref={dropdownRef}>
-      {
-        isMobile && <h3>{title}</h3>
-      }
-      {subMenu.map((item) => (
-        <Link key={item.id} to={`${item.link}`}>
-          <div className='sub-menu-item'>
-            <p>{item.name}</p>
-          </div>
-        </Link>
-      ))}
+      <CustomButton
+        className='custom-button low-emphasis-button'
+        onClick={() => setIsOpen(!isOpen)}>{title}
+      </CustomButton>
+      <CSSTransition
+        in={isOpen}
+        timeout={200}
+        classNames='sub-menu-transitions'
+        unmountOnExit>
+        <div className='sub-menu-list'>
+        {
+          isMobile && <p className='title'>{title}</p>
+        }
+          {subMenu.map((item) => (
+            <Link key={item.id} to={`${item.link}`}>
+              <div className='sub-menu-item'>
+                <p>{item.name}</p>
+              </div>
+            </Link>
+          ))}
+          {
+            isMobile &&
+            <CustomButton
+              className='custom-button back-button'
+              onClick={() => setIsOpen(!isOpen)}>❮
+            </CustomButton>
+          }
+
+        </div>
+      </CSSTransition>
     </div>
   )
 }

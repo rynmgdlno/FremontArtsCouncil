@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 // import { Link } from 'react-router-dom'
-import { CSSTransition } from 'react-transition-group'
+import { CSSTransition, TransitionGroup } from 'react-transition-group'
 
 import MenuItem from '../menu-item/menu-item'
 import CustomButton from '../custom-button/custom-button'
@@ -25,31 +25,21 @@ const Menu = ({ isMobile }) => {
     <div className='menu'>
       {menuTree.map((menuEntry) => (
         <div className='entry' key={menuEntry.id} id={menuEntry.name}>
-          <CustomButton
+          {/* <CustomButton
             className='custom-button low-emphasis-button'
             onClick={() => {
               toggleMenu(menuEntry.id)
               setIsOpen(!isOpen)
-            }}>{menuEntry.name}</CustomButton>
-          <div>
-            {
-              menuToggle === menuEntry.id &&
-              <CSSTransition
-                in={isOpen}
-                timeout={300}
-                classNames='sub-menu-transitions'
-                unmountOnExit
-              >
-                <MenuItem
-                  isMobile={isMobile}
-                  title={menuEntry.name}
-                  subMenu={menuEntry.subMenu}
-                  menuToggle={menuToggle}
-                  setMenuToggle={setMenuToggle}>
-                </MenuItem>
-              </CSSTransition>
-            }
-          </div>
+            }}>{menuEntry.name}</CustomButton> */}
+          {/* <div> */}
+            <MenuItem
+              isMobile={isMobile}
+              title={menuEntry.name}
+              subMenu={menuEntry.subMenu}
+              menuToggle={menuToggle}
+              setMenuToggle={setMenuToggle}>
+            </MenuItem>
+          {/* </div> */}
         </div>
       ))}
     </div>

@@ -8,6 +8,15 @@
   font-weight: 500;
 }
 
+.back-button {
+  font-size: 30px;
+  font-weight: 200;
+  margin-bottom: 2rem;
+  border: none;
+  color: global-styles.$red;
+  background: rgba(255, 255, 255, 0);
+}
+
 .low-emphasis-button {
   transition: all .2s ease-in-out;
   background: rgba(255, 255, 255, 0);
