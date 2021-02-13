@@ -1,0 +1,25 @@
+.footer-image {
+  position: absolute;
+  bottom: -13rem;
+  left: 55vw;;
+
+  .yellow {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+  
+  .green {
+    position: absolute;
+    bottom: 0;
+    left: 3rem;
+  }
+}
+
+.yellow-two {
+  position: absolute;
+  bottom: -13rem;
+  left: -2vw;
+  // transform: rotate(180deg);
+  // z-index: -1;
+}

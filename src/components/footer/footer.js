@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 
 import FooterForm from './footer-form/footer-form'
 
+import FooterImage from './footer-images/footer-image'
+import YellowTwo from './footer-images/yellow-two'
 import Facebook from '../../component-svgs/facebook'
 import Instagram from '../../component-svgs/instagram'
 
@@ -36,6 +38,8 @@ const Footer = () => {
         <h4>Get Our Newsletter</h4>
         <FooterForm />
       </div>
+      <YellowTwo className='yellow-two'/>
+      <FooterImage />
     </div>
   )
 }
