@@ -160,16 +160,21 @@ const menuTree = [
       },
       {
         id: 3,
+        name: 'Volunteer',
+        link: '/volunteer'
+      },
+      {
+        id: 4,
         name: 'Donate Now',
         link: '/donate'
       },
       {
-        id: 4,
+        id: 5,
         name: 'Sponsor Us',
         link: '/sponsor-us'
       },
       {
-        id: 5,
+        id: 6,
         name: 'Community Meetings',
         link: '/community-meetings'
       }
