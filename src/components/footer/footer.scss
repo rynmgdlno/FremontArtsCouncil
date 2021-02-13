@@ -73,4 +73,12 @@
     width: 27vw;
     margin-right: global-styles.$window-margin;
   }
+
+  @media (orientation: portrait) {
+    .footer-container {
+      .about-us {
+        margin-left: global-styles.$window-margin-tablet;
+      }
+    }
+  }
 }

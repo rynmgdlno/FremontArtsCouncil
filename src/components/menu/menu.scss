@@ -57,6 +57,17 @@
   .sub-menu-container {
     position: relative;
   }
+
+  @media (orientation: portrait) {
+    .menu {
+      margin-left: global-styles.$window-margin-tablet;
+      margin-top: 1rem;
+
+      .low-emphasis-button {
+        font-size: 17px;
+      }
+    }
+  }
 }
 
 .test {
@@ -68,20 +79,3 @@
   background-color: rgba(255,0,0,.2);
   z-index: 9999;
 }
-
-// .sub-menu-transitions-enter {
-//   opacity: 0;
-//   // transition: all 200ms ease-in-out;
-// }
-// .sub-menu-transitions-enter-active {
-//   opacity: 1;
-//   transition: all 200ms ease-in-out;
-// }
-// .sub-menu-transitions-exit {
-//   transition: all 200ms ease-in-out;
-//   opacity: 1;
-// }
-// .sub-menu-transitions-exit-active {
-//   opacity: 0;
-//   // transition: all .2s ease-in-out;
-// }

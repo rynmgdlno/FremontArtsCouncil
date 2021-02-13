@@ -44,6 +44,14 @@
   .header-button-container {
     display: flex;
   }
+
+  @media (orientation: portrait) {
+    .header {
+      .top-bar {
+        margin: 0 global-styles.$window-margin-tablet;
+      }
+    }
+  }
 }
 
 .menu-transitions-enter {

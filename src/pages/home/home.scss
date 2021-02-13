@@ -4,27 +4,4 @@
 .home {
   display: flex;
   flex-direction: column;
-  // width: 100vw;
-
-  // .home-section {
-  //   margin-left: global-styles.$window-margin-mobile;
-  //   margin-right: global-styles.$window-margin-mobile;
-  //   margin-top: 2rem;
-  //   margin-bottom: 3rem;
-  // }
-}
-
-@media screen and (min-width: 769px) {
-  .home {
-
-    // .home-section {
-    //   margin-left: global-styles.$window-margin;
-    //   margin-right: global-styles.$window-margin;
-    //   margin-top: 6rem;
-
-    //   .home-section-text {
-    //     width: 70%;
-    //   }
-    // }
-  }
 }
