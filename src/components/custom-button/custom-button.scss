@@ -40,7 +40,11 @@
 }
 
 .high-emphasis-button {
-  background-color: global-styles.$blue;
+  background-color: white;
+  color: global-styles.$blue;
+  border: 2px solid white;
+  border-radius: 12px;
+  width: 120px;
 }
 
 .donate-button {

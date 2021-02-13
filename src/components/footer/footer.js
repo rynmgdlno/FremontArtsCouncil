@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+import FooterForm from './footer-form/footer-form'
+
 import Facebook from '../../component-svgs/facebook'
 import Instagram from '../../component-svgs/instagram'
 
@@ -31,7 +33,8 @@ const Footer = () => {
         </div>
       </div>
       <div className='footer-form-container footer-section'>
-        <h4>Footer Form</h4>
+        <h4>Get Our Newsletter</h4>
+        <FooterForm />
       </div>
     </div>
   )
