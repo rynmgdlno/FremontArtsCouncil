@@ -12,6 +12,11 @@
   }
 
   .sign-up-button {
+    transition: all .2s ease-in-out;
     margin-left: auto;
+  }
+
+  .sign-up-button:hover {
+    transform: scale(1.1);
   }
 }
