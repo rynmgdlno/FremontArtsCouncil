@@ -15,9 +15,8 @@ const PageHeader = ({headerID}) => {
       <div className='page-header-text'>
         <h1 className='page-header-title'>{header[0]}</h1>
         <h3 className='page-header-subtitle'>{header[1]}</h3>
-        <h4>{header[3]}</h4>
       </div>
-      <img className='page-header-image' src={header[2]} alt='test stuff'/>
+      <img className='page-header-image' src={header[2]} alt={header[3]}/>
     </div>
   )
 } 

@@ -9,7 +9,8 @@ export const getHeader = async (headerID) => {
   const pageTitle = fields.pageTitle
   const pageIntroText = fields.pageIntroText
   const pageHeaderImage = `https:${fields.pageHeaderImage.fields.file.url}`
-  return [pageTitle, pageIntroText, pageHeaderImage]
+  const imageAltText = fields.imageAltText
+  return [pageTitle, pageIntroText, pageHeaderImage, imageAltText]
   // console.log(pageTitle)
   // console.log(pageIntroText)
   // console.log(pageHeaderImage)

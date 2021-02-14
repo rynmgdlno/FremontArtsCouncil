@@ -63,7 +63,7 @@ const menuTree = [
       {
         id: 1,
         name: 'Upcoming Events',
-        link: '/upcoming-events'
+        link: '/events'
       },
       {
         id: 2,
@@ -73,27 +73,27 @@ const menuTree = [
       {
         id: 3,
         name: 'Solstice Celebration',
-        link: '/solstice'
+        link: '/events/solstice'
       },
       {
         id: 4,
         name: 'Luminata',
-        link: '/luminata'
+        link: '/events/luminata'
       },
       {
         id: 5,
         name: 'Trolloween',
-        link: '/trolloween'
+        link: '/events/trolloween'
       },
       {
         id: 6,
         name: 'Feast of the Winter Solstice',
-        link: '/winter-feast'
+        link: '/events/winter-feast'
       },
       {
         id: 7,
         name: 'May Day',
-        link: '/may-day'
+        link: '/events/may-day'
       }
     ]
   },
@@ -109,17 +109,17 @@ const menuTree = [
       {
         id: 2,
         name: 'Participate',
-        link: '/participate'
+        link: '/parade/participate'
       },
       {
         id: 3,
         name: 'Gallery',
-        link: '/gallery'
+        link: '/parade/gallery'
       },
       {
         id: 4,
         name: 'Sponsors',
-        link: '/sponsors'
+        link: '/parade/sponsors'
       },
       {
         id: 5,
@@ -140,7 +140,7 @@ const menuTree = [
       {
         id: 2,
         name: 'Teach a Workshop',
-        link: '/teach-a-workshop'
+        link: '/workshops/teach-a-workshop'
       }
     ]
   },

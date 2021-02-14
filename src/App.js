@@ -18,8 +18,9 @@ import Trolloween from './pages/trolloween/trolloween'
 import WinterFeast from './pages/winter-feast/winter-feast'
 import MayDay from './pages/mayday/mayday'
 import Parade from './pages/parade/parade'
-import Participate from './pages/participate/participate'
-import Gallery from './pages/gallery/gallery'
+import Participate from './pages/parade/participate/participate'
+import Gallery from './pages/parade/gallery/gallery'
+import Register from './pages/parade/register/register'
 import Workshops from './pages/workshops/workshops'
 import Teach from './pages/teach/teach'
 import Artists from './pages/artists/artists'
@@ -36,7 +37,9 @@ import './App.scss';
 const App = () => {
   return (
     <HashRouter basename='/'>
+      {/* Homepage */}
       <Route exact path='/' render={(props) => <Container {...props} page={Home}/>}/>
+      {/* About */}
       <Route exact path='/mission' render={(props) => <Container {...props} page={Mission}/>} />
       <Route exact path='/story' render={(props) => <Container {...props} page={Story}/>} />
       <Route exact path='/commitment' render={(props) => <Container {...props} page={Commitment}/>} />
@@ -44,19 +47,25 @@ const App = () => {
       <Route exact path='/board' render={(props) => <Container {...props} page={Board}/>} />
       <Route exact path='/contact' render={(props) => <Container {...props} page={Contact}/>} />
       <Route exact path='/sponsors' render={(props) => <Container {...props} page={Sponsors}/>} />
+      {/* News */}
       <Route exact path='/latest' render={(props) => <Container {...props} page={Latest}/>} />
       <Route exact path='/press' render={(props) => <Container {...props} page={Press}/>} />
-      <Route exact path='/upcoming-events' render={(props) => <Container {...props} page={UpcomingEvents}/>} />
-      <Route exact path='/solstice' render={(props) => <Container {...props} page={Solstice}/>} />
-      <Route exact path='/luminata' render={(props) => <Container {...props} page={Luminata}/>} />
-      <Route exact path='/trolloween' render={(props) => <Container {...props} page={Trolloween}/>} />
-      <Route exact path='/winter-feast' render={(props) => <Container {...props} page={WinterFeast}/>} />
-      <Route exact path='/may-day' render={(props) => <Container {...props} page={MayDay}/>} />
+      {/* Events */}
+      <Route exact path='/events' render={(props) => <Container {...props} page={UpcomingEvents}/>} />
+      <Route exact path='/events/solstice' render={(props) => <Container {...props} page={Solstice}/>} />
+      <Route exact path='/events/luminata' render={(props) => <Container {...props} page={Luminata}/>} />
+      <Route exact path='/events/trolloween' render={(props) => <Container {...props} page={Trolloween}/>} />
+      <Route exact path='/events/winter-feast' render={(props) => <Container {...props} page={WinterFeast}/>} />
+      <Route exact path='/events/may-day' render={(props) => <Container {...props} page={MayDay}/>} />
+      {/* Parade */}
       <Route exact path='/parade' render={(props) => <Container {...props} page={Parade}/>} />
-      <Route exact path='/participate' render={(props) => <Container {...props} page={Participate}/>} />
-      <Route exact path='/gallery' render={(props) => <Container {...props} page={Gallery}/>} />
+      <Route exact path='/parade/participate' render={(props) => <Container {...props} page={Participate}/>} />
+      <Route exact path='/parade/gallery' render={(props) => <Container {...props} page={Gallery}/>} />
+      <Route exact path='/parade/register' render={(props) => <Container {...props} page={Register}/>} />
+      {/* Workshops */}
       <Route exact path='/workshops' render={(props) => <Container {...props} page={Workshops}/>} />
-      <Route exact path='/teach-a-workshop' render={(props) => <Container {...props} page={Teach}/>} />
+      <Route exact path='/workshops/teach-a-workshop' render={(props) => <Container {...props} page={Teach}/>} />
+      {/* Get Involved */}
       <Route exact path='/artists' render={(props) => <Container {...props} page={Artists}/>} />
       <Route exact path='/membership' render={(props) => <Container {...props} page={Membership}/>} />
       <Route exact path='/donate' render={(props) => <Container {...props} page={Donate}/>} />
