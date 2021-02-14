@@ -1,0 +1,45 @@
+@use '../../global/global-styles.scss';
+
+.page-header {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  margin-top: 6rem;
+  margin-bottom: 3rem;
+  position: relative;
+
+  .page-header-text {
+    margin-left: global-styles.$window-margin-mobile;
+    margin-right: global-styles.$window-margin-mobile;
+    margin-bottom: 3rem;
+
+    .page-header-title {}
+
+    .page-header-subtitle {}
+  }
+
+
+  .page-header-image {
+    width: 100vw;
+    max-width: 1440px;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .page-header {
+
+    .page-header-text {
+      margin-left: global-styles.$window-margin;
+      margin-right: global-styles.$window-margin;
+    }
+  }
+
+  @media (orientation: portrait) {
+    .page-header {
+      .page-header-text {
+        margin-left: global-styles.$window-margin-tablet;
+        margin-right: global-styles.$window-margin-tablet;
+      }
+    }
+  }
+}
