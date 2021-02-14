@@ -1,11 +1,13 @@
 import React from 'react'
 
+import PageHeader from '../../../components/page-header/page-header'
+
 import './luminary-lantern-workshops.scss'
 
 const LuminaryLantern = () => {
-  return (
+  return ( 
     <div>
-      
+      <PageHeader headerID={'3KKVrmRbBoAsVEAohFUwli'}/>
     </div>
   )
 }
