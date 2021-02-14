@@ -1,11 +1,13 @@
 import React from 'react'
 
+import PageHeader from '../../../components/page-header/page-header'
+
 import './winter-feast.scss'
 
 const WinterFeast = () => {
-  return (
+  return ( 
     <div>
-      <p>WinterFeast</p>
+      <PageHeader headerID={'qYMIsfGiSeauycSBwL9BL'}/>
     </div>
   )
 }

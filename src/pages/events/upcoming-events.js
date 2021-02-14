@@ -1,11 +1,13 @@
 import React from 'react'
 
+import PageHeader from '../../components/page-header/page-header'
+
 import './upcoming-events.scss'
 
 const UpcomingEvents = () => {
-  return (
+  return ( 
     <div>
-      <p>UpcomingEvents</p>
+      <PageHeader headerID={'3ACKdcppZYgrXRuYgBPcm3'}/>
     </div>
   )
 }

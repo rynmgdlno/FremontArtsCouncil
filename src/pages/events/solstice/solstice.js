@@ -1,11 +1,13 @@
 import React from 'react'
 
+import PageHeader from '../../../components/page-header/page-header'
+
 import './solstice.scss'
 
 const Solstice = () => {
-  return (
+  return ( 
     <div>
-      <p>Solstice</p>
+      <PageHeader headerID={'headerid'}/>
     </div>
   )
 }
