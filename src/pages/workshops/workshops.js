@@ -1,11 +1,13 @@
 import React from 'react'
 
+import PageHeader from '../../components/page-header/page-header'
+
 import './workshops.scss'
 
 const Workshops = () => {
-  return (
+  return ( 
     <div>
-      <p>Workshops</p>
+      <PageHeader headerID={'5ilpvgxauhJNZjqbBGSrHn'}/>
     </div>
   )
 }

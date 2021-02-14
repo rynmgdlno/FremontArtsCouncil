@@ -1,11 +1,13 @@
 import React from 'react'
 
+import PageHeader from '../../components/page-header/page-header'
+
 import './donate.scss'
 
 const Donate = () => {
-  return (
+  return ( 
     <div>
-      <p>Donate</p>
+      <PageHeader headerID={'6VtsyGKz7dyJi6mHtZH8KI'}/>
     </div>
   )
 }

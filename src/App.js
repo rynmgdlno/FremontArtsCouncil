@@ -2,6 +2,7 @@ import React from 'react'
 import { Route, HashRouter } from 'react-router-dom'
 
 import Home from './pages/home/home'
+// About
 import Mission from './pages/mission/mission'
 import Story from './pages/story/story'
 import Commitment from './pages/commitment/commitment'
@@ -9,20 +10,28 @@ import Troll from './pages/troll/troll'
 import Board from './pages/board/board'
 import Contact from './pages/contact/contact'
 import Sponsors from './pages/sponsors/sponsors'
+// News
 import Latest from './pages/latest/latest'
 import Press from './pages/press/press'
+// Events
 import UpcomingEvents from './pages/upcoming-events/upcoming-events'
 import Solstice from './pages/solstice/solstice'
 import Luminata from './pages/luminata/luminata'
 import Trolloween from './pages/trolloween/trolloween'
 import WinterFeast from './pages/winter-feast/winter-feast'
 import MayDay from './pages/mayday/mayday'
+// Parade
 import Parade from './pages/parade/parade'
 import Participate from './pages/parade/participate/participate'
 import Gallery from './pages/parade/gallery/gallery'
 import Register from './pages/parade/register/register'
+// Workshops
 import Workshops from './pages/workshops/workshops'
-import Teach from './pages/teach/teach'
+import LuminaryLantern from './pages/workshops/luminary-lantern-workshops/luminary-lantern-workshops'
+import LargeLuminary from './pages/workshops/large-luminary-workshop/large-luminary-workshop'
+import UpcomingWorkshops from './pages/workshops/upcoming-workshops/upcoming-workshops'
+import TeachWorkshop from './pages/workshops/teach-a-workshop/teach-a-workshop'
+// Get Involved
 import Artists from './pages/artists/artists'
 import Membership from './pages/membership/membership'
 import Donate from './pages/donate/donate'
@@ -64,7 +73,10 @@ const App = () => {
       <Route exact path='/parade/register' render={(props) => <Container {...props} page={Register}/>} />
       {/* Workshops */}
       <Route exact path='/workshops' render={(props) => <Container {...props} page={Workshops}/>} />
-      <Route exact path='/workshops/teach-a-workshop' render={(props) => <Container {...props} page={Teach}/>} />
+      <Route exact path='/workshops/luminary-lantern-workshops' render={(props) => <Container {...props} page={LuminaryLantern}/>} />
+      <Route exact path='/workshops/large-luminary-workshop' render={(props) => <Container {...props} page={LargeLuminary}/>} />
+      <Route exact path='/workshops/upcoming-workshops' render={(props) => <Container {...props} page={UpcomingWorkshops}/>} />
+      <Route exact path='/workshops/teach-a-workshop' render={(props) => <Container {...props} page={TeachWorkshop}/>} />
       {/* Get Involved */}
       <Route exact path='/artists' render={(props) => <Container {...props} page={Artists}/>} />
       <Route exact path='/membership' render={(props) => <Container {...props} page={Membership}/>} />

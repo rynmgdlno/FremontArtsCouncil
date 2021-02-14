@@ -1,11 +1,13 @@
 import React from 'react'
 
+import PageHeader from '../../components/page-header/page-header'
+
 import './membership.scss'
 
 const Membership = () => {
-  return (
+  return ( 
     <div>
-      <p>Membership</p>
+      <PageHeader headerID={'1qvzCME4OZARJ8yz3IfN6u'}/>
     </div>
   )
 }

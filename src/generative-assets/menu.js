@@ -113,18 +113,23 @@ const menuTree = [
       },
       {
         id: 3,
+        name: 'Register',
+        link: '/parade/register'
+      },
+      {
+        id: 4,
         name: 'Gallery',
         link: '/parade/gallery'
       },
       {
-        id: 4,
+        id: 5,
         name: 'Sponsors',
-        link: '/parade/sponsors'
+        link: '/sponsors'
       },
       {
-        id: 5,
+        id: 6,
         name: 'Solstice Celebration',
-        link: '/solstice'
+        link: '/events/solstice'
       }
     ]
   },
@@ -134,8 +139,23 @@ const menuTree = [
     subMenu: [
       {
         id: 1,
-        name: 'Upcoming Workshops',
+        name: 'Our Workshops',
         link: '/workshops'
+      },
+      {
+        id: 1,
+        name: 'Luminary Lantern Workshops',
+        link: '/workshops/luminary-lantern-workshops'
+      },
+      {
+        id: 1,
+        name: 'Large Luminary Workshop',
+        link: '/workshops/large-luminary-workshop'
+      },
+      {
+        id: 1,
+        name: 'Upcoming Workshops',
+        link: '/workshops/upcoming-workshops'
       },
       {
         id: 2,
