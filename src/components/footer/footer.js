@@ -10,7 +10,7 @@ import Instagram from '../../component-svgs/instagram'
 
 import './footer.scss'
 
-const Footer = () => {
+const Footer = ({ isMobile }) => {
   return (
     <div className='footer-container'>
       <div className='about-us footer-section'>
@@ -38,8 +38,13 @@ const Footer = () => {
         <h4>Get Our Newsletter</h4>
         <FooterForm />
       </div>
-      <YellowTwo className='yellow-two'/>
-      <FooterImage />
+      {
+        !isMobile && 
+      <>
+        <YellowTwo className='yellow-two'/>
+        <FooterImage />
+      </>
+      }
     </div>
   )
 }

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { useMediaPredicate } from 'react-media-hook'
+// import { useMediaPredicate } from 'react-media-hook'
 import { CSSTransition } from 'react-transition-group'
 
 import { useScrollPosition } from '../../hooks/scrollHook'
@@ -12,13 +12,13 @@ import CustomButton from "../custom-button/custom-button";
 
 import './header.scss'
 
-const Header = () => {
+const Header = ({ isMobile }) => {
   const [isOpen, setOpen] = useState(false)
   const [headerSizeOnScroll, setHeaderSize] = useState(true)
 
-  const isMobile = useMediaPredicate('(max-width: 769px)')
+  // const isMobile = useMediaPredicate('(max-width: 769px)')
 
-  // const animate = isOpen ? 'open' : null
+  // const animate = isOpen && 'open'
 
   useScrollPosition(({ prevPos, currPos }) => {
     const isScrolled = currPos.y > prevPos.y
