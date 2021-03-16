@@ -30,7 +30,6 @@ import Register from './pages/parade/register/register'
 import Workshops from './pages/workshops/workshops'
 import LuminaryLantern from './pages/workshops/luminary-lantern-workshops/luminary-lantern-workshops'
 import LargeLuminary from './pages/workshops/large-luminary-workshop/large-luminary-workshop'
-import UpcomingWorkshops from './pages/workshops/upcoming-workshops/upcoming-workshops'
 import TeachWorkshop from './pages/workshops/teach-a-workshop/teach-a-workshop'
 // Get Involved
 import Artists from './pages/artists/artists'
@@ -77,7 +76,6 @@ const App = () => {
       <Route exact path='/workshops' render={(props) => <Container {...props} page={Workshops}/>} />
       <Route exact path='/workshops/luminary-lantern-workshops' render={(props) => <Container {...props} page={LuminaryLantern}/>} />
       <Route exact path='/workshops/large-luminary-workshop' render={(props) => <Container {...props} page={LargeLuminary}/>} />
-      <Route exact path='/workshops/upcoming-workshops' render={(props) => <Container {...props} page={UpcomingWorkshops}/>} />
       <Route exact path='/workshops/teach-a-workshop' render={(props) => <Container {...props} page={TeachWorkshop}/>} />
       {/* Get Involved */}
       <Route exact path='/artists' render={(props) => <Container {...props} page={Artists}/>} />

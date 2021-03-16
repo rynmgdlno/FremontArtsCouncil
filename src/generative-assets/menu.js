@@ -159,8 +159,8 @@ const menuTree = [
       },
       {
         id: 1,
-        name: 'Upcoming Workshops',
-        link: '/workshops/upcoming-workshops'
+        name: 'Upcoming Events & Workshops',
+        link: '/events'
       },
       {
         id: 2,
