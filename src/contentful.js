@@ -11,9 +11,10 @@ export const getHeader = async (headerID) => {
   const pageHeaderImage = `https:${fields.pageHeaderImage.fields.file.url}`
   const imageAltText = fields.imageAltText
   return [pageTitle, pageIntroText, pageHeaderImage, imageAltText]
-  // console.log(pageTitle)
-  // console.log(pageIntroText)
-  // console.log(pageHeaderImage)
-  // console.log(fields.pageTitle)
-  
+}
+
+export const getEvent = async (elementID) => {
+  const element = await client.getEntry(elementID)
+  const fields = element.fields
+  console.log(fields)
 }
