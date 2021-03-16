@@ -5,36 +5,41 @@ const menuTree = [
     subMenu: [
       {
         id: 1,
+        name: 'About',
+        link: '/about'
+      },
+      {
+        id: 2,
         name: 'Mission',
         link: '/mission'
       },
       {
-        id: 2,
+        id: 3,
         name: 'Our Story',
         link: '/story'
       },
       {
-        id: 3,
+        id: 4,
         name: 'Commitment',
         link: '/commitment'
       },
       {
-        id: 4,
+        id: 5,
         name: 'Fremont Troll',
         link: '/troll'
       },
       {
-        id: 5,
+        id: 6,
         name: 'Board Members',
         link: '/board'
       },
       {
-        id: 6,
+        id: 7,
         name: 'Contact us',
         link: '/contact'
       },
       {
-        id: 7,
+        id: 8,
         name: 'Sponsors',
         link: '/sponsors'
       }

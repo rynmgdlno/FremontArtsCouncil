@@ -9,7 +9,7 @@ const PageHeader = ({headerID}) => {
   const [header, isloading] = useHeader(headerID)
 
   if (isloading) return <p>Loading...</p>
-  console.log(header)
+  // console.log(header)
   return (
     <div className='page-header'>
       <div className='page-header-text'>

@@ -3,6 +3,7 @@ import { Route, HashRouter } from 'react-router-dom'
 
 import Home from './pages/home/home'
 // About
+import About from './pages/about/about'
 import Mission from './pages/mission/mission'
 import Story from './pages/story/story'
 import Commitment from './pages/commitment/commitment'
@@ -49,6 +50,7 @@ const App = () => {
       {/* Homepage */}
       <Route exact path='/' render={(props) => <Container {...props} page={Home}/>}/>
       {/* About */}
+      <Route exact path='/about' render={(props) => <Container {...props} page={About}/>} />
       <Route exact path='/mission' render={(props) => <Container {...props} page={Mission}/>} />
       <Route exact path='/story' render={(props) => <Container {...props} page={Story}/>} />
       <Route exact path='/commitment' render={(props) => <Container {...props} page={Commitment}/>} />
