@@ -15,8 +15,6 @@ export const getHeader = async (headerID) => {
 
 export const getEvent = async (elementID) => {
   const element = await client.getEntry(elementID)
-  const fields = element.fields
-  // console.log(fields)
   const {
     eventAboutText,
     eventAddress,
@@ -34,7 +32,7 @@ export const getEvent = async (elementID) => {
     eventVolunteerText,
     previousEventGallery,
     previousEventMainMedia
-  } = fields
+  } = element.fields
 
   const donateImage = `https:${eventDonateImage.fields.file.url}`
   const headerImage = `https:${eventHeaderPhoto.fields.file.url}`
@@ -47,7 +45,7 @@ export const getEvent = async (elementID) => {
     gallery.push(`https:${image.fields.file.url}`)
   });
 
-  console.log(
+  return [
     eventAboutText,
     eventAddress,
     eventDate,
@@ -64,5 +62,5 @@ export const getEvent = async (elementID) => {
     eventVolunteerText,
     gallery,
     mainMedia
-  )
+  ]
 }

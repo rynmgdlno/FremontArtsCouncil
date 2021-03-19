@@ -1,0 +1,48 @@
+@use '../../global/global-styles.scss';
+
+.event {
+  .event-header {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    position: relative;
+
+    .event-header-text {
+      margin-left: global-styles.$window-margin-mobile;
+      margin-right: global-styles.$window-margin-mobile;
+      margin-bottom: 3rem;
+    }
+
+    .event-header-image {
+      width: 100vw;
+      max-width: 1440px;
+    }
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .event {
+    .event-header {
+      margin-top: 6rem;
+
+      .event-header-text {
+        margin-left: global-styles.$window-margin;
+        margin-right: global-styles.$window-margin;
+        width: 70%;
+      }
+    }
+  }
+
+  @media (orientation: portrait) {
+    .event {
+      .event-header {
+        .event-header-text {
+          margin-left: global-styles.$window-margin-tablet;
+          margin-right: global-styles.$window-margin-tablet;
+        }
+      }
+    }
+  }
+}

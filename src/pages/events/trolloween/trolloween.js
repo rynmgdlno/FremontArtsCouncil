@@ -1,6 +1,6 @@
 import React from 'react'
 
-import PageHeader from '../../../components/page-header/page-header'
+// import PageHeader from '../../../components/page-header/page-header'
 import Event from '../../../components/event/event'
 
 import './trolloween.scss'
