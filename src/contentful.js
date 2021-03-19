@@ -16,5 +16,53 @@ export const getHeader = async (headerID) => {
 export const getEvent = async (elementID) => {
   const element = await client.getEntry(elementID)
   const fields = element.fields
-  console.log(fields)
+  // console.log(fields)
+  const {
+    eventAboutText,
+    eventAddress,
+    eventDate,
+    eventDescription,
+    eventDonateImage,
+    eventDonateText,
+    eventHeaderPhoto,
+    eventLocation,
+    eventMapImage,
+    eventRsvpText,
+    eventRsvpTitle,
+    eventTitle,
+    eventVolunteerImage,
+    eventVolunteerText,
+    previousEventGallery,
+    previousEventMainMedia
+  } = fields
+
+  const donateImage = `https:${eventDonateImage.fields.file.url}`
+  const headerImage = `https:${eventHeaderPhoto.fields.file.url}`
+  const mapImage = `https:${eventMapImage.fields.file.url}`
+  const volunteerImage = `https:${eventVolunteerImage.fields.file.url}`
+  const mainMedia = `https:${previousEventMainMedia.fields.file.url}`
+  const gallery = []
+
+  previousEventGallery.forEach(image => {
+    gallery.push(`https:${image.fields.file.url}`)
+  });
+
+  console.log(
+    eventAboutText,
+    eventAddress,
+    eventDate,
+    eventDescription,
+    donateImage,
+    eventDonateText,
+    headerImage,
+    eventLocation,
+    mapImage,
+    eventRsvpText,
+    eventRsvpTitle,
+    eventTitle,
+    volunteerImage,
+    eventVolunteerText,
+    gallery,
+    mainMedia
+  )
 }
