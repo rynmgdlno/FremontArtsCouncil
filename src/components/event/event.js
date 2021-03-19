@@ -4,8 +4,8 @@ import useElement from '../../contentful-hooks/use-element'
 
 import './event.scss'
 
-const Event = ({elementID}) => {
-  const [event, isLoading] = useElement(elementID)
+const Event = ({eventID}) => {
+  const [event, isLoading] = useElement(eventID)
 
   if (isLoading) return <p>Loading...</p>
   console.log(event)
