@@ -4,7 +4,7 @@ import useElement from '../../contentful-hooks/use-element'
 
 import './event.scss'
 
-const Event = ({eventID}) => {
+const Event = ({ eventID }) => {
   const [event, isLoading] = useElement(eventID)
 
   if (isLoading) return <p>Loading...</p>
@@ -16,7 +16,7 @@ const Event = ({eventID}) => {
           <h1 className='event-header-title'>{event[11]}</h1>
           <h3 className='event-header-subtitle'>{event[3]}</h3>
         </div>
-        <img className='event-header-image' src={event[6]} alt=''/>
+        <img className='event-header-image' src={event[6]} alt='' />
       </div>
       <div className='event-info'>
         <span>Time</span>
@@ -36,11 +36,27 @@ const Event = ({eventID}) => {
           <p>{event[9]}</p>
         </div>
         <div className='map-container'>
-          <img className='location-map' src={event[8]} alt=''/>
+          <img className='location-map' src={event[8]} alt='a map' />
         </div>
       </div>
-      <div className='event-involved'></div>
-      <div className='event-previous'></div>
+      <div className='event-involved'>
+        <h2>Get Involved in {event[11]}</h2>
+        <span>Help make the Magic Happen</span>
+        <div className='event-involved-card-container'>
+
+        </div>
+      </div>
+      <div className='event-previous'>
+        <h2>Previous {event[11]}</h2>
+        <div className='prev-event-video-container'></div>
+        <div className='prev-event-gallery-container'>
+          {
+            event[14].map((image => {
+              return <img src={image} alt=''/>
+            }))
+          }
+        </div>
+      </div>
     </div>
   )
 }
