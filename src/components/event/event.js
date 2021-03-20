@@ -1,4 +1,6 @@
 import React from 'react'
+import ReactMarkdown from 'react-markdown'
+import gfm from 'remark-gfm'
 
 import useElement from '../../contentful-hooks/use-element'
 
@@ -8,7 +10,7 @@ const Event = ({ eventID }) => {
   const [event, isLoading] = useElement(eventID)
 
   if (isLoading) return <p>Loading...</p>
-  console.log(event)
+
   return (
     <div className='event'>
       <div className='event-header'>
@@ -24,7 +26,7 @@ const Event = ({ eventID }) => {
         <h2>1 PM  - 4 PM</h2>
         <span>Location</span>
         <h4>{event[7]}</h4>
-        <h4>{event[1]}</h4>
+        <h4><ReactMarkdown plugins={[gfm]} source={event[1]} /></h4>
       </div>
       <div className='event-description'>
         <h2>About {event[11]}</h2>
@@ -48,11 +50,15 @@ const Event = ({ eventID }) => {
       </div>
       <div className='event-previous'>
         <h2>Previous {event[11]}</h2>
-        <div className='prev-event-video-container'></div>
+        <div className='prev-event-video-container'>
+          <video controls width='100%'>
+            <source src={event[15]} />
+          </video>
+        </div>
         <div className='prev-event-gallery-container'>
           {
-            event[14].map((image => {
-              return <img src={image} alt=''/>
+            event[14].map(((image, i) => {
+              return <img src={image} key={i} alt=''/>
             }))
           }
         </div>
