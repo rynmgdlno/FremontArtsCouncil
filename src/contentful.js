@@ -45,6 +45,25 @@ export const getEvent = async (elementID) => {
     gallery.push(`https:${image.fields.file.url}`)
   });
 
+  console.log([
+    eventAboutText,
+    eventAddress,
+    eventDate,
+    eventDescription,
+    donateImage,
+    eventDonateText,
+    headerImage,
+    eventLocation,
+    mapImage,
+    eventRsvpText,
+    eventRsvpTitle,
+    eventTitle,
+    volunteerImage,
+    eventVolunteerText,
+    gallery,
+    mainMedia
+  ])
+
   return [
     eventAboutText,
     eventAddress,
