@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-import { getEvent } from '../contentful'
+import { getElement } from '../contentful'
 
 
 export default function useElement(elementID) {
@@ -8,7 +8,7 @@ export default function useElement(elementID) {
   const [isLoading, setLoading] = useState(true)
   
   useEffect(() => {
-    const promiseElement = getEvent(elementID)
+    const promiseElement = getElement(elementID)
     promiseElement.then(element => {
       setElement(element)
       setLoading(false)
