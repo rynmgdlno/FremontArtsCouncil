@@ -83,13 +83,12 @@ const Event = ({ isParade, eventID }) => {
             {
               isParade ?
                 <div className='location-button-container'>
-                  <CustomButton>Tickets</CustomButton>
-                  <CustomButton>Add to Calendar</CustomButton>
-                  <CustomButton>Add to Calendar</CustomButton>
+                  <CustomButton className='custom-button high-emphasis-button green-button'>Tickets</CustomButton>
+                  <CustomButton className='custom-button low-emphasis-button rsvp-button'>Add to Calendar</CustomButton>
                 </div> :
                 <div className='location-button-container'>
-                  <CustomButton>RSVP</CustomButton>
-                  <CustomButton>Add to Calendar</CustomButton>
+                  <CustomButton className='custom-button high-emphasis-button green-button'>RSVP</CustomButton>
+                  <CustomButton className='custom-button low-emphasis-button rsvp-button'>Add to Calendar</CustomButton>
                 </div>
             }
           </div>

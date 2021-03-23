@@ -40,21 +40,47 @@
 }
 
 .high-emphasis-button {
-  background-color: white;
-  color: global-styles.$blue;
-  border: 2px solid white;
+  transition: all .2s ease-in-out;
+  transform: scale(1);
+  color: white;
+  border: 2px solid;
   border-radius: 12px;
   width: 120px;
+  height: 50px;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.blue-button {
+  background-color: global-styles.$blue;
+  border-color: global-styles.$blue;
+}
+
+.green-button {
+  background-color: global-styles.$green;
+  border-color: global-styles.$green;
+}
+
+.rsvp-button {
+  color: global-styles.$blue;
 }
 
 .donate-button {
   transition: all .2s ease-in-out;
+  border: 2px solid white;
+  border-radius: 12px;
+  width: 120px;
   border-color: global-styles.$blue;
   color: global-styles.$blue;
 }
 
 .volunteer-button {
   transition: all .2s ease-in-out;
+  border: 2px solid white;
+  border-radius: 12px;
+  width: 120px;
   border-color: global-styles.$green;
   color: global-styles.$green;
 }
@@ -67,4 +93,15 @@
 .donate-button:hover {
   background-color: global-styles.$blue;
   color: white;
+}
+
+.sign-up-button {
+  transition: all .2s ease-in-out;
+  margin-left: auto;
+  color: white;
+  border-color: white;
+}
+
+.sign-up-button:hover {
+  transform: scale(1.1);
 }

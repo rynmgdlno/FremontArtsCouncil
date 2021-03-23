@@ -33,7 +33,7 @@ const FooterForm = () => {
       onChange='' 
       className='email'/>
 
-      <CustomButton type='submit' className='custom-button high-emphasis-button sign-up-button'>Sign Up</CustomButton>
+      <CustomButton type='submit' className='custom-button medium-emphasis-button sign-up-button'>Sign Up</CustomButton>
     </div>
   )
 }
