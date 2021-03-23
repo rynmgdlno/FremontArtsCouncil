@@ -2,11 +2,12 @@ import React from 'react'
 import ReactMarkdown from 'react-markdown'
 import gfm from 'remark-gfm'
 
+import CustomButton from '../custom-button/custom-button'
 import useElement from '../../contentful-hooks/use-element'
 
 import './event.scss'
 
-const Event = ({ eventID }) => {
+const Event = ({ isParade, eventID }) => {
   const [event, isLoading] = useElement(eventID)
 
   if (isLoading) return <p>Loading...</p>
@@ -79,6 +80,18 @@ const Event = ({ eventID }) => {
           <div className='location-description-container'>
             <h2 className='location-title'>{eventRsvpTitle}</h2>
             <p>{eventRsvpText}</p>
+            {
+              isParade ?
+                <div className='location-button-container'>
+                  <CustomButton>Tickets</CustomButton>
+                  <CustomButton>Add to Calendar</CustomButton>
+                  <CustomButton>Add to Calendar</CustomButton>
+                </div> :
+                <div className='location-button-container'>
+                  <CustomButton>RSVP</CustomButton>
+                  <CustomButton>Add to Calendar</CustomButton>
+                </div>
+            }
           </div>
           <div className='map-container'>
             <img className='location-map' src={mapImage} alt='a map' />
@@ -91,22 +104,30 @@ const Event = ({ eventID }) => {
           </div>
         </div>
         <div className='event-previous'>
-          <h2>Previous {eventTitle}</h2>
+          <h2 className='prev-event-title'>Previous {eventTitle}</h2>
           <div className='prev-event-video-container'>
             <video controls width='100%'>
               <source src={mainMedia} />
             </video>
           </div>
+          <h2>Gallery</h2>
           <div className='prev-event-gallery-container'>
             {
               gallery.map(((image, i) => {
-                return <img className='event-gallery-image' src={image} key={i} alt='' />
+                const bgStyle = {
+                  backgroundImage: `url(${image})`,
+                  backgroundSize: 'cover', 
+                  backgroundPosition: 'center'
+                }
+                return (
+                  <div className='event-image-container' key={i} style={bgStyle} />
+                )
               }))
             }
           </div>
         </div>
       </div>
-    </div>
+    </div >
   )
 }
 

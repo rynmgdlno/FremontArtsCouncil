@@ -47,6 +47,7 @@
 
     .event-description {
       margin-left: auto;
+      margin-top: 3rem;
 
       .event-about-title {
         margin-bottom: 0;
@@ -59,17 +60,48 @@
       width: 100%;
       border-radius: 10px;
       overflow: hidden;
-      // border: 1px solid black;
+      margin: 4rem 0;
 
       .location-description-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
         height: 90vw;
-        background-color: global-styles.$blue;
-        padding: 0 1.5rem;
+        background-color: global-styles.$beige;
+        padding: 0 2rem;
+
+        .location-title {
+          margin-top: 2rem;
+          margin-bottom: 0;
+        }
+
+        .location-button-container {
+          margin-bottom: 2rem;
+        }
       }
 
       .map-container {
         .location-map {
           width: 100%;
+        }
+      }
+    }
+
+    .event-involved {
+      text-align: center;
+    }
+
+    .event-previous {
+      text-align: center;
+
+      .prev-event-gallery-container {
+        display: flex;
+        flex-direction: column;
+
+        .event-image-container {
+          width: 92.5vw;
+          height: 92.5vw;
+          margin-bottom: 1rem;
         }
       }
     }
@@ -94,6 +126,43 @@
 
       .event-description {
         width: 55%;
+      }
+
+      .event-location-container {
+        flex-direction: row;
+        height: auto;
+
+        .location-description-container {
+          height: auto;
+          width: 45%;
+        }
+
+        .map-container {
+          width: 50%;
+
+          .location-map {
+            width: 100%;
+            height: auto;
+          }
+        }
+      }
+
+      .event-previous {
+        text-align: center;
+
+        .prev-event-gallery-container {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: space-between;
+  
+          .event-image-container {
+            width: 27vw;
+            height: 27vw;
+            // border-radius: 10px;
+            margin-bottom: 1rem;
+          }
+        }
       }
     }
   }

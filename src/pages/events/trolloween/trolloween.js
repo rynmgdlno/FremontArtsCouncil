@@ -9,7 +9,7 @@ const Trolloween = () => {
   return ( 
     <div>
       {/* <PageHeader headerID={'QXWCwlvUirm1Mcr45jtb4'}/> */}
-      <Event eventID={'5pwPBYX4ndWWj3uZnuIZSl'}/>
+      <Event isParade={false} eventID={'5pwPBYX4ndWWj3uZnuIZSl'}/>
     </div>
   )
 }
