@@ -53,7 +53,7 @@ const Event = ({ isParade, eventID }) => {
   const donateImage = `https:${eventDonateImage.fields.file.url}`
   const volunteerImage = `https:${eventVolunteerImage.fields.file.url}`
   const regImage = registerImage && `https:${registerImage.fields.file.url}`
-  const mainMedia = `https:${previousEventMainMedia.fields.file.url}`
+  const mainMedia = previousEventMainMedia && `https:${previousEventMainMedia.fields.file.url}`
   const gallery = []
   console.log(event.fields)
 
