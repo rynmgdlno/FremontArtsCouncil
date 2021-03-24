@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import ReactMarkdown from 'react-markdown'
 import gfm from 'remark-gfm'
 
 import useElement from '../../contentful-hooks/use-element'
 
+import GalleryModal from '../gallery-modal/gallery-modal'
 import InvolvedCard from './involved-card/involved-card'
 import CustomButton from '../custom-button/custom-button'
 
@@ -14,7 +15,9 @@ import './event.scss'
 const Event = ({ isParade, eventID }) => {
   const [event, isLoading] = useElement(eventID)
   const [isOpen, setIsOpen] = useState(false)
-  console.log(isOpen)
+  // const [galleryOpen, setGallery] = useState(false)
+  const [currentImage, setImage] = useState(null)
+  console.log(currentImage)
 
   if (isLoading) return <p>Loading...</p>
 
@@ -107,34 +110,33 @@ const Event = ({ isParade, eventID }) => {
                     className='custom-button high-emphasis-button green-button'>
                     RSVP
                   </CustomButton>
+                  <CustomButton
+                    onClick={() => setIsOpen(!isOpen)}
+                    className='custom-button low-emphasis-button rsvp-button'>
+                    Add to Calendar {!isOpen ? '-' : '+'}
+                  </CustomButton>
                   {
-                    !isOpen ?
-                      <CustomButton
-                        onClick={() => setIsOpen(!isOpen)}
-                        className='custom-button low-emphasis-button rsvp-button'>
-                        Add to Calendar
-                      </CustomButton>
-                      :
-                      <div className='calendar-select'>
-                        <a href={apple} download={apple}>
-                          <CustomButton
-                            className='custom-button low-emphasis-button rsvp-button'>
-                            Apple
+                    !isOpen &&
+                    <div className='calendar-select'>
+                      <a href={apple} download={apple}>
+                        <CustomButton
+                          className='custom-button low-emphasis-button rsvp-button'>
+                          Apple
                           </CustomButton>
-                        </a>
-                        <a target='_blank' rel='noreferrer' href={googleCalendarLink}>
-                          <CustomButton
-                            className='custom-button low-emphasis-button rsvp-button'>
-                            Google
+                      </a>
+                      <a target='_blank' rel='noreferrer' href={googleCalendarLink}>
+                        <CustomButton
+                          className='custom-button low-emphasis-button rsvp-button'>
+                          Google
                           </CustomButton>
-                        </a>
-                        <a href={outlook} download={outlook}>
-                          <CustomButton
-                            className='custom-button low-emphasis-button rsvp-button'>
-                            Outlook
+                      </a>
+                      <a href={outlook} download={outlook}>
+                        <CustomButton
+                          className='custom-button low-emphasis-button rsvp-button'>
+                          Outlook
                           </CustomButton>
-                        </a>
-                      </div>
+                      </a>
+                    </div>
                   }
                 </div>
             }
@@ -173,15 +175,18 @@ const Event = ({ isParade, eventID }) => {
                     backgroundPosition: 'center'
                   }
                   return (
-                    <div className='event-image-container' key={i} style={bgStyle} />
+                    <div onClick={() => setImage(image)} className='event-image-container' key={i} style={bgStyle} />
                   )
                 }))
               }
             </div>
+            {
+              currentImage && <GalleryModal image={currentImage} setImage={setImage}/>
+            }
           </div>
         }
       </div>
-    </div >
+    </div>
   )
 }
 

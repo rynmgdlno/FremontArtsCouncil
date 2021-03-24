@@ -76,12 +76,16 @@
         }
 
         .location-button-container {
+          position: relative;
           display: flex;
           justify-content: space-around;
           align-items: center;
           margin-bottom: 2rem;
 
           .calendar-select {
+            position: absolute;
+            top: 2.5rem;
+            left: 20rem;
             display: flex;
             flex-direction: column;
           }
