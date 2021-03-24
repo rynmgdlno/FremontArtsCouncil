@@ -5,7 +5,6 @@ import CustomButton from '../../custom-button/custom-button'
 import './involved-card.scss'
 
 const InvolvedCard = ({buttonText, text, bgImage, link}) => {
-  console.log(bgImage)
 
   const bgStyle = {
     backgroundImage: `url(${bgImage})`,

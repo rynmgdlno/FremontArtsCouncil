@@ -1,15 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import ReactMarkdown from 'react-markdown'
 import gfm from 'remark-gfm'
 
+import useElement from '../../contentful-hooks/use-element'
+
 import InvolvedCard from './involved-card/involved-card'
 import CustomButton from '../custom-button/custom-button'
-import useElement from '../../contentful-hooks/use-element'
+
 
 import './event.scss'
 
 const Event = ({ isParade, eventID }) => {
   const [event, isLoading] = useElement(eventID)
+  const [isOpen, setIsOpen] = useState(false)
+  console.log(isOpen)
 
   if (isLoading) return <p>Loading...</p>
 
@@ -39,7 +44,6 @@ const Event = ({ isParade, eventID }) => {
     previousEventGallery,
     previousEventMainMedia
   } = event.fields
-  console.log(googleCalendarLink)
 
   const headerImage = `https:${eventHeaderPhoto.fields.file.url}`
   const mapImage = `https:${eventMapImage.fields.file.url}`
@@ -84,12 +88,54 @@ const Event = ({ isParade, eventID }) => {
             {
               isParade ?
                 <div className='location-button-container'>
-                  <CustomButton className='custom-button high-emphasis-button green-button'>Tickets</CustomButton>
-                  <CustomButton className='custom-button low-emphasis-button rsvp-button'>Add to Calendar</CustomButton>
-                </div> :
+                  <CustomButton
+                    onClick={() => console.log('test')}
+                    className='custom-button high-emphasis-button green-button'>
+                    Tickets
+                  </CustomButton>
+                  <CustomButton
+                    onClick={() => {
+                      setIsOpen(!isOpen)
+                    }}
+                    className='custom-button low-emphasis-button rsvp-button'>
+                    Add to Calendar
+                  </CustomButton>
+                </div>
+                :
                 <div className='location-button-container'>
-                  <CustomButton className='custom-button high-emphasis-button green-button'>RSVP</CustomButton>
-                  <CustomButton className='custom-button low-emphasis-button rsvp-button'>Add to Calendar</CustomButton>
+                  <CustomButton
+                    className='custom-button high-emphasis-button green-button'>
+                    RSVP
+                  </CustomButton>
+                  {
+                    !isOpen ?
+                      <CustomButton
+                        onClick={() => setIsOpen(!isOpen)}
+                        className='custom-button low-emphasis-button rsvp-button'>
+                        Add to Calendar
+                      </CustomButton>
+                      :
+                      <div className='calendar-select'>
+                        <a href={apple} download={apple}>
+                          <CustomButton
+                            className='custom-button low-emphasis-button rsvp-button'>
+                            Apple
+                          </CustomButton>
+                        </a>
+                        <a target='_blank' rel='noreferrer' href={googleCalendarLink}>
+                          <CustomButton
+                            className='custom-button low-emphasis-button rsvp-button'>
+                            Google
+                          </CustomButton>
+                        </a>
+                        <a href={outlook} download={outlook}>
+                          <CustomButton
+                            className='custom-button low-emphasis-button rsvp-button'>
+                            Outlook
+                          </CustomButton>
+                        </a>
+                      </div>
+                  }
                 </div>
             }
           </div>

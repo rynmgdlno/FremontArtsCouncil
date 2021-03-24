@@ -78,7 +78,13 @@
         .location-button-container {
           display: flex;
           justify-content: space-around;
+          align-items: center;
           margin-bottom: 2rem;
+
+          .calendar-select {
+            display: flex;
+            flex-direction: column;
+          }
         }
       }
 
