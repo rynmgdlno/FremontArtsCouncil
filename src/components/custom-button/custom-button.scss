@@ -67,6 +67,10 @@
   color: global-styles.$blue;
 }
 
+.ic-card-button {
+  border: none;
+}
+
 .donate-button {
   transition: all .2s ease-in-out;
   border: 2px solid white;

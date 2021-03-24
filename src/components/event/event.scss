@@ -91,6 +91,12 @@
 
     .event-involved {
       text-align: center;
+      margin-bottom: 2rem;
+
+      .event-involved-card-container {
+        display: flex;
+        flex-direction: column;
+      }
     }
 
     .event-previous {
@@ -146,6 +152,15 @@
             width: 100%;
             height: auto;
           }
+        }
+      }
+
+      .event-involved {
+
+        .event-involved-card-container {
+          flex-direction: row;
+          justify-content: center;
+          margin-top: 2rem;
         }
       }
 

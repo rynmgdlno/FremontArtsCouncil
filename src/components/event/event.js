@@ -2,6 +2,7 @@ import React from 'react'
 import ReactMarkdown from 'react-markdown'
 import gfm from 'remark-gfm'
 
+import InvolvedCard from './involved-card/involved-card'
 import CustomButton from '../custom-button/custom-button'
 import useElement from '../../contentful-hooks/use-element'
 
@@ -100,31 +101,39 @@ const Event = ({ isParade, eventID }) => {
           <h2 className='event-get-involved'>Get Involved in {eventTitle}</h2>
           <span>Help make the Magic Happen</span>
           <div className='event-involved-card-container'>
-          </div>
-        </div>
-        <div className='event-previous'>
-          <h2 className='prev-event-title'>Previous {eventTitle}</h2>
-          <div className='prev-event-video-container'>
-            <video controls width='100%'>
-              <source src={mainMedia} />
-            </video>
-          </div>
-          <h2>Gallery</h2>
-          <div className='prev-event-gallery-container'>
+            <InvolvedCard buttonText='Donate Now' text={eventDonateText} bgImage={donateImage} link='/donate' />
+            <InvolvedCard buttonText='Volunteer Now' text={eventVolunteerText} bgImage={volunteerImage} link='/volunteer' />
             {
-              gallery.map(((image, i) => {
-                const bgStyle = {
-                  backgroundImage: `url(${image})`,
-                  backgroundSize: 'cover', 
-                  backgroundPosition: 'center'
-                }
-                return (
-                  <div className='event-image-container' key={i} style={bgStyle} />
-                )
-              }))
+              isParade && <InvolvedCard buttonText='Register Now' text={eventRegisterText} bgImage={registerImage} link='/parade/register' />
             }
           </div>
         </div>
+        {
+          !newEvent &&
+          <div className='event-previous'>
+            <h2 className='prev-event-title'>Previous {eventTitle}</h2>
+            <div className='prev-event-video-container'>
+              <video controls width='100%'>
+                <source src={mainMedia} />
+              </video>
+            </div>
+            <h2>Gallery</h2>
+            <div className='prev-event-gallery-container'>
+              {
+                gallery.map(((image, i) => {
+                  const bgStyle = {
+                    backgroundImage: `url(${image})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center'
+                  }
+                  return (
+                    <div className='event-image-container' key={i} style={bgStyle} />
+                  )
+                }))
+              }
+            </div>
+          </div>
+        }
       </div>
     </div >
   )
