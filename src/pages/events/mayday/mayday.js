@@ -1,13 +1,13 @@
 import React from 'react'
 
-import PageHeader from '../../../components/page-header/page-header'
+import Event from '../../../components/event/event'
 
 import './mayday.scss'
 
 const MayDay = () => {
-  return ( 
+  return (
     <div>
-      <PageHeader headerID={'2pVJYG64C1YLTImn1YLWbd'}/>
+      <Event isParade={false} eventID={'26nlAOHQjHzYfq5WZoL3vt'} />
     </div>
   )
 }

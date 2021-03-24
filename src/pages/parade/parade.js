@@ -1,13 +1,13 @@
 import React from 'react'
 
-import PageHeader from '../../components/page-header/page-header'
+import Event from '../../components/event/event'
 
 import './parade.scss'
 
 const Parade = () => {
   return ( 
     <div>
-      <PageHeader headerID={'4tHLsHCzikAgoBNawMYah9'}/>
+      <Event isParade={true} eventID={'61oWXVlzBWbbMVrZNp9cw6'}/>
     </div>
   )
 }

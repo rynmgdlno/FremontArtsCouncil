@@ -15,9 +15,7 @@ import './event.scss'
 const Event = ({ isParade, eventID }) => {
   const [event, isLoading] = useElement(eventID)
   const [isOpen, setIsOpen] = useState(false)
-  // const [galleryOpen, setGallery] = useState(false)
   const [currentImage, setImage] = useState(null)
-  console.log(currentImage)
 
   if (isLoading) return <p>Loading...</p>
 
@@ -33,8 +31,8 @@ const Event = ({ isParade, eventID }) => {
     eventHeaderPhoto,
     eventLocation,
     eventMapImage,
-    eventRegisterImage,
-    eventRegisterText,
+    registerImage,
+    registerText,
     eventRsvpText,
     eventRsvpTitle,
     eventTime,
@@ -50,13 +48,14 @@ const Event = ({ isParade, eventID }) => {
 
   const headerImage = `https:${eventHeaderPhoto.fields.file.url}`
   const mapImage = `https:${eventMapImage.fields.file.url}`
-  const apple = `https:${appleCalendar.fields.file.url}`
-  const outlook = `https:${outlookCalendar.fields.file.url}`
+  const apple = appleCalendar && `https:${appleCalendar.fields.file.url}`
+  const outlook = outlookCalendar && `https:${outlookCalendar.fields.file.url}`
   const donateImage = `https:${eventDonateImage.fields.file.url}`
   const volunteerImage = `https:${eventVolunteerImage.fields.file.url}`
-  const registerImage = eventRegisterImage && `https:${eventRegisterImage.fields.file.url}`
+  const regImage = registerImage && `https:${registerImage.fields.file.url}`
   const mainMedia = `https:${previousEventMainMedia.fields.file.url}`
   const gallery = []
+  console.log(event.fields)
 
   previousEventGallery.forEach(image => {
     gallery.push(`https:${image.fields.file.url}`)
@@ -88,35 +87,18 @@ const Event = ({ isParade, eventID }) => {
           <div className='location-description-container'>
             <h2 className='location-title'>{eventRsvpTitle}</h2>
             <p>{eventRsvpText}</p>
-            {
-              isParade ?
-                <div className='location-button-container'>
-                  <CustomButton
-                    onClick={() => console.log('test')}
-                    className='custom-button high-emphasis-button green-button'>
-                    Tickets
-                  </CustomButton>
-                  <CustomButton
-                    onClick={() => {
-                      setIsOpen(!isOpen)
-                    }}
-                    className='custom-button low-emphasis-button rsvp-button'>
-                    Add to Calendar
-                  </CustomButton>
-                </div>
-                :
                 <div className='location-button-container'>
                   <CustomButton
                     className='custom-button high-emphasis-button green-button'>
-                    RSVP
+                    { isParade ? 'Tickets' : 'RSVP' }
                   </CustomButton>
                   <CustomButton
                     onClick={() => setIsOpen(!isOpen)}
                     className='custom-button low-emphasis-button rsvp-button'>
-                    Add to Calendar {!isOpen ? '-' : '+'}
+                    Add to Calendar {isOpen ? '-' : '+'}
                   </CustomButton>
                   {
-                    !isOpen &&
+                    isOpen &&
                     <div className='calendar-select'>
                       <a href={apple} download={apple}>
                         <CustomButton
@@ -139,7 +121,6 @@ const Event = ({ isParade, eventID }) => {
                     </div>
                   }
                 </div>
-            }
           </div>
           <div className='map-container'>
             <img className='location-map' src={mapImage} alt='a map' />
@@ -152,7 +133,7 @@ const Event = ({ isParade, eventID }) => {
             <InvolvedCard buttonText='Donate Now' text={eventDonateText} bgImage={donateImage} link='/donate' />
             <InvolvedCard buttonText='Volunteer Now' text={eventVolunteerText} bgImage={volunteerImage} link='/volunteer' />
             {
-              isParade && <InvolvedCard buttonText='Register Now' text={eventRegisterText} bgImage={registerImage} link='/parade/register' />
+              isParade && <InvolvedCard buttonText='Register Now' text={registerText} bgImage={regImage} link='/parade/register' />
             }
           </div>
         </div>
