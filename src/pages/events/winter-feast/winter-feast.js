@@ -1,13 +1,13 @@
 import React from 'react'
 
-import PageHeader from '../../../components/page-header/page-header'
+import Event from '../../../components/event/event'
 
 import './winter-feast.scss'
 
 const WinterFeast = () => {
   return ( 
     <div>
-      <PageHeader headerID={'qYMIsfGiSeauycSBwL9BL'}/>
+      <Event isParade={false} eventID={'1RCpS52MhOUEnu5zcHY3T9'} />
     </div>
   )
 }

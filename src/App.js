@@ -21,6 +21,7 @@ import Luminata from './pages/events/luminata/luminata'
 import Trolloween from './pages/events/trolloween/trolloween'
 import WinterFeast from './pages/events/winter-feast/winter-feast'
 import MayDay from './pages/events/mayday/mayday'
+import SecondaryEvent from './pages/secondary-event/secondary-event'
 // Parade
 import Parade from './pages/parade/parade'
 import Participate from './pages/parade/participate/participate'
@@ -67,6 +68,7 @@ const App = () => {
       <Route exact path='/events/trolloween' render={(props) => <Container {...props} page={Trolloween}/>} />
       <Route exact path='/events/winter-feast' render={(props) => <Container {...props} page={WinterFeast}/>} />
       <Route exact path='/events/may-day' render={(props) => <Container {...props} page={MayDay}/>} />
+      <Route exact path='/events/:eventID' render={(props) => <Container {...props} page={SecondaryEvent}/>} />
       {/* Parade */}
       <Route exact path='/parade' render={(props) => <Container {...props} page={Parade}/>} />
       <Route exact path='/parade/participate' render={(props) => <Container {...props} page={Participate}/>} />

@@ -1,13 +1,13 @@
 import React from 'react'
 
-import PageHeader from '../../../components/page-header/page-header'
+import Event from '../../../components/event/event'
 
 import './solstice.scss'
 
 const Solstice = () => {
   return ( 
     <div>
-      <PageHeader headerID={'headerid'}/>
+      <Event isParade={false} eventID={'3rWW6GqmjRz5ZtHNsnRloe'} />
     </div>
   )
 }

@@ -86,41 +86,41 @@ const Event = ({ isParade, eventID }) => {
         <div className='event-location-container'>
           <div className='location-description-container'>
             <h2 className='location-title'>{eventRsvpTitle}</h2>
-            <p>{eventRsvpText}</p>
-                <div className='location-button-container'>
-                  <CustomButton
-                    className='custom-button high-emphasis-button green-button'>
-                    { isParade ? 'Tickets' : 'RSVP' }
-                  </CustomButton>
-                  <CustomButton
-                    onClick={() => setIsOpen(!isOpen)}
-                    className='custom-button low-emphasis-button rsvp-button'>
-                    Add to Calendar {isOpen ? '-' : '+'}
-                  </CustomButton>
-                  {
-                    isOpen &&
-                    <div className='calendar-select'>
-                      <a href={apple} download={apple}>
-                        <CustomButton
-                          className='custom-button low-emphasis-button rsvp-button'>
-                          Apple
+            <p className='rsvp-text'>{eventRsvpText}</p>
+            <div className='location-button-container'>
+              <CustomButton
+                className='custom-button high-emphasis-button green-button'>
+                {isParade ? 'Tickets' : 'RSVP'}
+              </CustomButton>
+              <CustomButton
+                onClick={() => setIsOpen(!isOpen)}
+                className='custom-button low-emphasis-button rsvp-button'>
+                Add to Calendar {isOpen ? '-' : '+'}
+              </CustomButton>
+              {
+                isOpen &&
+                <div className='calendar-select'>
+                  <a href={apple} download={apple}>
+                    <CustomButton
+                      className='custom-button low-emphasis-button rsvp-button'>
+                      Apple
                           </CustomButton>
-                      </a>
-                      <a target='_blank' rel='noreferrer' href={googleCalendarLink}>
-                        <CustomButton
-                          className='custom-button low-emphasis-button rsvp-button'>
-                          Google
+                  </a>
+                  <a target='_blank' rel='noreferrer' href={googleCalendarLink}>
+                    <CustomButton
+                      className='custom-button low-emphasis-button rsvp-button'>
+                      Google
                           </CustomButton>
-                      </a>
-                      <a href={outlook} download={outlook}>
-                        <CustomButton
-                          className='custom-button low-emphasis-button rsvp-button'>
-                          Outlook
+                  </a>
+                  <a href={outlook} download={outlook}>
+                    <CustomButton
+                      className='custom-button low-emphasis-button rsvp-button'>
+                      Outlook
                           </CustomButton>
-                      </a>
-                    </div>
-                  }
+                  </a>
                 </div>
+              }
+            </div>
           </div>
           <div className='map-container'>
             <img className='location-map' src={mapImage} alt='a map' />
@@ -162,7 +162,7 @@ const Event = ({ isParade, eventID }) => {
               }
             </div>
             {
-              currentImage && <GalleryModal image={currentImage} setImage={setImage}/>
+              currentImage && <GalleryModal image={currentImage} setImage={setImage} />
             }
           </div>
         }

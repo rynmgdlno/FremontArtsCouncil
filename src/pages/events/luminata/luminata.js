@@ -1,13 +1,13 @@
 import React from 'react'
 
-import PageHeader from '../../../components/page-header/page-header'
+import Event from '../../../components/event/event'
 
 import './luminata.scss'
 
 const Luminata = () => {
   return ( 
     <div>
-      <PageHeader headerID={'3cZLjSTNhMlTRLTKpMkKJX'}/>
+      <Event isParade={false} eventID={'2AOg2gmfzefNneqmbocD44'} />
     </div>
   )
 }

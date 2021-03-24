@@ -75,6 +75,10 @@
           margin-bottom: 0;
         }
 
+        .rsvp-text {
+          font-size: 18px;
+        }
+
         .location-button-container {
           position: relative;
           display: flex;
@@ -191,7 +195,7 @@
           flex-wrap: wrap;
           justify-content: space-between;
           margin-bottom: 4rem;
-  
+
           .event-image-container {
             transition: all .2s ease-in-out;
             cursor: pointer;
@@ -200,6 +204,7 @@
             margin-bottom: 1rem;
             transform: scale(1);
           }
+
           .event-image-container:hover {
             transform: scale(1.02);
           }
