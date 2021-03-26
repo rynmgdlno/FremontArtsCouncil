@@ -8,6 +8,10 @@ import useElement from '../../contentful-hooks/use-element'
 import GalleryModal from '../gallery-modal/gallery-modal'
 import InvolvedCard from './involved-card/involved-card'
 import CustomButton from '../custom-button/custom-button'
+import Squiggle1 from './graphic-components/squiggle1'
+import Squiggle2 from './graphic-components/squiggle2'
+import Squiggle3 from './graphic-components/squiggle3'
+import Squiggle4 from './graphic-components/squiggle4'
 
 
 import './event.scss'
@@ -63,6 +67,10 @@ const Event = ({ isParade, eventID }) => {
 
   return (
     <div className='event'>
+      <Squiggle1/>
+      <Squiggle2/>
+      <Squiggle3/>
+      <Squiggle4/>
       <div className='event-header'>
         <div className='event-header-text'>
           <h1 className='event-header-title'>{eventTitle}</h1>
