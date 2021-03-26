@@ -23,6 +23,5 @@ export const getElement = async (elementID) => {
 export const getEvents = async () => {
   const eventsObj = await client.getEntries({ 'content_type': 'event'})
   const events = eventsObj.items
-  console.log(events)
   return events
 }
