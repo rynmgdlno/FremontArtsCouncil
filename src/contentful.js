@@ -21,7 +21,7 @@ export const getElement = async (elementID) => {
 }
 
 export const getEvents = async () => {
-  const eventsObj = await client.getEntries({ 'content_type': 'event'})
+  const eventsObj = await client.getEntries({ content_type: 'event', order: 'fields.sortDate'})
   const events = eventsObj.items
   return events
 }
