@@ -1,10 +1,13 @@
 import React from 'react'
 
+import {getEvents} from '../../contentful'
+
 import PageHeader from '../../components/page-header/page-header'
 
 import './upcoming-events.scss'
 
 const UpcomingEvents = () => {
+  getEvents()
   return ( 
     <div>
       <PageHeader headerID={'3ACKdcppZYgrXRuYgBPcm3'}/>
