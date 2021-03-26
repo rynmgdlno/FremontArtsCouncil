@@ -1,21 +1,7 @@
 @use '../../global/global-styles.scss';
 
 .event {
-  .squiggle1{
-    position: absolute;
-    top: 105rem;
-    left: 4rem;
-    z-index: 0;
-  }
-  .squiggle2{
-    position: absolute;
-  }
-  .squiggle3{
-    position: absolute;
-  }
-  .squiggle4{
-    position: absolute;
-  }
+  position: relative;
 
   .event-header {
     display: flex;
@@ -70,13 +56,47 @@
       }
     }
 
+    .squiggle1 {
+      position: absolute;
+      top: 80rem;
+      left: 2rem;
+      transform: scale(.8);
+      z-index: 1;
+    }
+
+    .squiggle2 {
+      position: absolute;
+      top: 73rem;
+      left: -2rem;
+      transform: scale(.8);
+      z-index: 1;
+    }
+
+    .squiggle3 {
+      position: absolute;
+      top: 55rem;
+      right: -3rem;
+      transform: scale(.7);
+      z-index: 1;
+    }
+
+    .squiggle4 {
+      position: absolute;
+      top: 56rem;
+      right: 3rem;
+      transform: scale(.7);
+      z-index: 1;
+    }
+
     .event-location-container {
+      position: relative;
       display: flex;
       flex-direction: column;
       width: 100%;
       border-radius: 10px;
       overflow: hidden;
       margin: 4rem 0;
+      z-index: 999;
 
       .location-description-container {
         display: flex;
