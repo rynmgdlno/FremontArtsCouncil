@@ -22,13 +22,12 @@ const EventCard = ({ image, title, text, date, id }) => {
             <h3 className='event-card-date'>{date}</h3>
             <h2 className='event-card-title'>{title}</h2>
             <div className='event-card-image' style={bgStyle}/>
-            {/* <img className='event-card-image' src={`https:${image}`} alt='' /> */}
             <p className='event-card-text'>{text}</p>
             <CustomButton className='custom-button high-emphasis-button blue-button event-card-button'>Learn More</CustomButton>
           </div>
           :
           <div className='event-card'>
-            <img className='event-card-image' src={`https:${image}`} alt='' />
+            <div className='event-card-image' style={bgStyle}/>
             <div className='event-card-info-container'>
               <span className='event-card-date'>{date}</span>
               <h2 className='event-card-title'>{title}</h2>
