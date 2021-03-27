@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-// import { Link } from 'react-router-dom'
 import ReactMarkdown from 'react-markdown'
 import gfm from 'remark-gfm'
 
@@ -60,7 +59,6 @@ const Event = ({ isParade, eventID }) => {
   const regImage = registerImage && `https:${registerImage.fields.file.url}`
   const mainMedia = previousEventMainMedia && `https:${previousEventMainMedia.fields.file.url}`
   const gallery = []
-  console.log(event.fields)
 
   previousEventGallery.forEach(image => {
     gallery.push(`https:${image.fields.file.url}`)

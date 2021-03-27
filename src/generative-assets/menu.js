@@ -78,27 +78,27 @@ const menuTree = [
       {
         id: 3,
         name: 'Solstice Celebration',
-        link: '/events/solstice'
+        link: '/solstice'
       },
       {
         id: 4,
         name: 'Luminata',
-        link: '/events/luminata'
+        link: '/luminata'
       },
       {
         id: 5,
         name: 'Trolloween',
-        link: '/events/trolloween'
+        link: '/trolloween'
       },
       {
         id: 6,
         name: 'Feast of the Winter Solstice',
-        link: '/events/winter-feast'
+        link: '/winter-feast'
       },
       {
         id: 7,
         name: 'May Day',
-        link: '/events/may-day'
+        link: '/may-day'
       }
     ]
   },

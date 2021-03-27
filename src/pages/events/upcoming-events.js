@@ -30,21 +30,4 @@ const UpcomingEvents = () => {
   )
 }
 
-// const UpcomingEvents = () => {
-//   const [events, isLoading] = useEvents()
-//   const renderEvents = () => {
-//     if (isLoading) return <p>Loading...</p>
-//     return events.map((event, i) => (
-//       <EventCard />
-//     ))
-//   }
-
-//   return ( 
-//     <div>
-//       <PageHeader headerID={'3ACKdcppZYgrXRuYgBPcm3'}/>
-//       <div>{renderEvents()}</div>
-//     </div>
-//   )
-// }
-
 export default UpcomingEvents

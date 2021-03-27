@@ -63,11 +63,11 @@ const App = () => {
       <Route exact path='/press' render={(props) => <Container {...props} page={Press}/>} />
       {/* Events */}
       <Route exact path='/events' render={(props) => <Container {...props} page={UpcomingEvents}/>} />
-      <Route exact path='/events/solstice' render={(props) => <Container {...props} page={Solstice}/>} />
-      <Route exact path='/events/luminata' render={(props) => <Container {...props} page={Luminata}/>} />
-      <Route exact path='/events/trolloween' render={(props) => <Container {...props} page={Trolloween}/>} />
-      <Route exact path='/events/winter-feast' render={(props) => <Container {...props} page={WinterFeast}/>} />
-      <Route exact path='/events/may-day' render={(props) => <Container {...props} page={MayDay}/>} />
+      <Route exact path='/solstice' render={(props) => <Container {...props} page={Solstice}/>} />
+      <Route exact path='/luminata' render={(props) => <Container {...props} page={Luminata}/>} />
+      <Route exact path='/trolloween' render={(props) => <Container {...props} page={Trolloween}/>} />
+      <Route exact path='/winter-feast' render={(props) => <Container {...props} page={WinterFeast}/>} />
+      <Route exact path='/may-day' render={(props) => <Container {...props} page={MayDay}/>} />
       <Route exact path='/events/:eventID' render={(props) => <Container {...props} page={SecondaryEvent}/>} />
       {/* Parade */}
       <Route exact path='/parade' render={(props) => <Container {...props} page={Parade}/>} />
