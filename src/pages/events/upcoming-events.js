@@ -17,7 +17,6 @@ const UpcomingEvents = () => {
           events.map((event) => (
             <EventCard 
               key={event.sys.id}
-              className='event-card'
               image={event.fields.eventHeaderPhoto.fields.file.url}
               title={event.fields.eventTitle}
               text={event.fields.eventDescription}

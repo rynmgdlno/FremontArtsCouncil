@@ -1,5 +1,19 @@
+@use '../../global/global-styles.scss';
+
 .event-card {
-  
+  display: flex;
+  flex-direction: column;
+  margin: 0 global-styles.$window-margin-mobile;
+  margin-bottom: 4rem;
+
+  .event-card-date {
+
+  }
+
+  .event-card-image {
+    width: 100%;
+    height: 90vw;
+  }
 }
 
 @media screen and (min-width: 769px) {

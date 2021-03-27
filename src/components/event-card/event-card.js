@@ -5,29 +5,36 @@ import CustomButton from '../custom-button/custom-button'
 
 import './event-card.scss'
 
-const EventCard = ({ className, image, title, text, date, id }) => {
+const EventCard = ({ image, title, text, date, id }) => {
   const isMobile = useMediaPredicate('(max-width: 769px)')
+
+  const bgStyle = {
+    backgroundImage: `url(${image})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center'
+  }
 
   return (
     <>
       {
-        !isMobile ?
-          <div className={className}>
-            <img className='event-card-image' src={`https:${image}`} alt='' />
-            <div className='event-card-info-container'>
-              <span>{date}</span>
-              <h2>{title}</h2>
-              <p>{text}</p>
-              <CustomButton>{id}</CustomButton>
-            </div>
+        isMobile ?
+          <div className='event-card'>
+            <h3 className='event-card-date'>{date}</h3>
+            <h2 className='event-card-title'>{title}</h2>
+            <div className='event-card-image' style={bgStyle}/>
+            {/* <img className='event-card-image' src={`https:${image}`} alt='' /> */}
+            <p className='event-card-text'>{text}</p>
+            <CustomButton className='custom-button high-emphasis-button blue-button event-card-button'>Learn More</CustomButton>
           </div>
           :
-          <div>
-            <span>{date}</span>
-            <h2>{title}</h2>
+          <div className='event-card'>
             <img className='event-card-image' src={`https:${image}`} alt='' />
-            <p>{text}</p>
-            <CustomButton>{id}</CustomButton>
+            <div className='event-card-info-container'>
+              <span className='event-card-date'>{date}</span>
+              <h2 className='event-card-title'>{title}</h2>
+              <p className='event-card-text'>{text}</p>
+              <CustomButton className='custom-button high-emphasis-button blue-button event-card-button'>Learn More</CustomButton>
+            </div>
           </div>
       }
     </>
