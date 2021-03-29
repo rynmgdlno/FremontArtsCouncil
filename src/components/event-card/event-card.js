@@ -2,6 +2,7 @@ import React from 'react'
 import { useMediaPredicate } from 'react-media-hook'
 
 import CustomButton from '../custom-button/custom-button'
+import Divider from './divider'
 
 import './event-card.scss'
 
@@ -28,6 +29,7 @@ const EventCard = ({ image, title, text, date, id }) => {
           :
           <div className='event-card'>
             <div className='event-card-image' style={bgStyle}/>
+            <Divider className='event-divider' />
             <div className='event-card-info-container'>
               <span className='event-card-date'>{date}</span>
               <h2 className='event-card-title'>{title}</h2>

@@ -14,13 +14,28 @@
 
 @media screen and (min-width: 769px) {
   .event-card {
+    position: relative;
     flex-direction: row;
     margin: 0 global-styles.$window-margin;
     margin-bottom: 5rem;
 
     .event-card-image {
-      width: 500px;
-      height: 500px;
+      width: 30%;
+      height: 300px;
+    }
+
+    .event-divider {
+      position: absolute;
+      left: 32%;
+      width: 20px;
+      opacity: .3;
+    }
+
+    .event-card-info-container {
+      display: flex;
+      flex-direction: column;
+      padding-left: 4.5rem;
+      width: 60%;
     }
   }
 }
