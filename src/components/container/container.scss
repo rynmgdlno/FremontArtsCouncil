@@ -1,11 +1,10 @@
 .main-container {
   width: 100vw;
   background-color: white;
-  // overflow-x: hidden;
   position: relative;
   
   .page-container {
-    overflow-x: hidden;
+    // overflow-x: hidden;
     margin-top: 5rem;
   }
   
@@ -16,8 +15,10 @@
 
 @media screen and (min-width: 769px) {
   .main-container {
-    max-width: 1440px;
+    max-width: 1440;
+    
     .page-container {
+      // overflow: hidden;
       margin-top: 7rem;
     }
   

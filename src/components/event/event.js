@@ -107,24 +107,30 @@ const Event = ({ isParade, eventID }) => {
               {
                 isOpen &&
                 <div className='calendar-select'>
-                  <a href={apple} download={apple}>
-                    <CustomButton
-                      className='custom-button low-emphasis-button rsvp-button'>
-                      Apple
-                          </CustomButton>
-                  </a>
+                  {
+                    appleCalendar &&
+                    <a href={apple} download={apple}>
+                      <CustomButton
+                        className='custom-button low-emphasis-button rsvp-button'>
+                        Apple
+                    </CustomButton>
+                    </a>
+                  }
                   <a target='_blank' rel='noreferrer' href={googleCalendarLink}>
                     <CustomButton
                       className='custom-button low-emphasis-button rsvp-button'>
                       Google
-                          </CustomButton>
+                    </CustomButton>
                   </a>
-                  <a href={outlook} download={outlook}>
-                    <CustomButton
-                      className='custom-button low-emphasis-button rsvp-button'>
-                      Outlook
-                          </CustomButton>
-                  </a>
+                  {
+                    outlookCalendar &&
+                    <a href={outlook} download={outlook}>
+                      <CustomButton
+                        className='custom-button low-emphasis-button rsvp-button'>
+                        Outlook
+                    </CustomButton>
+                    </a>
+                  }
                 </div>
               }
             </div>

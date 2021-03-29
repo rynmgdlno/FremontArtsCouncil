@@ -4,7 +4,7 @@
   position: absolute;
   top: 75px;
   left: 0;
-  width: 100vw;
+  width: 100%;
   height: calc(100vh - 50px);
   padding-top: 10vh;
   display: flex;
@@ -36,6 +36,7 @@
     margin-top: 2rem;
     padding-top: 0;
     height: auto;
+    width: auto;
 
     .low-emphasis-button {
       font-size: 20px;
@@ -70,12 +71,12 @@
   }
 }
 
-.test {
-  position: absolute;
-  width: 100vw;
-  height: 50vh;
-  top: 0;
-  left: 0;
-  background-color: rgba(255,0,0,.2);
-  z-index: 9999;
-}
+// .test {
+//   position: absolute;
+//   width: 100vw;
+//   height: 50vh;
+//   top: 0;
+//   left: 0;
+//   background-color: rgba(255,0,0,.2);
+//   z-index: 9999;
+// }
