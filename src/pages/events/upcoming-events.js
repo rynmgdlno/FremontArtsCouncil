@@ -24,7 +24,7 @@ const UpcomingEvents = () => {
       </div>
       {
         isCalendar ?
-          <EventCalendar />
+          <EventCalendar events={events}/>
           :
           <div>
             {

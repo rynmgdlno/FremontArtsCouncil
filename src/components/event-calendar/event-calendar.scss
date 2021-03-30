@@ -1,0 +1,11 @@
+@use '../../global//global-styles.scss';
+
+.event-calendar {
+  margin: 0 global-styles.$window-margin;
+  
+  .month-button-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5rem;
+  }
+}
