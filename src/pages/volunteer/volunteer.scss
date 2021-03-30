@@ -1,0 +1,57 @@
+@use '../../global/global-styles.scss';
+
+.volunteer {
+  margin: global-styles.$window-margin-mobile;
+
+  .vol-title {
+    text-align: center;
+  }
+
+  .volunteer-card {
+    margin-bottom: 5rem;
+
+    .vol-card-header {
+      display: flex;
+      align-items: center;
+    
+      .green-number {
+        width: 48px;
+        margin-right: 2rem;
+      }
+    }
+
+    .vol-card-main {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .volunteer {
+    margin: global-styles.$window-margin;
+
+    .vol-bottom {
+      margin-left: global-styles.$window-margin;
+
+      .vol-email-container {
+        display: flex;
+        align-items: center;
+
+        .vol-email {
+          margin-left: 1rem;
+        }
+      }
+    }
+    .volunteer-card {
+
+      .vol-card-main {
+        flex-direction: row;
+
+        .vol-card-image {
+          margin: 1rem 5rem;
+        }
+      }
+    }
+  }
+}
