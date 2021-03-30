@@ -1,3 +1,27 @@
+@use '../../../../global/global-styles.scss';
+
 .month-event-card {
-  background-color: red;
+  // border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  margin: global-styles.$window-margin-mobile;
+  width: 90%;
+  
+  .card-event-image {
+    height: 250px;
+  }
+
+  .card-event-date {
+    margin: 1rem 0;
+  }
+
+  .card-event-title {
+    margin: 1rem 0;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .month-event-card {
+    width: 29%;
+  }
 }

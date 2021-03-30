@@ -1,11 +1,51 @@
 @use '../../global//global-styles.scss';
 
 .event-calendar {
-  margin: 0 global-styles.$window-margin;
-  
-  .month-button-container {
+  margin: 0 global-styles.$window-margin-mobile;
+
+  .month-header {
     display: flex;
-    justify-content: center;
-    margin-bottom: 5rem;
+    justify-content: space-between;
+    background-color: global-styles.$yellow;
+
+    .arrow-button {
+      width: 32px;
+    }
+  }
+
+  .month-window {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(229,188,55,.5);
+    margin-bottom: 3rem;
+  }
+
+}
+
+@media screen and (min-width: 769px) {
+  .event-calendar {
+    margin: 0 global-styles.$window-margin;
+
+    .month-header {
+      margin: 0;
+
+      .month-title {
+        margin: 1rem 0;
+        padding: 0 global-styles.$window-margin;
+      }
+    }
+
+    .month-window {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 0 global-styles.$window-margin 2rem;
+    }
+
+    .month-button-container {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 5rem;
+    }
   }
 }

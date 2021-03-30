@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react'
+import { useMediaPredicate } from 'react-media-hook'
 
 import MonthEventCard from './month/month-event-card/month-event-card'
 import CustomButton from '../custom-button/custom-button'
@@ -25,6 +26,7 @@ const EventCalendar = ({ events }) => {
 
   const [counter, setCounter] = useState(0)
   const [month, setMonth] = useState(months[counter])
+  const isMobile = useMediaPredicate('(max-width: 769px)')
 
   useEffect(() => {
     setMonth(months[counter])
@@ -46,11 +48,28 @@ const EventCalendar = ({ events }) => {
     }
   }
 
-
   return (
     <div className='event-calendar'>
       <div className='month-panel'>
-        <h2 className='month-title'>{month}</h2>
+        {
+          isMobile ?
+            <div className='month-header'>
+              <CustomButton
+                onClick={() => monthMinus()}
+                className='custom-button low-emphasis-button'>
+                <ArrowButton className='arrow-button' />
+              </CustomButton>
+              <h2 className='month-title'>{month}</h2>
+              <CustomButton
+                onClick={() => monthPlus()}
+                className='custom-button low-emphasis-button'>
+                <ArrowButton className='arrow-button right-button' />
+              </CustomButton>
+            </div> :
+            <div className='month-header'>
+              <h2 className='month-title'>{month}</h2>
+            </div>
+        }
         <div className='month-window'>
           {
             events.map((event) => (
@@ -66,18 +85,21 @@ const EventCalendar = ({ events }) => {
           }
         </div>
       </div>
-      <div className='month-button-container'>
-        <CustomButton
-          onClick={() => monthMinus()}
-          className='custom-button low-emphasis-button'>
-          <ArrowButton className='arrow-button' />
-        </CustomButton>
-        <CustomButton
-          onClick={() => monthPlus()}
-          className='custom-button low-emphasis-button'>
-          <ArrowButton className='arrow-button right-button' />
-        </CustomButton>
-      </div>
+      {
+        !isMobile &&
+        <div className='month-button-container'>
+          <CustomButton
+            onClick={() => monthMinus()}
+            className='custom-button low-emphasis-button'>
+            <ArrowButton className='arrow-button' />
+          </CustomButton>
+          <CustomButton
+            onClick={() => monthPlus()}
+            className='custom-button low-emphasis-button'>
+            <ArrowButton className='arrow-button right-button' />
+          </CustomButton>
+        </div>
+      }
     </div>
   )
 }
