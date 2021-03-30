@@ -1,0 +1,18 @@
+.display-button-container {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin-right: 5rem;
+
+  .view-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .view-button-text {
+      margin-top: 1rem;
+    }
+  }
+
+}
