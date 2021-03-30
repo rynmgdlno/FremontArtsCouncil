@@ -2,7 +2,7 @@ import React from 'react'
 
 import './month-event-card.scss'
 
-const MonthEventCard = ({ image, date, title }) => {
+const MonthEventCard = ({ image, date, title, id }) => {
   const eventImage = `https:${image}`
   return (
     <div className='month-event-card'>
