@@ -27,6 +27,21 @@
   }
 }
 
+.reg-form {
+  margin: 0 global-styles.$window-margin-mobile 4rem;
+
+  .reg-form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.reg-success {
+  margin: 0 global-styles.$window-margin-mobile 4rem;
+}
+
 @media screen and (min-width: 769px) {
   .volunteer {
     margin: global-styles.$window-margin;
@@ -53,5 +68,18 @@
         }
       }
     }
+  }
+
+  .reg-form {
+    margin: 0 global-styles.$window-margin 4rem;
+
+    .reg-form-container {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
+
+  .reg-success {
+    margin: 0 global-styles.$window-margin 4rem;
   }
 }

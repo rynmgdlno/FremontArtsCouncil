@@ -1,7 +1,18 @@
 input {
   font-size: 16px;
-  border: none;
+  border: 1px solid grey;
   border-radius: 3px;
   padding: 10px 5px;
   margin-bottom: 10px;
+}
+
+.reg-form-input {
+  width: 80%;
+  margin: 1rem 2rem;
+}
+
+@media screen and (min-width: 769px) {
+  .reg-form-input {
+    width: 43%;
+  }
 }
