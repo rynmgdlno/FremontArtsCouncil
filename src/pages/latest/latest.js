@@ -8,6 +8,9 @@ const Latest = () => {
   return ( 
     <div>
       <PageHeader headerID={'JIiZ8itrU7Lx2dqDXbOpr'}/>
+      <div className='news'>
+        
+      </div>
     </div>
   )
 }
