@@ -2,11 +2,12 @@
 
 .event {
   position: relative;
+  width: 100%;
 
   .event-header {
     display: flex;
     flex-direction: column;
-    width: 100vw;
+    width: 100%;
     margin-top: 2rem;
     margin-bottom: 3rem;
     position: relative;
@@ -14,11 +15,10 @@
     .event-header-text {
       margin-left: global-styles.$window-margin-mobile;
       margin-right: global-styles.$window-margin-mobile;
-      // margin-bottom: 3rem;
     }
 
     .event-header-image {
-      // width: 94%;
+      width: 94%;
       max-width: 1440px;
     }
   }

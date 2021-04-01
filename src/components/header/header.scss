@@ -2,10 +2,6 @@
 
 .header {
   position: fixed;
-<<<<<<< HEAD
-=======
-  // left: 0;
->>>>>>> 54de59422fa3b250a2845ef896a14edfe75d15bf
   top: 0px;
   width: 100%;
   padding-top: 5px;
@@ -19,6 +15,7 @@
     margin-left: global-styles.$window-margin-mobile;
     margin-right: global-styles.$window-margin-mobile;
   }
+
   .header-button-container {
     display: flex;
   }
