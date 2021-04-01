@@ -4,7 +4,8 @@
   position: relative;
   
   .page-container {
-    // overflow-x: hidden;
+    max-width: 1440px;
+    overflow-x: hidden;
     margin-top: 5rem;
   }
   
