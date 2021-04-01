@@ -1,12 +1,12 @@
 @use '../../global/global-styles.scss';
 
 .page-header {
+  position: relative;
   display: flex;
   flex-direction: column;
   width: 100vw;
-  margin-top: 2rem;
+  padding-top: 3rem;
   margin-bottom: 3rem;
-  position: relative;
 
   .page-header-text {
     margin-left: global-styles.$window-margin-mobile;
@@ -15,7 +15,7 @@
   }
 
   .page-header-image {
-    width: 100vw;
+    width: 99%;
     max-width: 1440px;
   }
 }
