@@ -4,7 +4,6 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  width: 100vw;
   padding-top: 3rem;
   margin-bottom: 3rem;
 
@@ -15,7 +14,7 @@
   }
 
   .page-header-image {
-    width: 99%;
+    width: 100%;
     max-width: 1440px;
   }
 }

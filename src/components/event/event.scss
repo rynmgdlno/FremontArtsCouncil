@@ -1,268 +1,343 @@
 @use '../../global/global-styles.scss';
 
 .event {
-  position: relative;
-  width: 100%;
-
   .event-header {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    margin-top: 2rem;
-    margin-bottom: 3rem;
-    position: relative;
-
     .event-header-text {
-      margin-left: global-styles.$window-margin-mobile;
-      margin-right: global-styles.$window-margin-mobile;
-    }
+      .event-header-title {
 
+      }
+      .event-header-subtitle {
+
+      }
+    }
     .event-header-image {
-      width: 94%;
-      max-width: 1440px;
+
     }
   }
-
   .event-body {
-    margin-left: global-styles.$window-margin-mobile;
-    margin-right: global-styles.$window-margin-mobile;
-
     .event-info {
       .event-date {
-        margin-top: 0;
-        margin-bottom: 0;
-      }
 
+      }
       .event-time {
-        margin-top: 0;
-      }
 
+      }
       .event-location {
-        margin-top: 0;
-      }
 
+      }
       .event-address {
-        text-decoration: none;
-        color: global-styles.$green;
+
       }
     }
-
     .event-description {
-      margin-left: auto;
-      margin-top: 3rem;
-
       .event-about-title {
-        margin-bottom: 0;
+
       }
     }
-
-    .squiggle1 {
-      position: absolute;
-      top: 80rem;
-      left: 2rem;
-      transform: scale(.8);
-      z-index: 1;
-    }
-
-    .squiggle2 {
-      position: absolute;
-      top: 73rem;
-      left: -2rem;
-      transform: scale(.8);
-      z-index: 1;
-    }
-
-    .squiggle3 {
-      position: absolute;
-      top: 55rem;
-      right: -3rem;
-      transform: scale(.7);
-      z-index: 1;
-    }
-
-    .squiggle4 {
-      position: absolute;
-      top: 56rem;
-      right: 3rem;
-      transform: scale(.7);
-      z-index: 1;
-    }
-
     .event-location-container {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      border-radius: 10px;
-      overflow: hidden;
-      margin: 4rem 0;
-      z-index: 999;
-
       .location-description-container {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        height: 90vw;
-        background-color: global-styles.$beige;
-        padding: 0 2rem;
-
         .location-title {
-          margin-top: 2rem;
-          margin-bottom: 0;
-        }
 
-        .rsvp-text {
-          font-size: 18px;
         }
+        .rsvp-text{
 
+        }
         .location-button-container {
-          position: relative;
-          display: flex;
-          justify-content: space-around;
-          align-items: center;
-          margin-bottom: 2rem;
-
           .calendar-select {
-            position: absolute;
-            top: 2.5rem;
-            left: 20rem;
-            display: flex;
-            flex-direction: column;
+
           }
         }
       }
-
-      .map-container {
-        .location-map {
-          width: 100%;
-        }
-      }
     }
-
     .event-involved {
-      text-align: center;
-      margin-bottom: 2rem;
+      .event-get-involved {
 
+      }
       .event-involved-card-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
 
-        .involved-card {
-          margin: 1rem 0;
-        }
       }
     }
-
     .event-previous {
-      text-align: center;
+      .prev-event-title {
 
+      }
+      .prev-event-video-container {
+
+      }
       .prev-event-gallery-container {
-        display: flex;
-        flex-direction: column;
-
         .event-image-container {
-          width: 92.5vw;
-          height: 92.5vw;
-          margin-bottom: 1rem;
+          
         }
       }
     }
   }
+
 }
 
-@media screen and (min-width: 769px) {
-  .event {
-    .event-header {
-      margin-top: 6rem;
+// .event {
+//   position: relative;
+//   width: 100%;
+//   overflow: hidden;
 
-      .event-header-text {
-        margin-left: global-styles.$window-margin;
-        margin-right: global-styles.$window-margin;
-        width: 70%;
-      }
-    }
+//   .event-header {
+//     display: flex;
+//     flex-direction: column;
+//     width: 100%;
+//     margin-top: 2rem;
+//     margin-bottom: 3rem;
+//     position: relative;
 
-    .event-body {
-      margin-left: global-styles.$window-margin;
-      margin-right: global-styles.$window-margin;
+//     .event-header-text {
+//       margin-left: global-styles.$window-margin-mobile;
+//       margin-right: global-styles.$window-margin-mobile;
+//     }
 
-      .event-description {
-        width: 55%;
-      }
+//     .event-header-image {
+//       width: 100%;
+//       max-width: 1440px;
+//     }
+//   }
 
-      .event-location-container {
-        flex-direction: row;
-        height: auto;
+//   .event-body {
+//     margin-left: global-styles.$window-margin-mobile;
+//     margin-right: global-styles.$window-margin-mobile;
 
-        .location-description-container {
-          height: auto;
-          width: 45%;
-        }
+//     .event-info {
+//       .event-date {
+//         margin-top: 0;
+//         margin-bottom: 0;
+//       }
 
-        .map-container {
-          width: 50%;
+//       .event-time {
+//         margin-top: 0;
+//       }
 
-          .location-map {
-            width: 100%;
-            height: auto;
-          }
-        }
-      }
+//       .event-location {
+//         margin-top: 0;
+//       }
 
-      .event-involved {
+//       .event-address {
+//         text-decoration: none;
+//         color: global-styles.$green;
+//       }
+//     }
 
-        .event-involved-card-container {
-          flex-direction: row;
-          justify-content: center;
-          margin-top: 2rem;
+//     .event-description {
+//       margin-left: auto;
+//       margin-top: 3rem;
 
-          .involved-card {
-            margin: 0 2rem;
-          }
-        }
-      }
+//       .event-about-title {
+//         margin-bottom: 0;
+//       }
+//     }
 
-      .event-previous {
-        text-align: center;
+//     .squiggle1 {
+//       position: absolute;
+//       top: 80rem;
+//       left: 2rem;
+//       transform: scale(.8);
+//       z-index: 1;
+//     }
 
-        .prev-event-gallery-container {
-          display: flex;
-          flex-direction: row;
-          flex-wrap: wrap;
-          justify-content: center;
-          margin-bottom: 4rem;
+//     .squiggle2 {
+//       position: absolute;
+//       top: 73rem;
+//       left: -2rem;
+//       transform: scale(.8);
+//       z-index: 1;
+//     }
 
-          .event-image-container {
-            transition: all .2s ease-in-out;
-            cursor: pointer;
-            width: 25vw;
-            height: 25vw;
-            margin: 1rem;
-            transform: scale(1);
-          }
+//     .squiggle3 {
+//       position: absolute;
+//       top: 55rem;
+//       right: -3rem;
+//       transform: scale(.7);
+//       z-index: 1;
+//     }
 
-          .event-image-container:hover {
-            transform: scale(1.02);
-          }
-        }
-      }
-    }
-  }
+//     .squiggle4 {
+//       position: absolute;
+//       top: 56rem;
+//       right: 3rem;
+//       transform: scale(.7);
+//       z-index: 1;
+//     }
 
-  @media (orientation: portrait) {
-    .event {
-      .event-header {
-        .event-header-text {
-          margin-left: global-styles.$window-margin-tablet;
-          margin-right: global-styles.$window-margin-tablet;
-        }
-      }
-    }
+//     .event-location-container {
+//       position: relative;
+//       display: flex;
+//       flex-direction: column;
+//       width: 100%;
+//       border-radius: 10px;
+//       overflow: hidden;
+//       margin: 4rem 0;
+//       z-index: 999;
 
-    .event-body {
-      margin-left: global-styles.$window-margin-tablet;
-      margin-right: global-styles.$window-margin-tablet;
-    }
-  }
-}
+//       .location-description-container {
+//         display: flex;
+//         flex-direction: column;
+//         justify-content: space-around;
+//         height: 90vw;
+//         background-color: global-styles.$beige;
+//         padding: 0 2rem;
+
+//         .location-title {
+//           margin-top: 2rem;
+//           margin-bottom: 0;
+//         }
+
+//         .rsvp-text {
+//           font-size: 18px;
+//         }
+
+//         .location-button-container {
+//           position: relative;
+//           display: flex;
+//           justify-content: space-around;
+//           align-items: center;
+//           margin-bottom: 2rem;
+
+//           .calendar-select {
+//             position: absolute;
+//             top: 2.5rem;
+//             left: 20rem;
+//             display: flex;
+//             flex-direction: column;
+//           }
+//         }
+//       }
+
+//       .map-container {
+//         .location-map {
+//           width: 100%;
+//         }
+//       }
+//     }
+
+//     .event-involved {
+//       text-align: center;
+//       margin-bottom: 2rem;
+
+//       .event-involved-card-container {
+//         display: flex;
+//         flex-direction: column;
+//         align-items: center;
+
+//         .involved-card {
+//           margin: 1rem 0;
+//         }
+//       }
+//     }
+
+//     .event-previous {
+//       text-align: center;
+
+//       .prev-event-gallery-container {
+//         display: flex;
+//         flex-direction: column;
+
+//         .event-image-container {
+//           width: 92.5vw;
+//           height: 92.5vw;
+//           margin-bottom: 1rem;
+//         }
+//       }
+//     }
+//   }
+// }
+
+// @media screen and (min-width: 769px) {
+//   .event {
+//     .event-header {
+//       margin-top: 6rem;
+
+//       .event-header-text {
+//         margin-left: global-styles.$window-margin;
+//         margin-right: global-styles.$window-margin;
+//         width: 70%;
+//       }
+//     }
+
+//     .event-body {
+//       margin-left: global-styles.$window-margin;
+//       margin-right: global-styles.$window-margin;
+
+//       .event-description {
+//         width: 55%;
+//       }
+
+//       .event-location-container {
+//         flex-direction: row;
+//         height: auto;
+
+//         .location-description-container {
+//           height: auto;
+//           width: 45%;
+//         }
+
+//         .map-container {
+//           width: 50%;
+
+//           .location-map {
+//             width: 100%;
+//             height: auto;
+//           }
+//         }
+//       }
+
+//       .event-involved {
+
+//         .event-involved-card-container {
+//           flex-direction: row;
+//           justify-content: center;
+//           margin-top: 2rem;
+
+//           .involved-card {
+//             margin: 0 2rem;
+//           }
+//         }
+//       }
+
+//       .event-previous {
+//         text-align: center;
+
+//         .prev-event-gallery-container {
+//           display: flex;
+//           flex-direction: row;
+//           flex-wrap: wrap;
+//           justify-content: center;
+//           margin-bottom: 4rem;
+
+//           .event-image-container {
+//             transition: all .2s ease-in-out;
+//             cursor: pointer;
+//             width: 25vw;
+//             height: 25vw;
+//             margin: 1rem;
+//             transform: scale(1);
+//           }
+
+//           .event-image-container:hover {
+//             transform: scale(1.02);
+//           }
+//         }
+//       }
+//     }
+//   }
+
+//   @media (orientation: portrait) {
+//     .event {
+//       .event-header {
+//         .event-header-text {
+//           margin-left: global-styles.$window-margin-tablet;
+//           margin-right: global-styles.$window-margin-tablet;
+//         }
+//       }
+//     }
+
+//     .event-body {
+//       margin-left: global-styles.$window-margin-tablet;
+//       margin-right: global-styles.$window-margin-tablet;
+//     }
+//   }
+// }
