@@ -66,14 +66,18 @@ const Event = ({ isParade, eventID }) => {
 
   return (
     <div className='event'>
-      <div className='event-header'>
-        <div className='event-header-text'>
-          <h1 className='event-header-title'>{eventTitle}</h1>
-          <h3 className='event-header-subtitle'>{eventDescription}</h3>
+      <div className='page-header'>
+        <div className='page-header-text'>
+          <h1>{eventTitle}</h1>
+          <h3>{eventDescription}</h3>
         </div>
-        <img className='event-header-image' src={headerImage} alt='' />
+        <img className='page-header-image' src={headerImage} alt='' />
       </div>
       <div className='event-body'>
+        <Squiggle1 className='squiggle sq1'/>
+        <Squiggle2 className='squiggle sq2'/>
+        <Squiggle3 className='squiggle sq3'/>
+        <Squiggle4 className='squiggle sq4'/>
         <div className='event-info'>
           <span>Time:</span>
           <h3 className='event-date'>{eventDate}</h3>
@@ -86,10 +90,6 @@ const Event = ({ isParade, eventID }) => {
           <h3 className='event-about-title'>{eventAboutTitle}</h3>
           <p>{eventAboutText}</p>
         </div>
-        <Squiggle1 />
-        <Squiggle2 />
-        <Squiggle3 />
-        <Squiggle4 />
         <div className='event-location-container'>
           <div className='location-description-container'>
             <h2 className='location-title'>{eventRsvpTitle}</h2>
@@ -140,7 +140,7 @@ const Event = ({ isParade, eventID }) => {
           </div>
         </div>
         <div className='event-involved'>
-          <h2 className='event-get-involved'>Get Involved in {eventTitle}</h2>
+          <h2>Get Involved</h2>
           <span>Help make the Magic Happen</span>
           <div className='event-involved-card-container'>
             <InvolvedCard buttonText='Donate Now' text={eventDonateText} bgImage={donateImage} link='/donate' />

@@ -1,343 +1,289 @@
 @use '../../global/global-styles.scss';
 
 .event {
-  .event-header {
-    .event-header-text {
-      .event-header-title {
-
-      }
-      .event-header-subtitle {
-
-      }
-    }
-    .event-header-image {
-
-    }
-  }
   .event-body {
+    position: relative;
+    margin: 0 global-styles.$window-margin-mobile;
+
+    .squiggle {
+      position: absolute;
+      z-index: 1;
+    }
+
+    .sq1 {
+      display: none;
+    }
+    .sq2 {
+      display: none;
+    }
+    .sq3 {
+      transform: scale(.5);
+      right: -100px;
+      top: -100px;
+    }
+    .sq4 {
+      transform: scale(.5);
+      right: -40px;
+      top: -70px;
+    }
+
     .event-info {
+      // margin: 3rem global-styles.$window-margin-mobile;
+
       .event-date {
-
+        font-size: 22px;
+        margin: 1rem 0 0;
       }
+
       .event-time {
-
+        font-size: 22px;
+        margin: 0 0 1rem;
       }
-      .event-location {
 
+      .event-location {
+        font-size: 20px;
+        margin: 1rem 0 1rem;
       }
       .event-address {
-
+        color: global-styles.$purple;
+        font-size: 18px;
       }
     }
     .event-description {
-      .event-about-title {
+      margin-top: 3rem;
 
+      .event-about-title {
+        font-size: 20px;
       }
     }
+
     .event-location-container {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      border-radius: 10px;
+      overflow: hidden;
+      margin: 4rem 0;
+      z-index: 999;
+
       .location-description-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 90vw;
+        background-color: global-styles.$beige;
+        padding: 0 2rem;
+
         .location-title {
-
+          margin-top: 2rem;
+          margin-bottom: 0;
         }
+
         .rsvp-text{
+          font-size: 18px;
 
         }
-        .location-button-container {
-          .calendar-select {
 
+        .location-button-container {
+          position: relative;
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          margin-bottom: 2rem;
+
+          .calendar-select {
+            position: absolute;
+            top: 2.5rem;
+            right: 1rem;
+            display: flex;
+            flex-direction: column;
+          }
+        }
+      }
+
+      .map-container {
+        .location-map {
+          width: 100%;
+        }
+      }
+    }
+
+    .event-involved {
+      text-align: center;
+      margin-bottom: 2rem;
+
+      .event-involved-card-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .involved-card {
+          margin: 1rem 0;
+          width: 100%;
+          height: 450px;
+        }
+      }
+    }
+
+    .event-previous {
+      text-align: center;
+
+      .prev-event-gallery-container {
+        display: flex;
+        flex-direction: column;
+
+        .event-image-container {
+          justify-content: center;
+          cursor: pointer;
+          width: 85vw;
+          height: 85vw;
+          margin-bottom: 1rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .event {
+  
+    .event-body {
+      margin: 0 global-styles.$window-margin;
+
+      .sq1 {
+        display: inline;
+        top: 350px;
+      }
+
+      .sq2 {
+        display: inline;
+        left: -6rem;
+        top:300px;
+      }
+
+      .sq3 {
+        transform: scale(1);
+        right: -100px;
+        top: -5px;
+      }
+
+      .sq4 {
+        transform: scale(1);
+        right: 0px;
+        top: -5px;
+      }
+
+      .event-info {
+        .event-date {
+          font-size: 38px;
+        }
+        .event-time {
+          font-size: 38px;
+        }
+        .event-location {
+          font-size: 30px;
+        }
+        .event-address {
+          font-size: 20px;
+        }
+      }
+
+      .event-description {
+        width: 55%;
+        margin-left: auto;
+
+        .event-about-title {
+          font-size: 38px;
+        }
+      }
+
+      .event-location-container {
+        flex-direction: row;
+        height: auto;
+
+        .location-description-container {
+          height: auto;
+          width: 45%;
+        }
+
+        .map-container {
+          width: 50%;
+
+          .location-map {
+            width: 100%;
+            height: auto;
+          }
+        }
+      }
+      .event-involved {
+        .event-involved-card-container {
+          flex-direction: row;
+          margin-top: 2rem;
+
+          .involved-card {
+            margin: 0 2rem;
+            width: 30%
+          }
+        }
+      }
+      .event-previous {
+        .prev-event-gallery-container {
+          flex-direction: row;
+          flex-wrap: wrap;
+          margin-bottom: 4rem;
+
+          .event-image-container {
+            transition: all .2s ease-in-out;
+            width: 25vw;
+            height: 25vw;
+            margin: 1rem;
+            transform: scale(1)
+          }
+
+          .event-image-container:hover {
+            transform: scale(1.02);
           }
         }
       }
     }
-    .event-involved {
-      .event-get-involved {
+  }
 
-      }
-      .event-involved-card-container {
+  @media (orientation: portrait) {
+    .event {
+      .event-body {
+        margin: 0 global-styles.$window-margin-tablet;
+        
+        .event-info {
 
-      }
-    }
-    .event-previous {
-      .prev-event-title {
+          .event-date {
+            font-size: 32px;
+          }
 
-      }
-      .prev-event-video-container {
+          .event-time {
+            font-size: 32px;
+          }
+        }
 
-      }
-      .prev-event-gallery-container {
-        .event-image-container {
-          
+        .event-location-container {
+          .location-description-container {
+            .location-title {
+              font-size: 28px;
+            }
+          }
+        }
+
+        .event-involved {
+          .event-involved-card-container {
+            flex-direction: row;
+            flex-wrap: wrap;
+            .involved-card {
+              margin-bottom: 2rem;
+              width: 40%;
+            }
+          }
         }
       }
     }
   }
-
 }
 
-// .event {
-//   position: relative;
-//   width: 100%;
-//   overflow: hidden;
-
-//   .event-header {
-//     display: flex;
-//     flex-direction: column;
-//     width: 100%;
-//     margin-top: 2rem;
-//     margin-bottom: 3rem;
-//     position: relative;
-
-//     .event-header-text {
-//       margin-left: global-styles.$window-margin-mobile;
-//       margin-right: global-styles.$window-margin-mobile;
-//     }
-
-//     .event-header-image {
-//       width: 100%;
-//       max-width: 1440px;
-//     }
-//   }
-
-//   .event-body {
-//     margin-left: global-styles.$window-margin-mobile;
-//     margin-right: global-styles.$window-margin-mobile;
-
-//     .event-info {
-//       .event-date {
-//         margin-top: 0;
-//         margin-bottom: 0;
-//       }
-
-//       .event-time {
-//         margin-top: 0;
-//       }
-
-//       .event-location {
-//         margin-top: 0;
-//       }
-
-//       .event-address {
-//         text-decoration: none;
-//         color: global-styles.$green;
-//       }
-//     }
-
-//     .event-description {
-//       margin-left: auto;
-//       margin-top: 3rem;
-
-//       .event-about-title {
-//         margin-bottom: 0;
-//       }
-//     }
-
-//     .squiggle1 {
-//       position: absolute;
-//       top: 80rem;
-//       left: 2rem;
-//       transform: scale(.8);
-//       z-index: 1;
-//     }
-
-//     .squiggle2 {
-//       position: absolute;
-//       top: 73rem;
-//       left: -2rem;
-//       transform: scale(.8);
-//       z-index: 1;
-//     }
-
-//     .squiggle3 {
-//       position: absolute;
-//       top: 55rem;
-//       right: -3rem;
-//       transform: scale(.7);
-//       z-index: 1;
-//     }
-
-//     .squiggle4 {
-//       position: absolute;
-//       top: 56rem;
-//       right: 3rem;
-//       transform: scale(.7);
-//       z-index: 1;
-//     }
-
-//     .event-location-container {
-//       position: relative;
-//       display: flex;
-//       flex-direction: column;
-//       width: 100%;
-//       border-radius: 10px;
-//       overflow: hidden;
-//       margin: 4rem 0;
-//       z-index: 999;
-
-//       .location-description-container {
-//         display: flex;
-//         flex-direction: column;
-//         justify-content: space-around;
-//         height: 90vw;
-//         background-color: global-styles.$beige;
-//         padding: 0 2rem;
-
-//         .location-title {
-//           margin-top: 2rem;
-//           margin-bottom: 0;
-//         }
-
-//         .rsvp-text {
-//           font-size: 18px;
-//         }
-
-//         .location-button-container {
-//           position: relative;
-//           display: flex;
-//           justify-content: space-around;
-//           align-items: center;
-//           margin-bottom: 2rem;
-
-//           .calendar-select {
-//             position: absolute;
-//             top: 2.5rem;
-//             left: 20rem;
-//             display: flex;
-//             flex-direction: column;
-//           }
-//         }
-//       }
-
-//       .map-container {
-//         .location-map {
-//           width: 100%;
-//         }
-//       }
-//     }
-
-//     .event-involved {
-//       text-align: center;
-//       margin-bottom: 2rem;
-
-//       .event-involved-card-container {
-//         display: flex;
-//         flex-direction: column;
-//         align-items: center;
-
-//         .involved-card {
-//           margin: 1rem 0;
-//         }
-//       }
-//     }
-
-//     .event-previous {
-//       text-align: center;
-
-//       .prev-event-gallery-container {
-//         display: flex;
-//         flex-direction: column;
-
-//         .event-image-container {
-//           width: 92.5vw;
-//           height: 92.5vw;
-//           margin-bottom: 1rem;
-//         }
-//       }
-//     }
-//   }
-// }
-
-// @media screen and (min-width: 769px) {
-//   .event {
-//     .event-header {
-//       margin-top: 6rem;
-
-//       .event-header-text {
-//         margin-left: global-styles.$window-margin;
-//         margin-right: global-styles.$window-margin;
-//         width: 70%;
-//       }
-//     }
-
-//     .event-body {
-//       margin-left: global-styles.$window-margin;
-//       margin-right: global-styles.$window-margin;
-
-//       .event-description {
-//         width: 55%;
-//       }
-
-//       .event-location-container {
-//         flex-direction: row;
-//         height: auto;
-
-//         .location-description-container {
-//           height: auto;
-//           width: 45%;
-//         }
-
-//         .map-container {
-//           width: 50%;
-
-//           .location-map {
-//             width: 100%;
-//             height: auto;
-//           }
-//         }
-//       }
-
-//       .event-involved {
-
-//         .event-involved-card-container {
-//           flex-direction: row;
-//           justify-content: center;
-//           margin-top: 2rem;
-
-//           .involved-card {
-//             margin: 0 2rem;
-//           }
-//         }
-//       }
-
-//       .event-previous {
-//         text-align: center;
-
-//         .prev-event-gallery-container {
-//           display: flex;
-//           flex-direction: row;
-//           flex-wrap: wrap;
-//           justify-content: center;
-//           margin-bottom: 4rem;
-
-//           .event-image-container {
-//             transition: all .2s ease-in-out;
-//             cursor: pointer;
-//             width: 25vw;
-//             height: 25vw;
-//             margin: 1rem;
-//             transform: scale(1);
-//           }
-
-//           .event-image-container:hover {
-//             transform: scale(1.02);
-//           }
-//         }
-//       }
-//     }
-//   }
-
-//   @media (orientation: portrait) {
-//     .event {
-//       .event-header {
-//         .event-header-text {
-//           margin-left: global-styles.$window-margin-tablet;
-//           margin-right: global-styles.$window-margin-tablet;
-//         }
-//       }
-//     }
-
-//     .event-body {
-//       margin-left: global-styles.$window-margin-tablet;
-//       margin-right: global-styles.$window-margin-tablet;
-//     }
-//   }
-// }

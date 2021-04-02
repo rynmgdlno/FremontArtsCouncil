@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Squiggle1 = () => {
+const Squiggle1 = ({ className }) => {
   return (
-    <svg className='squiggle1' width="272" height="304" viewBox="0 0 272 304" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg className={className} width="272" height="304" viewBox="0 0 272 304" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path opacity="0.66" d="M139.76 66.3827C87.6064 56.7207 26.3716 125.559 40.6825 209.472C49.8392 263.011 110.305 315.042 153.048 300.325C184.825 289.38 208.312 240.996 194.464 214.701C170.439 169.182 52.0905 223.301 13.6154 172.147C-17.3023 131.041 12.3307 33.8191 69.797 8.52206C151.675 -27.5772 283.641 85.2718 269.554 160.426C257.154 226.552 186.239 232.552 174.419 216.346C165.654 204.309 166.279 194.364 175.111 117.793C177.118 99.4373 154.453 69.1345 139.76 66.3827Z" stroke="#137FA3" stroke-width="2" stroke-miterlimit="10" />
     </svg>
   )
