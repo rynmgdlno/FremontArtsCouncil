@@ -4,6 +4,15 @@
   display: flex;
   flex-direction: column;
   margin: 3rem global-styles.$window-margin-mobile;
+
+  .wip-info {
+    .wip-main-text {
+      margin-bottom: 4rem;
+    }
+    .faq {
+      margin-top: 4rem;
+    }
+  }
 }
 
 @media screen and (min-width: 769px) {
@@ -17,14 +26,6 @@
 
     .wip-info {
       width: 70%;
-
-      .wip-main-text {
-        margin-bottom: 4rem;
-      }
-
-      .faq {
-        margin-top: 4rem;
-      }
     }
   }
 
