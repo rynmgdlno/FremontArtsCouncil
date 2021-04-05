@@ -1,0 +1,36 @@
+@use '../../global/global-styles.scss';
+
+.workshop-info-page-container {
+  display: flex;
+  flex-direction: column;
+  margin: 3rem global-styles.$window-margin-mobile;
+}
+
+@media screen and (min-width: 769px) {
+  .workshop-info-page-container {
+    flex-direction: row;
+    margin: 3rem global-styles.$window-margin;
+
+    .wip-sidebar {
+      width: 30%;
+    }
+
+    .wip-info {
+      width: 70%;
+
+      .wip-main-text {
+        margin-bottom: 4rem;
+      }
+
+      .faq {
+        margin-top: 4rem;
+      }
+    }
+  }
+
+  @media (orientation: portrait) {
+    .workshop-info-page-container {
+      margin: 3rem global-styles.$window-margin-tablet;     
+    }
+  }
+}

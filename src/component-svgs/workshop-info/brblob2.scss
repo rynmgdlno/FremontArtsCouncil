@@ -1,0 +1,17 @@
+.brblob2-container {
+  display: none;
+}
+
+@media screen and (min-width: 769px) {
+
+  .brblob2-container {
+    display: inline-block;
+    position: relative;
+  
+    .brblob2 {
+      position: absolute;
+      bottom: -60rem;
+      right: 0rem;
+    }
+  }
+}

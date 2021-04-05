@@ -1,0 +1,21 @@
+.fan2-container {
+  position: relative;
+
+  .fan2 {
+    position: absolute;
+    transform: scale(.5);
+    top: -15rem;
+    right: -6rem;
+  }
+}
+
+@media screen and (min-width: 769px) {
+
+  .fan2-container {
+    .fan2 {
+      transform: scale(1);
+      top: -15rem;
+      right: 0rem;
+    }
+  }
+}

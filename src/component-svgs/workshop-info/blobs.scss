@@ -1,0 +1,22 @@
+.blobs-container {
+  position: relative;
+
+  .blobs {
+    position: absolute;
+    // transform: scale(.6);
+    top: 15rem;
+    left: 0rem;
+    opacity: .3;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .blobs-container {
+    .blobs {
+      opacity: 1;
+      position: absolute;
+      top: 15rem;
+      left: 0rem;
+    }
+  }
+}
