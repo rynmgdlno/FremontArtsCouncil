@@ -1,0 +1,10 @@
+.top-blob-container {
+  position: relative;
+
+  .top-blob {
+    position: absolute;
+    top: -15rem;
+    right: 12rem;
+    z-index: 0;
+  }
+}

@@ -1,0 +1,10 @@
+.bl-blobs-container {
+  position: relative;
+
+  .bl-blobs {
+    position: absolute;
+    bottom: -120rem;
+    left: -2rem;
+    z-index: 0;
+  }
+}

@@ -1,0 +1,10 @@
+.left-blobs-container {
+  position: relative;
+
+  .left-blobs {
+    position: absolute;
+    top: 12rem;
+    left: -2rem;
+    z-index: 0;
+  }
+}

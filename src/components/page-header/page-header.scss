@@ -6,6 +6,7 @@
   flex-direction: column;
   padding-top: 3rem;
   margin-bottom: 3rem;
+  z-index: 9;
 
   .page-header-text {
     margin-left: global-styles.$window-margin-mobile;

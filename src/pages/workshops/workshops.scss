@@ -1,0 +1,47 @@
+@use '../../global/global-styles.scss';
+.our-workshops {
+  position: relative;
+
+  .workshop-page-container {
+    position: relative;
+    margin: 5rem global-styles.$window-margin-mobile;
+  
+    .workshop-entry {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 5rem;
+  
+      .workshop-image {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .our-workshops {
+
+    .workshop-page-container {
+      margin: 10rem global-styles.$window-margin;
+  
+      .workshop-entry:nth-child(even) {
+        flex-direction: row-reverse;
+      }
+  
+      .workshop-entry {
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 10rem;
+  
+        .workshop-image {
+          width: 50%;
+          object-fit: cover;
+        }
+  
+        .workshop-info-container {
+          width: 40%;
+        }
+      }
+    }
+  }
+}
