@@ -8,7 +8,7 @@ const TeachWorkshop = () => {
   return ( 
     <div>
       <PageHeader headerID={'2t1nET0M1tCNa2LyHr0wuN'}/>
-      <WorkshopInfo id='6dpy8PqO8h9Pzclvhp1cYn' />
+      <WorkshopInfo id='6dpy8PqO8h9Pzclvhp1cYn' isTeach={true}/>
     </div>
   )
 }

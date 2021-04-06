@@ -8,7 +8,7 @@ const LuminaryLantern = () => {
   return ( 
     <div>
       <PageHeader headerID={'3KKVrmRbBoAsVEAohFUwli'}/>
-      <WorkshopInfo id='1ptuupnrzsq6V4AyR8rHGf' />
+      <WorkshopInfo id='1ptuupnrzsq6V4AyR8rHGf' isTeach={false} />
     </div>
   )
 }

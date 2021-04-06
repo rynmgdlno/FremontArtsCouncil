@@ -11,7 +11,7 @@ import BrBlob2 from '../../component-svgs/workshop-info/brblob2'
 
 import './workshop-info.scss'
 
-const WorkshopInfo = ({ id }) => {
+const WorkshopInfo = ({ id, isTeach }) => {
   const [workshop, isLoading] = useElement(id)
   
   if (isLoading) return <p>Loading...</p>
@@ -28,12 +28,15 @@ const WorkshopInfo = ({ id }) => {
     <Fan2 />
     <BrBlob2 />
       <div className='workshop-info-page-container'>
+      {
+        !isTeach &&
         <div className='wip-sidebar'>
           <h3>Date & Time</h3>
           <ReactMarkdown plugins={[gfm]} source={dateTime} />
           <h3>Location</h3>
           <ReactMarkdown plugins={[gfm]} source={location} />
         </div>
+      }
         <div className='wip-info'>
           <ReactMarkdown className='wip-main-text' plugins={[gfm]} source={info} />
           <CustomButton className='custom-button high-emphasis-button blue-button'>Register</CustomButton>

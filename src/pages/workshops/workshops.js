@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import PageHeader from '../../components/page-header/page-header'
 import CustomButton from '../../components/custom-button/custom-button'
@@ -30,7 +31,9 @@ const Workshops = () => {
           <div className='workshop-info-container'>
             <h3 className='workshop-title'>Luminary Lantern Workshops</h3>
             <p className='workshop-info'>Thursdays, Fridays, Saturdays, and Sundays. Join us in making lanterns for Luminata!</p>
-            <CustomButton className='custom-button high-emphasis-button blue-button'>Register</CustomButton>
+            <Link to='/workshops/luminary-lantern-workshops'>
+              <CustomButton className='custom-button high-emphasis-button blue-button'>More Info</CustomButton>
+            </Link>
           </div>
         </div>
         <div className='workshop-entry'>
@@ -38,7 +41,9 @@ const Workshops = () => {
           <div className='workshop-info-container'>
             <h3 className='workshop-title'>Large Luminary Workshop</h3>
             <p className='workshop-info'>Weekly Wednesday workshop series led by Sarah Lovett. Meets for 5 weeks starting 8/21, 7-10 PM</p>
-            <CustomButton className='custom-button high-emphasis-button blue-button'>Register</CustomButton>
+            <Link to='/workshops/large-luminary-workshop'>
+              <CustomButton className='custom-button high-emphasis-button blue-button'>More Info</CustomButton>
+            </Link>
           </div>
         </div>
         <div className='workshop-entry'>
@@ -46,7 +51,9 @@ const Workshops = () => {
           <div className='workshop-info-container'>
             <h3 className='workshop-title'>Teach a Workshop</h3>
             <p className='workshop-info'>Volunteers are always needed to help teach our art workshops and other FAC events. </p>
-            <CustomButton className='custom-button high-emphasis-button blue-button'>Sign Up</CustomButton>
+            <Link to='/workshops/teach-a-workshop'>
+              <CustomButton className='custom-button high-emphasis-button blue-button'>More Info</CustomButton>
+            </Link>
           </div>
         </div>
       </div>
