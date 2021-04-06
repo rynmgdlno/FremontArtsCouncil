@@ -25,3 +25,9 @@ export const getEvents = async () => {
   const events = eventsObj.items
   return events
 }
+
+export const getNews = async () => {
+  const newsObj = await client.getEntries({ content_type: 'newsEntry', order: 'sys.createdAt'})
+  const news = newsObj.items
+  return news
+}

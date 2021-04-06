@@ -1,0 +1,36 @@
+@use '../../global/global-styles.scss';
+
+.news-card {
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 400px;
+  width: 90%;
+  box-shadow: 3px 5px 20px rgba(0, 0, 0, .1);
+  border-radius: 10px;
+  margin-bottom: 3rem;
+  overflow: hidden;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+
+  .news-card-image-container {
+    width: 100%;
+    height: 70%;
+  }
+
+  .news-card-info-container {
+    padding: 0rem 1rem;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .news-card {
+    width: 30%;
+    max-width: 300px;
+    margin-right: 2rem;
+  }
+}

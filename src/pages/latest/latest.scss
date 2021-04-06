@@ -1,0 +1,65 @@
+@use '../../global/global-styles.scss';
+
+.news {
+  margin: 5rem global-styles.$window-margin-mobile;
+
+  .most-recent {
+    display: flex;
+    flex-direction: column;
+
+    .recent-header {
+      display: flex;
+      flex-direction: column;
+
+      .recent-image {
+        width: 100%;
+      }
+    }
+  }
+
+  .news-card-container {
+    // width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+
+@media screen and (min-width: 769px) {
+
+  .news {
+    margin: 5rem global-styles.$window-margin;
+
+    .most-recent {
+      width: 100%;
+      // flex-direction: row;
+
+      .recent-header {
+        flex-direction: row;
+        
+        .recent-image {
+          width: 50%;
+          object-fit: cover;
+        }
+
+        .recent-title {
+          margin: 0 2rem;
+        }
+      }
+    }
+
+    .news-card-container {
+      margin-top: 5rem;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
+
+  @media (orientation: portrait) {
+    .news {
+      margin: 5rem global-styles.$window-margin-tablet;
+    }
+  }
+}
