@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { useMediaPredicate } from 'react-media-hook'
 
 import CustomButton from '../custom-button/custom-button'
@@ -22,19 +23,30 @@ const EventCard = ({ image, title, text, date, id }) => {
           <div className='event-card'>
             <h3 className='event-card-date'>{date}</h3>
             <h2 className='event-card-title'>{title}</h2>
-            <div className='event-card-image' style={bgStyle}/>
+            <div className='event-card-image' style={bgStyle} />
             <p className='event-card-text'>{text}</p>
-            <CustomButton className='custom-button high-emphasis-button blue-button event-card-button'>Learn More</CustomButton>
+            <Link to={`/events/${id}`}>
+              <CustomButton className='custom-button high-emphasis-button blue-button event-card-button'>Learn More</CustomButton>
+            </Link>
           </div>
           :
           <div className='event-card'>
-            <div className='event-card-image' style={bgStyle}/>
+            <div className='event-card-image' style={bgStyle} />
             <Divider className='event-divider' />
             <div className='event-card-info-container'>
               <span className='event-card-date'>{date}</span>
               <h2 className='event-card-title'>{title}</h2>
               <p className='event-card-text'>{text}</p>
-              <CustomButton className='custom-button high-emphasis-button blue-button event-card-button'>Learn More</CustomButton>
+              {
+                id === '61oWXVlzBWbbMVrZNp9cw6' ?
+                  <Link to={`/parade`}>
+                    <CustomButton className='custom-button high-emphasis-button blue-button event-card-button'>Learn More</CustomButton>
+                  </Link>
+                  :
+                  <Link to={`/events/${id}`}>
+                    <CustomButton className='custom-button high-emphasis-button blue-button event-card-button'>Learn More</CustomButton>
+                  </Link>
+              }
             </div>
           </div>
       }

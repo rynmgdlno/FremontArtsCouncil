@@ -12,7 +12,7 @@ const Latest = () => {
   const [news, isLoading] = useNews('event')
   const [newNews, setNews] = useState()
   const [recent, setRecent] = useState()
-  const isMobile = useMediaPredicate('(max-width: 769px)')
+  // const isMobile = useMediaPredicate('(max-width: 769px)')
 
   useEffect(() => {
     setRecent(news[0])

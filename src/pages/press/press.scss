@@ -1,0 +1,17 @@
+@use '../../global/global-styles.scss';
+
+.press {  
+  margin: 0 global-styles.$window-margin-mobile;
+}
+
+@media screen and (min-width: 769px) {
+  .press {
+    margin: 0 global-styles.$window-margin
+  }
+
+  @media (orientation: portrait) {
+    .press {
+      margin: 0 global-styles.$window-margin-tablet
+    }
+  }
+}

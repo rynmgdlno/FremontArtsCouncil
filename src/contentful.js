@@ -31,3 +31,9 @@ export const getNews = async () => {
   const news = newsObj.items
   return news
 }
+
+export const getPress = async () => {
+  const pressObj = await client.getEntries({ content_type: 'pressEntry', order: 'sys.createdAt'})
+  const press = pressObj.items
+  return press
+}

@@ -1,0 +1,36 @@
+@use '../../global/global-styles.scss';
+
+.press-card {
+  margin-bottom: 2rem;
+  
+  .press-header {
+    display: flex;
+    flex-direction: column;
+
+    .press-image {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+  }
+}
+
+@media screen and (min-width: 769px) {
+
+  .press-card {
+    .press-header {
+      display: flex;
+      flex-direction: row;
+  
+      .press-image {
+        width: 30%;
+        height: 200px;
+        object-fit: cover;
+      }
+  
+      .press-header-text {
+        margin: 0 2rem;
+      }
+    }
+  }
+}
