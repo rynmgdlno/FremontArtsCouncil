@@ -1,6 +1,6 @@
 @use '../../global/global-styles.scss';
 
-.news {
+.news-page {
   margin: 5rem global-styles.$window-margin-mobile;
 
   .most-recent {
@@ -29,7 +29,7 @@
 
 @media screen and (min-width: 769px) {
 
-  .news {
+  .news-page {
     margin: 5rem global-styles.$window-margin;
 
     .most-recent {
@@ -58,7 +58,7 @@
   }
 
   @media (orientation: portrait) {
-    .news {
+    .news-page {
       margin: 5rem global-styles.$window-margin-tablet;
     }
   }

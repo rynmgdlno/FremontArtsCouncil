@@ -17,7 +17,7 @@ const HeroLinks = () => {
           <h2 className='card-title'>Workshops</h2>
         </div>
       </Link>
-      <Link className='card-container events-area' to='/upcoming-events'>
+      <Link className='card-container events-area' to='/events'>
         <div className='events card'>
           <h2 className='card-title'>Events</h2>
         </div>

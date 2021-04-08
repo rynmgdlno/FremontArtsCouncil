@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import { useMediaPredicate } from 'react-media-hook'
 
 import NewsCard from '../../components/news-card/news-card'
 
@@ -12,20 +11,16 @@ const Latest = () => {
   const [news, isLoading] = useNews('event')
   const [newNews, setNews] = useState()
   const [recent, setRecent] = useState()
-  // const isMobile = useMediaPredicate('(max-width: 769px)')
 
   useEffect(() => {
     setRecent(news[0])
     setNews(news.slice(1))
   }, [news])
 
-  console.log(newNews)
-  console.log(recent)
-
   return (
     <div>
       <PageHeader headerID={'JIiZ8itrU7Lx2dqDXbOpr'} />
-      <div className='news'>
+      <div className='news-page'>
         {
           recent &&
           <div className='most-recent'>
