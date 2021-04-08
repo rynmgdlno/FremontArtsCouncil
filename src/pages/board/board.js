@@ -1,12 +1,12 @@
 import React from 'react'
 
+import InfoPage from '../../components/info-page/info-page'
+
 import './board.scss'
 
 const Board = () => {
   return (
-    <div>
-      <p>Board</p>
-    </div>
+    <InfoPage elementID='2qJ7TobF8sbeMMM2ETkniB'/>
   )
 }
 

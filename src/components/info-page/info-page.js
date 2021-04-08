@@ -21,7 +21,7 @@ const InfoPage = ({ elementID }) => {
   } = element.fields
 
   const headerImage = `https:${pageHeaderImage.fields.file.url}`
-  const secondaryImage = `https:${optionalImage.fields.file.url}`
+  const secondaryImage = optionalImage && `https:${optionalImage.fields.file.url}`
 
   console.log(element)
 
