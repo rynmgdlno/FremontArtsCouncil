@@ -88,7 +88,7 @@ const Event = ({ isParade, eventID }) => {
         </div>
         <div className='event-description'>
           <h3 className='event-about-title'>{eventAboutTitle}</h3>
-          <p>{eventAboutText}</p>
+          <ReactMarkdown source={eventAboutText} plugins={[gfm]}/>
         </div>
         <div className='event-location-container'>
           <div className='location-description-container'>

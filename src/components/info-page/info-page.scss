@@ -1,0 +1,95 @@
+@use '../../global//global-styles.scss';
+
+.info-page {
+
+  .info-page-header {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding-top: 3rem;
+    margin-bottom: 3rem;
+    z-index: 9;
+
+    .info-page-header-text {
+      margin-left: global-styles.$window-margin-mobile;
+      margin-right: global-styles.$window-margin-mobile;
+      margin-bottom: 3rem;
+    }
+
+    .info-page-header-image {
+      width: 100%;
+      max-width: 1440px;
+    }
+  }
+
+  .info-page-body {
+    margin: 0 global-styles.$window-margin-mobile;
+
+    .text-image-container {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      // margin: global-styles.$window-margin-tablet;
+
+      .mid-image {
+        width: 100%;
+        object-fit: cover;
+      }
+
+      .mid-text {
+        width: 90%;
+        margin: global-styles.$window-margin-mobile;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .info-page {
+
+    .info-page-header {
+      margin-top: 6rem;
+
+      .info-page-header-text {
+        margin-left: global-styles.$window-margin;
+        margin-right: global-styles.$window-margin;
+        width: 70%;
+      }
+    }
+
+    .info-page-body {
+      margin: 0 global-styles.$window-margin;
+
+      .text-image-container {
+        flex-direction: row;
+        margin: global-styles.$window-margin-tablet;
+
+        .mid-image {
+          width: 35%;
+        }
+
+        .mid-text {
+          width: 55%;
+        }
+      }
+
+    }
+  }
+
+  @media (orientation: portrait) {
+    .info-page {
+
+      .info-page-header {
+
+        .info-page-header-text {
+          margin-left: global-styles.$window-margin-tablet;
+          margin-right: global-styles.$window-margin-tablet;
+        }
+      }
+
+      .info-page-body {
+        margin: 0 global-styles.$window-margin-tablet;
+      }
+    }
+  }
+}
