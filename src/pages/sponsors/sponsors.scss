@@ -1,0 +1,22 @@
+@use '../../global//global-styles.scss';
+
+.sponsors-page {
+  margin: 2rem global-styles.$window-margin-mobile;
+
+  .sponsors-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .sponsor-link {
+      width: 80%;
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .sponsors-page {
+    margin: 2rem global-styles.$window-margin;
+  }
+}

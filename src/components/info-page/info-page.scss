@@ -6,14 +6,12 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    padding-top: 3rem;
     margin-bottom: 3rem;
     z-index: 9;
 
     .info-page-header-text {
       margin-left: global-styles.$window-margin-mobile;
       margin-right: global-styles.$window-margin-mobile;
-      margin-bottom: 3rem;
     }
 
     .info-page-header-image {
