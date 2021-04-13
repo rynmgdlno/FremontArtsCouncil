@@ -20,7 +20,7 @@ const menuTree = [
       },
       {
         id: 4,
-        name: 'Commitment',
+        name: 'Racial Equity and Inclusion',
         link: '/commitment'
       },
       {
@@ -134,7 +134,7 @@ const menuTree = [
       {
         id: 6,
         name: 'Solstice Celebration',
-        link: '/events/solstice'
+        link: '/solstice'
       }
     ]
   },
