@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-import { getHeader } from '../contentful'
+import { getHeader } from '../apis/contentful'
 
 
 export default function useHeader(headerID) {

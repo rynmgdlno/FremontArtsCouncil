@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-import { getElement } from '../contentful'
+import { getElement } from '../apis/contentful'
 
 
 export default function useElement(elementID) {

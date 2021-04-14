@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-import { getNews } from '../contentful'
+import { getNews } from '../apis/contentful'
 
 const newsList = getNews()
 

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-import { getPress } from '../contentful'
+import { getPress } from '../apis/contentful'
 
 
 export default function usePress(pressID) {

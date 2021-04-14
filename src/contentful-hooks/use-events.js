@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-import { getEvents } from '../contentful'
+import { getEvents } from '../apis/contentful'
 
 const eventList = getEvents()
 
