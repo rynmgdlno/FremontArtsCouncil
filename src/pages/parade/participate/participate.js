@@ -3,6 +3,13 @@ import React from 'react'
 import PageHeader from '../../../components/page-header/page-header'
 import SimpleCard from '../../../components/simple-card/simple-card'
 
+import Svg1 from '../../../component-svgs/parade/participate/svg1'
+import Svg2 from '../../../component-svgs/parade/participate/svg2'
+import Svg3 from '../../../component-svgs/parade/participate/svg3'
+import Svg4 from '../../../component-svgs/parade/participate/svg4'
+import Svg5 from '../../../component-svgs/parade/participate/svg5'
+import Svg6 from '../../../component-svgs/parade/participate/svg6'
+
 import register from '../../../images/parade/participate/register.png'
 import float from '../../../images/parade/participate/float.png'
 import powerhouse from '../../../images/parade/participate/powerhouse.png'
@@ -13,10 +20,16 @@ import faq from '../../../images/parade/participate/faq.png'
 import './participate.scss'
 
 const Participate = () => {
-  return ( 
+  return (
     <div>
-      <PageHeader headerID={'6WFXB1Pd0xhA8bnrYqT4Yb'}/>
+      <PageHeader headerID={'6WFXB1Pd0xhA8bnrYqT4Yb'} />
       <div className='participate-container'>
+        <Svg1 className='svg1' />
+        <Svg2 className='svg2' />
+        <Svg3 className='svg3' />
+        <Svg4 className='svg4' />
+        <Svg5 className='svg5' />
+        <Svg6 className='svg6' />
         <h2 className='participate-title'>2021 Fremont Solstice Parade</h2>
         <SimpleCard
           title='Register to be in the Parade'

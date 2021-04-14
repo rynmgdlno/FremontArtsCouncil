@@ -9,7 +9,7 @@
 }
 
 @media screen and (min-width: 769px) {
-  .simple-card:nth-child(even) {
+  .simple-card:nth-child(odd) {
     flex-direction: row-reverse;
   }
 

@@ -4,6 +4,42 @@
   position: relative;
   margin: 5rem global-styles.$window-margin-mobile;
 
+  .svg1 {
+    position: absolute;
+    top: 5rem;
+    right: -6rem;
+  }
+
+  .svg2 {
+    position: absolute;
+    top: 32rem;
+    left: -6rem;
+  }
+
+  .svg3 {
+    position: absolute;
+    top: 90rem;
+    left: -6rem;
+  }
+
+  .svg4 {
+    position: absolute;
+    top: 200rem;
+    right: -6rem;
+  }
+
+  .svg5 {
+    position: absolute;
+    top: 150rem;
+    left: -6rem;
+  }
+
+  .svg6 {
+    position: absolute;
+    top: 70rem;
+    left: 40%;
+  }
+
   .participate-title {
     text-align: center;
   }
