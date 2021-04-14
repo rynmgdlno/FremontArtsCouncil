@@ -1,8 +1,6 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 
 import PageHeader from '../../components/page-header/page-header'
-import CustomButton from '../../components/custom-button/custom-button'
 
 import lumLanWor from '../../images/workshops/Rectangle 291.png'
 import larLumWor from '../../images/workshops/Rectangle 299.png'

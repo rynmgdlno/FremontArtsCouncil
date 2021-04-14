@@ -1,0 +1,22 @@
+@use '../../../global/global-styles.scss';
+
+.participate-container {
+  position: relative;
+  margin: 5rem global-styles.$window-margin-mobile;
+
+  .participate-title {
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .participate-container {
+    margin: 3rem global-styles.$window-margin;
+  }
+
+  @media (orientation: portrait) {
+    .participate-container {
+      margin: 3rem global-styles.$window-margin-tablet;
+    }
+  }
+}

@@ -44,4 +44,12 @@
       }
     }
   }
+
+  @media (orientation: portrait) {
+    .our-workshops {
+      .workshop-page-container {
+        margin: 5rem global-styles.$window-margin-tablet;
+      }
+    }
+  }
 }
