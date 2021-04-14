@@ -1,0 +1,30 @@
+.simple-card {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5rem;
+
+  .s-card-image {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .simple-card:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+
+  .simple-card {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 10rem;
+
+    .s-card-image {
+      width: 50%;
+      object-fit: cover;
+    }
+
+    .s-card-info-container {
+      width: 40%;
+    }
+  }
+}
