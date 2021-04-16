@@ -1,0 +1,23 @@
+@use '../../../global/global-styles.scss';
+
+.gallery-page {
+  margin: 6rem global-styles.$window-margin-mobile;
+  .gallery-title {
+    width: calc(100vw - 1rem);
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .gallery-page {
+    margin: 6rem global-styles.$window-margin;
+    .gallery-title {
+      width: calc(100vw - 6rem)
+    }
+  }
+
+  @media screen and (orientation: portrait) {
+    .gallery-page {
+      margin: 6rem global-styles.$window-margin-tablet;
+    }
+  }
+}
