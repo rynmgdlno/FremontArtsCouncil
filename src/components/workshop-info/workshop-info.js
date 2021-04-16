@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import ReactMarkdown from 'react-markdown'
 import gfm from 'remark-gfm'
 
@@ -45,14 +46,18 @@ const WorkshopInfo = ({ id, isTeach, isParade }) => {
                 <CustomButton className='custom-button high-emphasis-button blue-button'>Register</CustomButton>
                 <h3 className='faq'>FAQ</h3>
                 <p>Luminata and workshop FAQs</p>
-                <CustomButton className='custom-button high-emphasis-button blue-button'>Learn More</CustomButton>
+                <Link to='/faq'>
+                  <CustomButton className='custom-button high-emphasis-button blue-button'>Learn More</CustomButton>
+                </Link>
               </>
               :
               <>
                 <CustomButton className='custom-button medium-emphasis-button'>Register</CustomButton>
                 <h3 className='faq'>FAQ</h3>
                 <p>All you need to know about ensemble logistics</p>
-                <CustomButton className='custom-button medium-emphasis-button'>Learn More</CustomButton>
+                <Link to='/faq'>
+                  <CustomButton className='custom-button medium-emphasis-button'>Learn More</CustomButton>
+                </Link>
               </>
           }
         </div>

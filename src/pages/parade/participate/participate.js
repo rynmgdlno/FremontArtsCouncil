@@ -64,7 +64,7 @@ const Participate = () => {
         <SimpleCard
           title='FAQ'
           text='Learn more about ensemble logistics.'
-          link=''
+          link='/faq'
           buttonText='Learn More'
           image={faq} />
       </div>

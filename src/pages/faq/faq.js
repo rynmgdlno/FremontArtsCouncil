@@ -9,7 +9,7 @@ const FAQ = () => {
   
   return (
     <div className='faq-page'>
-      <Faq className='test' data={paradeFaqData} />
+      <Faq data={paradeFaqData} />
       <Faq data={workshopFaqData} />
     </div>
   )
