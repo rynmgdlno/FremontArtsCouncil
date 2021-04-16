@@ -1,0 +1,21 @@
+@use '../../global/global-styles.scss';
+
+.faq-page {
+  margin: 6rem global-styles.$window-margin-mobile;
+
+  .faq-row-wrapper {
+    margin-bottom: 3rem;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .faq-page {
+    margin: 6rem global-styles.$window-margin;
+  }
+
+  @media (orientation: portrait) {
+    .faq-page {
+      margin: 6rem global-styles.$window-margin-tablet;
+    }
+  }
+}

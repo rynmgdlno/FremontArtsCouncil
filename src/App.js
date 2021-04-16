@@ -40,6 +40,8 @@ import Volunteer from './pages/volunteer/volunteer'
 import SponsorUs from './pages/sponsor-us/sponsor-us'
 import Meetings from './pages/meetings/meetings'
 
+import FAQ from './pages/faq/faq'
+
 import Container from './components/container/container'
 
 import './App.scss';
@@ -86,6 +88,8 @@ const App = () => {
       <Route exact path='/volunteer' render={(props) => <Container {...props} page={Volunteer}/>} />
       <Route exact path='/sponsor-us' render={(props) => <Container {...props} page={SponsorUs}/>} />
       <Route exact path='/community-meetings' render={(props) => <Container {...props} page={Meetings}/>} />
+      {/* Misc */}
+      <Route exact path='/faq' render={(props) => <Container {...props} page={FAQ}/>} />
     </HashRouter>
   );
 }
