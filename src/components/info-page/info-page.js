@@ -2,6 +2,8 @@ import React from 'react'
 import ReactMarkdown from 'react-markdown'
 import gfm from 'remark-gfm'
 
+import Spinner from '../../component-svgs/spinner'
+
 import useElement from '../../contentful-hooks/use-element'
 
 import './info-page.scss'
@@ -9,7 +11,7 @@ import './info-page.scss'
 const InfoPage = ({ elementID }) => {
   const [element, isLoading] = useElement(elementID)
 
-  if (isLoading) return <p>Loading...</p>
+  if (isLoading) return <Spinner />
 
   const {
     infoTextOne,

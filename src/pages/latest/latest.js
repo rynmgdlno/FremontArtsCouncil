@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react'
 
 import NewsCard from '../../components/news-card/news-card'
-
 import PageHeader from '../../components/page-header/page-header'
+import Spinner from '../../component-svgs/spinner'
+
 import useNews from '../../contentful-hooks/use-news'
 
 import './latest.scss'
@@ -36,7 +37,7 @@ const Latest = () => {
         <h2>More News...</h2>
         <div className='news-card-container'>
           {
-            isLoading ? <p>Loading...</p> :
+            isLoading ? <Spinner /> :
               newNews.map((entry) => (
                 <NewsCard
                   key={entry.sys.id}

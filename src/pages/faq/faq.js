@@ -6,7 +6,7 @@ import { paradeFaqData, workshopFaqData } from '../../generative-assets/parade-f
 import './faq.scss'
 
 const FAQ = () => {
-  
+
   return (
     <div className='faq-page'>
       <Faq data={paradeFaqData} />

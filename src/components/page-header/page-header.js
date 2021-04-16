@@ -1,14 +1,15 @@
 import React from 'react'
 
-// import { getHeader } from '../../contentful'
 import useHeader from '../../contentful-hooks/use-header'
+
+import Spinner from '../../component-svgs/spinner'
 
 import './page-header.scss'
 
 const PageHeader = ({headerID}) => {
   const [header, isloading] = useHeader(headerID)
 
-  if (isloading) return <p>Loading...</p>
+  if (isloading) return <Spinner />
   // console.log(header)
   return (
     <div className='page-header'>

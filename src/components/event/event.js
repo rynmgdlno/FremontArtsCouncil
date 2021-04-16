@@ -7,6 +7,7 @@ import useElement from '../../contentful-hooks/use-element'
 import GalleryModal from '../gallery-modal/gallery-modal'
 import InvolvedCard from './involved-card/involved-card'
 import CustomButton from '../custom-button/custom-button'
+import Spinner from '../../component-svgs/spinner'
 
 import Squiggle1 from './graphic-components/squiggle1'
 import Squiggle2 from './graphic-components/squiggle2'
@@ -21,7 +22,7 @@ const Event = ({ isParade, eventID }) => {
   const [isOpen, setIsOpen] = useState(false)
   const [currentImage, setImage] = useState(null)
 
-  if (isLoading) return <p>Loading...</p>
+  if (isLoading) return <Spinner />
 
   const {
     appleCalendar,

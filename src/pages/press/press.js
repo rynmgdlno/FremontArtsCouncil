@@ -3,13 +3,14 @@ import React from 'react'
 import usePress from '../../contentful-hooks/use-press'
 
 import PressCard from '../../components/press-card/press-card'
+import Spinner from '../../component-svgs/spinner'
 
 import './press.scss'
 
 const Press = () => {
   const [press, isLoading] = usePress()
 
-  if (isLoading) return <p>Loading...</p>
+  if (isLoading) return <Spinner />
 
   console.log(press, isLoading)
   return (
