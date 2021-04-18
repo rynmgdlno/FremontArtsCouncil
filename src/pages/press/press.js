@@ -12,7 +12,6 @@ const Press = () => {
 
   if (isLoading) return <Spinner />
 
-  console.log(press, isLoading)
   return (
     <div className='press'>
       <h1>Press</h1>

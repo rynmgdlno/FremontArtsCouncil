@@ -6,6 +6,8 @@
   
   .page-container {
     margin-top: 5rem;
+    // min-height: calc(66vh);
+    // width: 100%;
   }
   
   .footer {
@@ -29,9 +31,9 @@
     
     .footer {
       // position: absolute;
-      bottom: 0px;
+      // bottom: 0px;
       height: 23vh;
-      width: 100%;
+      width: 100vw;
     }
   }
 }

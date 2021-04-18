@@ -14,7 +14,6 @@ const Gallery = () => {
   const [page, setPage] = useState(1)
   const [photos, isLoading] = useFlickr('fremont solstice parade seattle', page)
   const [currentImage, setImage] = useState(null)
-  console.log(page)
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -45,8 +44,8 @@ const Gallery = () => {
             photoList.map(((photo) => {
               return (
                 photo.url_l &&
-                <div onClick={() => setImage(photo.url_l)}>
-                  <GalleryCard image={photo.url_l} owner={photo.ownername} description={photo.title} id={photo.id} />
+                <div onClick={() => setImage(photo.url_l)} key={photo.id} >
+                  <GalleryCard image={photo.url_l} owner={photo.ownername} description={photo.title}/>
                 </div>
               )
             }))

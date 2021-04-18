@@ -3,7 +3,7 @@
 .gallery-page {
   margin: 6rem global-styles.$window-margin-mobile;
   .gallery-title {
-    width: calc(100vw - 1rem);
+    width: calc(100vw - 2rem);
   }
 }
 
@@ -11,13 +11,16 @@
   .gallery-page {
     margin: 6rem global-styles.$window-margin;
     .gallery-title {
-      width: calc(100vw - 6rem)
+      width: calc(100vw - 12rem)
     }
   }
 
   @media screen and (orientation: portrait) {
     .gallery-page {
       margin: 6rem global-styles.$window-margin-tablet;
+      .gallery-title {
+        width: calc(100vw - 6rem)
+      }
     }
   }
 }
