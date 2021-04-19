@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 
 import PageHeader from '../../components/page-header/page-header'
+import CustomButton from '../../components/custom-button/custom-button'
 
 import './membership.scss'
 
@@ -9,9 +10,7 @@ const Membership = () => {
   const [amount, setAmount] = useState(0)
   const [displayForm, setForm] = useState(false)
   const [confirmation, setConfirmation] = useState(false)
-
-  console.log(level, amount)
-  console.log(displayForm)
+  const [money, setMoney] = useState('money-popup-closed')
 
   return (
     <div>
@@ -122,7 +121,21 @@ const Membership = () => {
                 </div>
               </div>
             </div>
-            <h3 className='money'>Where your money is going</h3>
+            <CustomButton
+              onClick={() => setMoney('money-popup')}
+              className='custom-button low-emphasis-button money'>
+              <h3>Where your money is going</h3>
+            </CustomButton>
+            <div className={money}>
+              <CustomButton
+                onClick={() => {
+                  setMoney('money-popup-closed')
+                  console.log('test')
+                }}
+                className='custom-button low-emphasis-button close-money'>X</CustomButton>
+              <h4>Where Your Money Is Going</h4>
+              <p>Sed lobortis fermentum ante, eu ornare dui commodo ut. Vivamus cursus magna convallis magna sodales, id sagittis metus ornare. Suspendisse pretium, arcu ac tincidunt iaculis, libero lacus sodales lorem, ac vestibulum risus nulla vel massa. Nulla metus odio, consectetur in tortor eleifend, commodo euismod orci. In lobortis vehicula elit quis aliquam. In commodo justo est, ut maximus ipsum finibus non. Nullam ornare ultricies ante, vel pretium nibh pulvinar et. Aenean ac orci sed magna sollicitudin feugiat. Curabitur eu felis feugiat, hendrerit ipsum at, mollis sem.</p>
+            </div>
           </div>
           :
           <div className='membership-form'>{level}{amount}</div>
