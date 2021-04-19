@@ -20,7 +20,17 @@
     width: 30vw;
   
     .form-names {
+      width: 100%;
       flex-direction: row;
+      justify-content: space-between;
+
+      .first-name, .last-name {
+        width: 47%;
+      }
+    }
+
+    .email {
+      width: calc(100% - 11px);
     }
   }
 }
