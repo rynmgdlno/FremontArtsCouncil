@@ -23,7 +23,7 @@ const Home = () => {
       <HeroLinks />
       <UpcomingEventsWorkshops />
       <GetInvolved />
-      <GetInspired />
+      {/* <GetInspired /> */}
       <OurSponsors />
     </div>
   )

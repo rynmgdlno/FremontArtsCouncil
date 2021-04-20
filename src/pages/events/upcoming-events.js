@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 
 import useEvents from '../../contentful-hooks/use-events'
 
+import Spinner from '../../component-svgs/spinner'
 import EventCalendar from '../../components/event-calendar/event-calendar'
 import PageHeader from '../../components/page-header/page-header'
 import EventCard from '../../components/event-card/event-card'
@@ -28,7 +29,7 @@ const UpcomingEvents = () => {
           :
           <div>
             {
-              isLoading ? <p>Loading...</p> :
+              isLoading ? <Spinner /> :
                 events.map((event) => (
                   <EventCard
                     key={event.sys.id}
