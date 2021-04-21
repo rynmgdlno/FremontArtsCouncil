@@ -11,7 +11,7 @@ import './upcoming-events.scss'
 import ViewButton from '../../components/view-button/view-button'
 
 const UpcomingEvents = () => {
-  const [events, isLoading] = useEvents('event')
+  const [events, isLoading] = useEvents()
   const [isCalendar, setCalendar] = useState(false)
 
   return (
@@ -43,7 +43,6 @@ const UpcomingEvents = () => {
             }
           </div>
       }
-
     </div>
   )
 }

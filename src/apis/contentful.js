@@ -37,3 +37,9 @@ export const getPress = async () => {
   const press = pressObj.items
   return press
 }
+
+export const getFaq = async () => {
+  const faqObj = await client.getEntries({ content_type: 'faqPage'})
+  const events = faqObj.items
+  return events
+}

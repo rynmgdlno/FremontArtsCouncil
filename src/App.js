@@ -41,6 +41,7 @@ import SponsorUs from './pages/sponsor-us/sponsor-us'
 import Meetings from './pages/meetings/meetings'
 
 import FAQ from './pages/faq/faq'
+import Photography from './pages/photography/photography'
 
 import Container from './components/container/container'
 
@@ -90,6 +91,7 @@ const App = () => {
       <Route exact path='/community-meetings' render={(props) => <Container {...props} page={Meetings}/>} />
       {/* Misc */}
       <Route exact path='/faq' render={(props) => <Container {...props} page={FAQ}/>} />
+      <Route exact path='/photography' render={(props) => <Container {...props} page={Photography}/>} />
     </HashRouter>
   );
 }
