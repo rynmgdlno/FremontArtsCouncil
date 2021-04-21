@@ -1,5 +1,7 @@
-import React, { useState } from 'react'
+import React, { useRef, useEffect } from 'react'
 import { useMediaPredicate } from 'react-media-hook'
+import ScrollSnap from 'scroll-snap'
+import EasingFunctions from '../../../global/EasingFunctions'
 
 import useEvents from '../../../contentful-hooks/use-events'
 
@@ -11,23 +13,25 @@ import './upcoming-events-workshops.scss'
 const UpcomingEventsWorkshops = () => {
   const [events, isLoading] = useEvents('event')
   const isMobile = useMediaPredicate('(max-width: 769px)')
+  const snapSize = !isMobile ? '396px' : '70%'
+  const container = useRef()
 
-  const mobileList = () => {
-    if (isMobile) {
-      while (events.length > 2) {
-        events.pop()
-      }
-    }
-  }
-
-  mobileList()
-
-  console.log(events)
+  useEffect(() => {
+    const element = container.current
+    const snapElement = new ScrollSnap(element, {
+      snapDestinationX: snapSize,
+      timeout: 100,
+      duration: 300,
+      threshold: .2,
+      easing: EasingFunctions.easeInQuad
+    })
+    snapElement.bind()
+  }, [snapSize])
 
   return (
     <div className='home-upcoming'>
       <h2>Upcoming Events and Workshops</h2>
-      <div className='home-event-card-container'>
+      <div className='home-event-card-container' ref={container}>
         {
           isLoading ? <Spinner /> :
             events.map((event) => (

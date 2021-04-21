@@ -6,7 +6,6 @@
   align-items: center;
   // width: 96vw;
   text-align: center;
-  margin-top: 4rem;
   background: linear-gradient(0, global-styles.$yellow 25%, white 25%);
 }
 
@@ -35,27 +34,31 @@
 }
 
 @media screen and (min-width: 769px) {
-  .involved-card-container {
-    flex-direction: row;
-    margin-bottom: 5rem;
+  .home-involved {
     margin-top: 4rem;
 
-    .involved-card {
-      transition: all .2s ease-in-out;
-      display: flex;
-      flex-direction: column;
-      width: 25vw;
-      height: 25vw;
-      max-width: 350px;
-      max-height: 350px;
-
-      .involved-card-title {
-        margin-top: 40%;
+    .involved-card-container {
+      flex-direction: row;
+      margin-bottom: 5rem;
+      margin-top: 4rem;
+  
+      .involved-card {
+        transition: all .2s ease-in-out;
+        display: flex;
+        flex-direction: column;
+        width: 25vw;
+        height: 25vw;
+        max-width: 350px;
+        max-height: 350px;
+  
+        .involved-card-title {
+          margin-top: 40%;
+        }
       }
-    }
-
-    .involved-card:hover {
-      transform: scale(1.1);
+  
+      .involved-card:hover {
+        transform: scale(1.1);
+      }
     }
   }
 }

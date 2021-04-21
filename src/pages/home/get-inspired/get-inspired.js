@@ -20,7 +20,6 @@ const GetInspired = () => {
     gallery.push(`https:${image.fields.file.url}`)
   })
 
-  console.log(gallery)
   return (
     <div className='home-inspired'>
       <h2>Get Inspired</h2>

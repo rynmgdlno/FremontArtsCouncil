@@ -1,17 +1,16 @@
 @use '../../global/global-styles.scss';
 
 .home-event-card {
-  margin: 3rem 0;
+  margin-left: 1.5rem;
   border-radius: 10px;
   overflow: hidden;
   align-items: center;
   justify-content: center;
   border-radius: 10px;
   color: black;
-  width: 80vw;
-  height: 80vw;
+  width: 70vw;
+  height: 70vw;
   box-shadow: 3px 5px 20px rgba(0, 0, 0, .1);
-  margin-bottom: 1rem;
 
   .home-event-card-image {
     height: 60%;

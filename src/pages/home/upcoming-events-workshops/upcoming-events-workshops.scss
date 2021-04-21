@@ -3,32 +3,48 @@
 .home-upcoming {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   text-align: center;
   margin-top: 4rem;
-  // width: 90vw;
+  width: calc(100vw - 2rem);
 
   .home-event-card-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     width: 100%;
-    justify-content: space-evenly;
     align-items: center;
+    width: calc(100vw - 0rem);
+    max-width: 1400px;
+    padding-left: 2rem;
+    height: 400px;
+    overflow-x: scroll;
   }
 }
 
 @media screen and (min-width: 769px) {
 
   .home-upcoming {
+    // width: calc(100vw - 12rem);
+    max-width: 1440px;
+    align-items: center;
+
     .home-event-card-container {
-      width: calc(100vw - 12rem);
-      max-width: 1400px;
-      padding-left: 3rem;
+      width: calc(100% - 12rem);
+      // max-width: 1400px;
+      padding: 0;
       height: 400px;
       display: flex;
       flex-direction: row;
       overflow-x: scroll;
+    }
+  }
+
+  @media (orientation: portrait) {
+    .home-upcoming {
+      // width: calc(100vh - 6rem);
+
+      .home-event-card-container {
+        width: calc(100% - 6rem);
+      }
     }
   }
 }
