@@ -5,8 +5,6 @@ import useElement from '../../contentful-hooks/use-element'
 
 import Spinner from '../../component-svgs/spinner'
 
-import { paradeFaqData, workshopFaqData } from '../../generative-assets/parade-faq'
-
 import './faq.scss'
 
 const FAQ = () => {
@@ -24,7 +22,6 @@ const FAQ = () => {
     <div className='faq-page'>
       <Faq data={paradeData} />
       <Faq data={workshopData} />
-      <a download='/src/images/PARADE-MAP-2019.pdf' href='/src/images/PARADE-MAP-2019.pdf'>test</a>
     </div>
   )
 }

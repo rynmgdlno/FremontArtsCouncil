@@ -1,12 +1,12 @@
 import React from 'react'
 
+import GeneralPage from '../../components/general-page/general-page'
+
 import './artists'
 
 const Artists = () => {
   return (
-    <div>
-      <p>Artists</p>
-    </div>
+    <GeneralPage id='1WHchyhSjV66n0uEmOpaNr' />
   )
 }
 

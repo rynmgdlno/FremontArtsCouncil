@@ -1,0 +1,59 @@
+@use '../../global/global-styles.scss';
+
+.general-page {
+  .general-header {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 3rem;
+    z-index: 9;
+
+    .general-header-text {
+      margin: 0 global-styles.$window-margin-mobile;
+    }
+
+
+    .general-header-image {
+      width: 100%;
+      max-width: 1440px;
+    }
+  }
+
+  .general-content {
+    margin: 1rem global-styles.$window-margin-mobile;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .general-page {
+    .general-header {
+      margin-top: 6rem;
+
+      .general-header-text {
+        margin-left: global-styles.$window-margin;
+        margin-right: global-styles.$window-margin;
+        width: 70%;
+      }
+    }
+
+    .general-content {
+      margin: 0 global-styles.$window-margin 3rem;
+    }
+  }
+
+  @media (orientation: portrait) {
+    .general-page {
+      .general-header {
+        .general-header-text {
+          margin: 0 global-styles.$window-margin-tablet;
+        }
+      }
+
+      .general-content {
+        margin: 0 global-styles.$window-margin-tablet 3rem;
+      }
+    }
+
+
+  }
+}

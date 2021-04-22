@@ -1,17 +1,25 @@
 import React, { useState } from 'react'
 
+import useElement from '../../contentful-hooks/use-element'
+
+import Spinner from '../../component-svgs/spinner'
 import PageHeader from '../../components/page-header/page-header'
 import CustomButton from '../../components/custom-button/custom-button'
 
 import './membership.scss'
 
 const Membership = () => {
+  const [data, isLoading] = useElement('30OC59fYh1zLsGqdXES5mH')
   const [level, setLevel] = useState('')
   const [amount, setAmount] = useState(0)
   const [displayForm, setForm] = useState(false)
   const [confirmation, setConfirmation] = useState(false)
   const [money, setMoney] = useState('money-popup-closed')
-
+  
+  if (isLoading) return <Spinner />
+  
+  const moneyTitle = data.fields.title
+  const moneyText = data.fields.content
   return (
     <div>
       <PageHeader headerID={'1qvzCME4OZARJ8yz3IfN6u'} />
@@ -133,8 +141,13 @@ const Membership = () => {
                   console.log('test')
                 }}
                 className='custom-button low-emphasis-button close-money'>X</CustomButton>
-              <h4>Where Your Money Is Going</h4>
-              <p>Sed lobortis fermentum ante, eu ornare dui commodo ut. Vivamus cursus magna convallis magna sodales, id sagittis metus ornare. Suspendisse pretium, arcu ac tincidunt iaculis, libero lacus sodales lorem, ac vestibulum risus nulla vel massa. Nulla metus odio, consectetur in tortor eleifend, commodo euismod orci. In lobortis vehicula elit quis aliquam. In commodo justo est, ut maximus ipsum finibus non. Nullam ornare ultricies ante, vel pretium nibh pulvinar et. Aenean ac orci sed magna sollicitudin feugiat. Curabitur eu felis feugiat, hendrerit ipsum at, mollis sem.</p>
+              {
+                isLoading ? <Spinner /> :
+                  <>
+                    <h4>{moneyTitle}</h4>
+                    <p>{moneyText}</p>
+                  </>
+              }
             </div>
           </div>
           :

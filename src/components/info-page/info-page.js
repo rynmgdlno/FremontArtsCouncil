@@ -2,9 +2,9 @@ import React from 'react'
 import ReactMarkdown from 'react-markdown'
 import gfm from 'remark-gfm'
 
-import Spinner from '../../component-svgs/spinner'
-
 import useElement from '../../contentful-hooks/use-element'
+
+import Spinner from '../../component-svgs/spinner'
 
 import './info-page.scss'
 
