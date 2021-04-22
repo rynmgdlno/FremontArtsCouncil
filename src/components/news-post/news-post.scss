@@ -1,0 +1,44 @@
+@use '../../global/global-styles.scss';
+
+.news-post {
+  margin: 5rem global-styles.$window-margin-mobile;
+  
+  .post-header {
+    display: flex;
+    flex-direction: column;
+    
+    .post-image{
+      width: 100%;
+    }
+  }
+
+  .post-text {
+    margin: 2rem 0;
+  }
+}
+
+@media screen and(min-width: 769px) {
+  .news-post {
+    margin: 5rem global-styles.$window-margin;
+    
+    .post-header {
+      flex-direction: row;
+      
+      .post-image {
+        width: 40%;
+        object-fit: cover;
+      }
+      
+      .post-header-text {
+        margin: 0 2rem;
+      }
+    }
+  }
+  
+  @media (orientation: portrait) {
+    .news-post {
+      margin: 5rem global-styles.$window-margin-tablet;
+
+    }
+  }
+}

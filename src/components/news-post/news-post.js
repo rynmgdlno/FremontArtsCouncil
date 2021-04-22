@@ -24,14 +24,14 @@ const NewsPost = ({ postID }) => {
 
   return (
     <div className='news-post'>
-      <div className='most-recent'>
-        <div className='recent-header'>
-          <img className='recent-image' src={image} alt='' />
-          <h2 className='recent-title'>{newsTitle}</h2>
-          <span>{date}</span>
+      <div className='post-header'>
+        <img className='post-image' src={image} alt='' />
+        <div className='post-header-text'>
+          <h2 className='post-title'>{newsTitle}</h2>
+          <span className='post-date'>{date}</span>
         </div>
-        <ReactMarkdown source={newsText} plugins={[gfm]}/>
       </div>
+      <ReactMarkdown source={newsText} plugins={[gfm]} className='post-text' />
     </div>
   )
 }
