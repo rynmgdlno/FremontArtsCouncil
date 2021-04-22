@@ -11,7 +11,7 @@ import useNews from '../../contentful-hooks/use-news'
 import './latest.scss'
 
 const Latest = () => {
-  const [news, isLoading] = useNews('event')
+  const [news, isLoading] = useNews()
   const [newNews, setNews] = useState()
   const [recent, setRecent] = useState()
 
@@ -38,21 +38,26 @@ const Latest = () => {
           </div>
         }
         <h2>More News...</h2>
-        <div className='news-card-container'>
-          {
-            isLoading ? <Spinner /> :
-              newNews.map((entry) => (
-                <NewsCard
-                  key={entry.sys.id}
-                  image={entry.fields.newsEntryImage.fields.file.url}
-                  title={entry.fields.newsTitle}
-                  date={entry.fields.date}
-                  text={`${entry.fields.newsText.slice(0, 100)}...`}
-                  id={entry.sys.id}
-                />
-              ))
-          }
-        </div>
+        {
+          news ?
+            <div className='news-card-container'>
+              {
+                isLoading ? <Spinner /> :
+                  newNews.map((entry) => (
+                    <NewsCard
+                      key={entry.sys.id}
+                      image={entry.fields.newsEntryImage.fields.file.url}
+                      title={entry.fields.newsTitle}
+                      date={entry.fields.date}
+                      text={`${entry.fields.newsText.slice(0, 100)}...`}
+                      id={entry.sys.id}
+                    />
+                  ))
+              }
+            </div>
+            :
+            <h2>Nothing to see here, check back later for updates!</h2>
+        }
       </div>
     </div>
   )

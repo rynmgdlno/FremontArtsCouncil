@@ -26,6 +26,7 @@ const FormInput = ({
         placeholder={placeholder}
         value={value}
         className={className}
+        onChange={onChange}
         style={error && {border: 'solid 1px red'}}
         {...props}
       />
