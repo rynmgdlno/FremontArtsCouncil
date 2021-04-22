@@ -40,7 +40,7 @@ const Participate = () => {
         <SimpleCard
           title='Reserve a Float'
           text='Create a float and then ride it out. Whatever floats your boat. Reserve your float now!'
-          link=''
+          link='/parade/register'
           buttonText='Reserve'
           image={float} />
         <SimpleCard
@@ -58,7 +58,7 @@ const Participate = () => {
         <SimpleCard
           title='McKay Grants'
           text='Submit a proposal for development of parade ensembles and be awarded a McKay Grant.'
-          link=''
+          link='/parade/mckay'
           buttonText='Submit'
           image={grants} />
         <SimpleCard

@@ -27,6 +27,7 @@ import Parade from './pages/parade/parade'
 import Participate from './pages/parade/participate/participate'
 import Gallery from './pages/parade/gallery/gallery'
 import Register from './pages/parade/register/register'
+import McKay from './pages/parade/mckay/mckay'
 // Workshops
 import Workshops from './pages/workshops/workshops'
 import LuminaryLantern from './pages/workshops/luminary-lantern-workshops/luminary-lantern-workshops'
@@ -77,6 +78,7 @@ const App = () => {
       <Route exact path='/parade/participate' render={(props) => <Container {...props} page={Participate}/>} />
       <Route exact path='/parade/gallery' render={(props) => <Container {...props} page={Gallery}/>} />
       <Route exact path='/parade/register' render={(props) => <Container {...props} page={Register}/>} />
+      <Route exact path='/parade/mckay' render={(props) => <Container {...props} page={McKay}/>} />
       {/* Workshops */}
       <Route exact path='/workshops' render={(props) => <Container {...props} page={Workshops}/>} />
       <Route exact path='/workshops/luminary-lantern-workshops' render={(props) => <Container {...props} page={LuminaryLantern}/>} />
