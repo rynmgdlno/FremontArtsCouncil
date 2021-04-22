@@ -13,6 +13,7 @@ import Contact from './pages/contact/contact'
 import Sponsors from './pages/sponsors/sponsors'
 // News
 import Latest from './pages/latest/latest'
+import Post from './pages/post/post'
 import Press from './pages/press/press'
 // Events
 import UpcomingEvents from './pages/events/upcoming-events'
@@ -64,6 +65,7 @@ const App = () => {
       <Route exact path='/sponsors' render={(props) => <Container {...props} page={Sponsors}/>} />
       {/* News */}
       <Route exact path='/latest' render={(props) => <Container {...props} page={Latest}/>} />
+      <Route exact path='/post/:postID' render={(props) => <Container {...props} page={Post}/>} />
       <Route exact path='/press' render={(props) => <Container {...props} page={Press}/>} />
       {/* Events */}
       <Route exact path='/events' render={(props) => <Container {...props} page={UpcomingEvents}/>} />

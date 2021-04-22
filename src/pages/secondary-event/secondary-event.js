@@ -6,7 +6,7 @@ import Event from '../../components/event/event'
 import './secondary-event.scss'
 
 const SecondaryEvent = () => {
-  const {eventID} = useParams()
+  const { eventID } = useParams()
 
   return (
     <div>

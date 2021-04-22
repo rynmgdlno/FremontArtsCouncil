@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react'
+import ReactMarkdown from 'react-markdown'
+import gfm from 'remark-gfm'
 
 import NewsCard from '../../components/news-card/news-card'
 import PageHeader from '../../components/page-header/page-header'
@@ -25,13 +27,14 @@ const Latest = () => {
         {
           recent &&
           <div className='most-recent'>
-
             <div className='recent-header'>
               <img className='recent-image' src={recent.fields.newsEntryImage.fields.file.url} alt='' />
-              <h2 className='recent-title'>{recent.fields.newsTitle}</h2>
+              <div className='recent-header-text'>
+                <h2 className='recent-title'>{recent.fields.newsTitle}</h2>
+                <span>{recent.fields.date}</span>
+              </div>
             </div>
-            <p>{recent.fields.newsText}</p>
-
+            <ReactMarkdown source={recent.fields.newsText} plugins={[gfm]} />
           </div>
         }
         <h2>More News...</h2>
@@ -43,7 +46,9 @@ const Latest = () => {
                   key={entry.sys.id}
                   image={entry.fields.newsEntryImage.fields.file.url}
                   title={entry.fields.newsTitle}
+                  date={entry.fields.date}
                   text={`${entry.fields.newsText.slice(0, 100)}...`}
+                  id={entry.sys.id}
                 />
               ))
           }

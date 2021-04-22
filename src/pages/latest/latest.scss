@@ -44,7 +44,9 @@
           object-fit: cover;
         }
 
-        .recent-title {
+        .recent-header-text {
+          display: flex;
+          flex-direction: column;
           margin: 0 2rem;
         }
       }
