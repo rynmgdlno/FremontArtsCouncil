@@ -1,6 +1,6 @@
 import React from 'react'
 
-import './card.scss'
+// import './card.scss'
 
 const Card = ({ title, subTitle, image }) => {
   const background = {

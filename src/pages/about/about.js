@@ -2,7 +2,7 @@ import React from 'react'
 
 import InfoPage from '../../components/info-page/info-page'
 
-import './about.scss'
+// import './about.scss'
 
 const About = () => {
   return (
