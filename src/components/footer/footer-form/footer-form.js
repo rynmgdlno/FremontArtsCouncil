@@ -28,7 +28,8 @@ const FooterForm = () => {
       'name': `${form.firstName} ${form.lastName}`,
       'email': form.email,
       'subject': 'Newsletter Signup Request',
-      'message': 'N/A'
+      'message': 'N/A',
+      'recipient': 'ryannmagdaleno@icloud.com'
     })
   }
 
