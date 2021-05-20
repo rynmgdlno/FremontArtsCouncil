@@ -12,6 +12,14 @@ const FooterForm = () => {
     email: ''
   })
 
+  const clearForm = () => {
+    setForm({
+      firstName: '',
+      lastName: '',
+      email: ''
+    })
+  }
+
   const handleChange = (e) => {
     const { name, value } = e.target
     setForm(prevState => ({
@@ -36,6 +44,7 @@ const FooterForm = () => {
   const sendForm = async () => {
     try {
       let response = await fetch('http://localhost:5000/mail', fetchParams)
+      if (response.ok === true) clearForm()
       console.log(response)
     } catch {
       console.log('error')
@@ -51,6 +60,7 @@ const FooterForm = () => {
           placeholder='first name'
           label='first name'
           onChange={handleChange}
+          value={form.firstName}
           className='first-name' />
         <FormInput
           name='lastName'
@@ -58,6 +68,7 @@ const FooterForm = () => {
           placeholder='last name'
           label='last name'
           onChange={handleChange}
+          value={form.lastName}
           className='last-name' />
       </div>
       <FormInput
@@ -66,6 +77,7 @@ const FooterForm = () => {
         placeholder='email'
         label='email'
         onChange={handleChange}
+        value={form.email}
         className='email' />
 
       <CustomButton
