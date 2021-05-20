@@ -13,18 +13,33 @@ const FooterForm = () => {
   })
 
   const handleChange = (e) => {
-    const {name, value} = e.target
-    setForm( prevState => ({
+    const { name, value } = e.target
+    setForm(prevState => ({
       ...prevState,
-      [name] : value
+      [name]: value
     }))
   }
 
-  const sendForm = () => {
-
+  const fetchParams = {
+    crossDomain: true,
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      'name': `${form.firstName} ${form.lastName}`,
+      'email': form.email,
+      'subject': 'Newsletter Signup Request',
+      'message': 'N/A'
+    })
   }
 
-  console.log(form)
+  const sendForm = async () => {
+    try {
+      let response = await fetch('http://localhost:5000/mail', fetchParams)
+      console.log(response)
+    } catch {
+      console.log('error')
+    }
+  }
 
   return (
     <div className='footer-form'>
@@ -44,7 +59,6 @@ const FooterForm = () => {
           onChange={handleChange}
           className='last-name' />
       </div>
-
       <FormInput
         name='email'
         type='email'
@@ -56,7 +70,7 @@ const FooterForm = () => {
       <CustomButton
         type='submit'
         className='custom-button medium-emphasis-button sign-up-button'
-        onClick={() => sendForm()}
+        onClick={sendForm}
       >
         Sign Up
       </CustomButton>
