@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 
 import FormInput from '../../form-input/form-input'
 import CustomButton from '../../custom-button/custom-button'
+import Close from '../../../component-svgs/close'
 
 import './footer-form.scss'
 
@@ -11,6 +12,8 @@ const FooterForm = () => {
     lastName: '',
     email: ''
   })
+
+  const [success, setSuccess] = useState(false)
 
   const clearForm = () => {
     setForm({
@@ -41,11 +44,14 @@ const FooterForm = () => {
     })
   }
 
+  // console.log(success)
   const sendForm = async () => {
     try {
       let response = await fetch('http://localhost:5000/mail', fetchParams)
-      if (response.ok === true) clearForm()
-      console.log(response)
+      if (response.ok === true) {
+        clearForm()
+        setSuccess(true)
+      }
     } catch {
       console.log('error')
     }
@@ -87,6 +93,17 @@ const FooterForm = () => {
       >
         Sign Up
       </CustomButton>
+      {
+        success &&
+        <div className='success'>
+          <CustomButton
+            className='close-button custom-button low-emphasis-button'
+            onClick={() => setSuccess(false)} >
+            <Close className='close' />
+          </CustomButton>
+          <h2>Thank You!</h2>
+        </div>
+      }
     </div>
   )
 }
