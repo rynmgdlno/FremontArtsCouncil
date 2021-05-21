@@ -44,7 +44,6 @@ const FooterForm = () => {
     })
   }
 
-  // console.log(success)
   const sendForm = async () => {
     try {
       let response = await fetch('http://localhost:5000/mail', fetchParams)
