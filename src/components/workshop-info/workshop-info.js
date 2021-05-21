@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import ReactMarkdown from 'react-markdown'
 import gfm from 'remark-gfm'
 
 import useElement from '../../contentful-hooks/use-element'
 
+import Registration from './registration/registration'
 import CustomButton from '../custom-button/custom-button'
 import Blobs from '../../component-svgs/workshop-info/blobs'
 import Fan2 from '../../component-svgs/workshop-info/fan2'
@@ -14,6 +15,7 @@ import './workshop-info.scss'
 
 const WorkshopInfo = ({ id, isTeach, isParade }) => {
   const [workshop, isLoading] = useElement(id)
+  const [reg, setReg] = useState(false)
 
   if (isLoading) return <p>Loading...</p>
 
@@ -43,7 +45,14 @@ const WorkshopInfo = ({ id, isTeach, isParade }) => {
           {
             !isParade ?
               <>
-                <CustomButton className='custom-button high-emphasis-button blue-button'>Register</CustomButton>
+                <CustomButton
+                  onClick={() => setReg(!reg)}
+                  className='custom-button high-emphasis-button blue-button'>
+                  Register
+                </CustomButton>
+                {
+                  reg && <Registration />
+                }
                 <h3 className='faq'>FAQ</h3>
                 <p>Luminata and workshop FAQs</p>
                 <Link to='/faq'>
@@ -52,7 +61,14 @@ const WorkshopInfo = ({ id, isTeach, isParade }) => {
               </>
               :
               <>
-                <CustomButton className='custom-button medium-emphasis-button'>Register</CustomButton>
+                <CustomButton
+                  onClick={() => setReg(!reg)}
+                  className='custom-button medium-emphasis-button'>
+                  Register
+                </CustomButton>
+                {
+                  reg && <Registration />
+                }
                 <h3 className='faq'>FAQ</h3>
                 <p>All you need to know about ensemble logistics</p>
                 <Link to='/faq'>
