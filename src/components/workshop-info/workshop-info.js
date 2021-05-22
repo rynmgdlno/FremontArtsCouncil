@@ -17,6 +17,7 @@ const WorkshopInfo = ({ id, isTeach, isParade }) => {
   const [workshop, isLoading] = useElement(id)
   const [reg, setReg] = useState(false)
 
+
   if (isLoading) return <p>Loading...</p>
 
   const {

@@ -135,7 +135,7 @@ const Registration = () => {
               type='submit'
               className={buttonClass}>
               Submit
-        </CustomButton>
+            </CustomButton>
             {
               fixForm && clicked && submitDisabled && <span className='form-alert'>Please fill out the form correctly.</span>
             }
