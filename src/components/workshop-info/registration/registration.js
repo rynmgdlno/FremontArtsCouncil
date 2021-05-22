@@ -20,8 +20,6 @@ const Registration = () => {
   const [success, setSuccess] = useState(false)
   const buttonClass = !submitDisabled ? `custom-button high-emphasis-button green-button` : `custom-button high-emphasis-button disabled-button`
 
-  // const [success, setSuccess] = useState(false)
-
   const clearForm = () => {
     setRegForm({
       name: '',
