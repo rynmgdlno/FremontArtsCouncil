@@ -6,7 +6,7 @@ import FormInput from '../../form-input/form-input'
 
 import './registration.scss'
 
-const Registration = () => {
+const Registration = ({ isParade }) => {
   const [regForm, setRegForm] = useState({
     name: '',
     email: '',
@@ -25,7 +25,7 @@ const Registration = () => {
       name: '',
       email: '',
       phone: '',
-      workshop: ''
+      workshop: isParade ? 'Parade Registration' : ''
     })
   }
 
@@ -38,12 +38,14 @@ const Registration = () => {
   }
 
   useEffect(() => {
-    if (regForm.name && regForm.email && regForm.phone && regForm.workshop && EmailValidator.validate(regForm.email)) {
+    if (isParade && regForm.name && regForm.email && regForm.phone && EmailValidator.validate(regForm.email)) {
+      setDisabled(false)
+    } else if (regForm.name && regForm.email && regForm.phone && regForm.workshop && EmailValidator.validate(regForm.email)) {
       setDisabled(false)
     } else {
       setDisabled(true)
     }
-  }, [regForm])
+  }, [regForm, isParade])
 
   const fetchParams = {
     crossDomain: true,
@@ -118,18 +120,23 @@ const Registration = () => {
                 clicked && submitDisabled && fixForm && !regForm.phone && 'form-error'
               }
             />
-            <span>Workshop:</span>
-            <FormInput
-              name='workshop'
-              type='text'
-              placeholder='Workshop'
-              label='Workshop'
-              onChange={handleChange}
-              value={regForm.workshop}
-              className={
-                clicked && submitDisabled && fixForm && !regForm.workshop && 'form-error'
-              }
-            />
+            {
+              !isParade &&
+              <>
+                <span>Workshop:</span>
+                <FormInput
+                  name='workshop'
+                  type='text'
+                  placeholder='Workshop'
+                  label='Workshop'
+                  onChange={handleChange}
+                  value={regForm.workshop}
+                  className={
+                    clicked && submitDisabled && fixForm && !regForm.workshop && 'form-error'
+                  }
+                />
+              </>
+            }
             <CustomButton
               onClick={sendForm}
               type='submit'

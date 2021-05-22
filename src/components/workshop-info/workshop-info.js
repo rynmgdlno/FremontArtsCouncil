@@ -68,7 +68,7 @@ const WorkshopInfo = ({ id, isTeach, isParade }) => {
                   Register
                 </CustomButton>
                 {
-                  reg && <Registration />
+                  reg && <Registration isParade={isParade}/>
                 }
                 <h3 className='faq'>FAQ</h3>
                 <p>All you need to know about ensemble logistics</p>
