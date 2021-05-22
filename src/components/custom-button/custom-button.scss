@@ -121,3 +121,11 @@
 .sign-up-button:hover {
   transform: scale(1.1);
 }
+
+.disabled-button {
+  background-color: #ccc;
+  &:hover {
+    cursor: not-allowed;
+    transform: scale(1);
+  }
+}

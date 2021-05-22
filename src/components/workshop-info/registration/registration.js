@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import * as EmailValidator from 'email-validator'
 
 import CustomButton from '../../custom-button/custom-button'
 import FormInput from '../../form-input/form-input'
@@ -13,13 +14,20 @@ const Registration = () => {
     workshop: ''
   })
 
+  const [submitDisabled, setDisabled] = useState(true)
+  const [fixForm, setFixForm] = useState(false)
+  const [clicked, setClicked] = useState(false)
+  const [success, setSuccess] = useState(false)
+  const buttonClass = !submitDisabled ? `custom-button high-emphasis-button green-button` : `custom-button high-emphasis-button disabled-button`
+
   // const [success, setSuccess] = useState(false)
 
   const clearForm = () => {
     setRegForm({
-      firstName: '',
-      lastName: '',
-      email: ''
+      name: '',
+      email: '',
+      phone: '',
+      workshop: ''
     })
   }
 
@@ -30,6 +38,14 @@ const Registration = () => {
       [name]: value
     }))
   }
+
+  useEffect(() => {
+    if (regForm.name && regForm.email && regForm.phone && regForm.workshop && EmailValidator.validate(regForm.email)) {
+      setDisabled(false)
+    } else {
+      setDisabled(true)
+    }
+  }, [regForm])
 
   const fetchParams = {
     crossDomain: true,
@@ -45,63 +61,93 @@ const Registration = () => {
   }
 
   const sendForm = async () => {
-    try {
-      let response = await fetch('http://localhost:5000/mail', fetchParams)
-      if (response.ok === true) {
-        clearForm()
-        // setSuccess(true)
+    setClicked(true)
+    if (!submitDisabled) {
+      setFixForm(false)
+      try {
+        let response = await fetch('http://localhost:5000/mail', fetchParams)
+        if (response.ok === true) {
+          clearForm()
+          setSuccess(true)
+        }
+      } catch {
+        console.log('error')
       }
-    } catch {
-      console.log('error')
+    } else {
+      setFixForm(true)
     }
   }
 
-  console.log(regForm.name)
-
   return (
     <div className='workshop-registration'>
-      <h2>Registration</h2>
-      <span>Name:</span>
-      <FormInput 
-        name='name'
-        type='text'
-        placeholder='Name'
-        label='Name'
-        onChange={handleChange}
-        value={regForm.name}
-        className=''
-      />
-      <span>Email:</span>
-      <FormInput 
-        name='email'
-        type='email'
-        placeholder='Email'
-        label='Email'
-        onChange={handleChange}
-        value={setRegForm.email}
-        className=''
-      />
-      <span>Phone:</span>
-      <FormInput 
-        name='phone'
-        type='text'
-        placeholder='Phone'
-        label='Phone'
-        onChange={handleChange}
-        value={regForm.phone}
-        className=''
-      />
-      <span>Workshop:</span>
-      <FormInput 
-        name='workshop'
-        type='text'
-        placeholder='Workshop'
-        label='Workshop'
-        onChange={handleChange}
-        value={regForm.workshop}
-        className=''
-      />
-      <CustomButton onClick={sendForm} className='custom-button high-emphasis-button green-button'>Submit</CustomButton>
+      {
+        !success ?
+          <>
+            <h2>Registration</h2>
+            <span>Name:</span>
+            <FormInput
+              name='name'
+              type='text'
+              placeholder='Name'
+              label='Name'
+              onChange={handleChange}
+              value={regForm.name}
+              className={
+                clicked && submitDisabled && fixForm && !regForm.name && 'form-error'
+              }
+            />
+            <span>Email:</span>
+            <FormInput
+              name='email'
+              type='email'
+              placeholder='Email'
+              label='Email'
+              onChange={handleChange}
+              value={setRegForm.email}
+              className={
+                clicked && submitDisabled && fixForm && !EmailValidator.validate(regForm.email) && 'form-error'
+              }
+            />
+            <span>Phone:</span>
+            <FormInput
+              name='phone'
+              type='text'
+              placeholder='Phone'
+              label='Phone'
+              onChange={handleChange}
+              value={regForm.phone}
+              className={
+                clicked && submitDisabled && fixForm && !regForm.phone && 'form-error'
+              }
+            />
+            <span>Workshop:</span>
+            <FormInput
+              name='workshop'
+              type='text'
+              placeholder='Workshop'
+              label='Workshop'
+              onChange={handleChange}
+              value={regForm.workshop}
+              className={
+                clicked && submitDisabled && fixForm && !regForm.workshop && 'form-error'
+              }
+            />
+            <CustomButton
+              onClick={sendForm}
+              type='submit'
+              className={buttonClass}>
+              Submit
+        </CustomButton>
+            {
+              fixForm && clicked && submitDisabled && <span className='form-alert'>Please fill out the form correctly.</span>
+            }
+          </>
+          :
+          <div>
+            <h4>Thank you for signing up!</h4>
+            <span>We'll be in touch soon.</span>
+          </div>
+      }
     </div>
   )
 }

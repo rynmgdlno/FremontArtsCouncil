@@ -1,4 +1,10 @@
 .workshop-registration {
   display: flex;
   flex-direction: column;
+
+  .form-alert {
+    margin-top: 1rem;
+    font-weight: 500;
+    color: red;
+  }
 }
