@@ -10,7 +10,7 @@ const NewsCard = ({ image, title, date, text, id }) => {
     backgroundPosition: 'center'
   }
   return (
-    <>
+    <div>
       <Link to={`/post/${id}`} className='news-card'>
         <div className='news-card-image-container' style={bgStyle} />
         <div className='news-card-info-container'>
@@ -19,7 +19,7 @@ const NewsCard = ({ image, title, date, text, id }) => {
           <p>{text}</p>
         </div>
       </Link>
-    </>
+    </div>
   )
 }
 

@@ -143,10 +143,10 @@ const Membership = () => {
                 className='custom-button low-emphasis-button close-money'>X</CustomButton>
               {
                 isLoading ? <Spinner /> :
-                  <>
+                  <div>
                     <h4>{moneyTitle}</h4>
                     <p>{moneyText}</p>
-                  </>
+                  </div>
               }
             </div>
           </div>

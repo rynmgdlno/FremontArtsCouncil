@@ -17,7 +17,7 @@ const FormInput = ({
 }) => {
   
   return (
-    <React.Fragment>
+    <>
       {/* <label htmlFor={name}>{label}</label> */}
       <input
         id={name}
@@ -31,7 +31,7 @@ const FormInput = ({
         {...props}
       />
       { error && <p>{ error }</p>}
-    </React.Fragment>
+    </>
   )
 }
 

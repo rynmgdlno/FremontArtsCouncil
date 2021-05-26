@@ -70,8 +70,8 @@ const Registration = ({ isParade }) => {
           clearForm()
           setSuccess(true)
         }
-      } catch {
-        console.log('error')
+      } catch (error) {
+        console.log(error)
       }
     } else {
       setFixForm(true)
