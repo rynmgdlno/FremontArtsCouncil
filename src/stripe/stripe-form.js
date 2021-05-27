@@ -39,7 +39,7 @@ const StripeForm = ({ isDonation, product, frequency, amount }) => {
         })
       }
 
-      const { data } = await fetch('http://localhost:5000/stripe', fetchParams)
+      const data = await fetch('http://localhost:5000/stripe', fetchParams)
       console.log('success')
       console.log(data)
     } catch (error) {
