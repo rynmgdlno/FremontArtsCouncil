@@ -23,7 +23,16 @@ const Donate = () => {
     phone: ''
   })
 
-  const buttonClass = {
+  const userAmount = formData.amount / 100
+  const userRepeat = formData.repeat ? 'monthly recurring' : 'one-time'
+
+  const buttonClass = (x) => (
+    formData.amount === x ?
+      `custom-button high-emphasis-button blue-button` :
+      `custom-button high-emphasis-button`
+  )
+
+  const monthlyButtonClass = {
     unselected: `custom-button high-emphasis-button`,
     selected: `custom-button high-emphasis-button blue-button`
   }
@@ -44,94 +53,123 @@ const Donate = () => {
     }))
   }
 
-  useEffect(() => {
-    console.log(formData.amount)
-  }, [formData])
+  const setOther = (e) => {
+    const re = /^[0-9/b]+$/
+    if (e.target.value === '' || re.test(e.target.value)) {
+      setForm(prevState => ({
+        ...prevState,
+        amount: parseInt(e.target.value) * 100
+      }))
+    }
+  }
 
-  // console.log(amount)
+  const setRepeat = (x) => {
+    setForm(prevState => ({
+      ...prevState,
+      repeat: x
+    }))
+  }
+
+  useEffect(() => {
+    if (!formData.amount) {
+      setForm(prevState => ({
+        ...prevState,
+        amount: 10000
+      }))
+    }
+  }, [formData.amount])
+
 
   return (
     <div className='donate'>
       <PageHeader headerID={'6VtsyGKz7dyJi6mHtZH8KI'} />
-      <div className='donate-button-container'>
+      <div className='donate-container'>
         <h3>Donate</h3>
-        <CustomButton
-          onClick={() => setAmount(10000)}
-          className={formData.amount === 10000 ? buttonClass.selected : buttonClass.unselected}>
-          $100
+        <span>Donation Amount:</span>
+        <div className='donate-button-container'>
+          <CustomButton
+            onClick={() => setAmount(10000)}
+            className={buttonClass(10000)}>
+            $100
+            </CustomButton>
+          <CustomButton
+            name={7500}
+            onClick={() => setAmount(7500)}
+            className={buttonClass(7500)}>
+            $75
+            </CustomButton>
+          <CustomButton
+            name={5000}
+            onClick={() => setAmount(5000)}
+            className={buttonClass(5000)}>
+            $50
+            </CustomButton>
+          <CustomButton
+            name={2500}
+            onClick={() => setAmount(2500)}
+            className={buttonClass(2500)}>
+            $25
+            </CustomButton>
+          <CustomButton
+            name={1500}
+            onClick={() => setAmount(1500)}
+            className={buttonClass(1500)}>
+            $15
+            </CustomButton>
+        </div>
+        <div className='other'>
+          <span>Other:</span>
+          <FormInput type='number' placeholder='$  USD' onChange={setOther} />
+        </div>
+        <div>
+          <h5>Make it monthly?</h5>
+          <CustomButton
+            onClick={() => setRepeat(false)}
+            className={formData.repeat ? monthlyButtonClass.unselected : monthlyButtonClass.selected}>
+            One Time
           </CustomButton>
-        <CustomButton
-          name={7500}
-          onClick={() => setAmount(7500)}
-          className={formData.amount === 7500 ? buttonClass.selected : buttonClass.unselected}>
-          $75
+          <CustomButton
+            onClick={() => setRepeat(true)}
+            className={!formData.repeat ? monthlyButtonClass.unselected : monthlyButtonClass.selected}>
+            Monthly
           </CustomButton>
-        <CustomButton
-          name={5000}
-          onClick={() => setAmount(5000)}
-          className={formData.amount === 5000 ? buttonClass.selected : buttonClass.unselected}>
-          $50
-          </CustomButton>
-        <CustomButton
-          name={2500}
-          onClick={() => setAmount(2500)}
-          className={formData.amount === 2500 ? buttonClass.selected : buttonClass.unselected}>
-          $25
-          </CustomButton>
-        <CustomButton
-          name={1500}
-          onClick={() => setAmount(1500)}
-          className={formData.amount === 1500 ? buttonClass.selected : buttonClass.unselected}>
-          $15
-          </CustomButton>
-        <span>Other:</span>
-        <FormInput type='number' placeholder='$  USD' />
+        </div>
+        <div className='information'>
+          <h3>Your Information</h3>
+          <FormInput
+            name='fName'
+            type='text'
+            label='First Name'
+            placeholder='First Name'
+            onChange={handleChange}
+          />
+          <FormInput
+            name='lName'
+            type='text'
+            label='Last Name'
+            placeholder='Last Name'
+            onChange={handleChange}
+          />
+          <FormInput
+            name='email'
+            type='email'
+            label='Email'
+            placeholder='Email'
+            onChange={handleChange}
+          />
+          <FormInput
+            name='phone'
+            type='tel'
+            label='Phone Number'
+            placeholder='Phone Number'
+            onChange={handleChange}
+          />
+        </div>
+        <Elements stripe={stripePromise}>
+          <StripeForm />
+        </Elements>
+        <span>{`By clicking "Pay" you agree to a ${userRepeat} payment of $${userAmount}.00`}</span>
       </div>
-      <div>
-        <h5>Make it monthly?</h5>
-        <CustomButton
-          className='custom-button high-emphasis-button'>
-          One Time
-        </CustomButton>
-        <CustomButton
-          className='custom-button high-emphasis-button'>
-          Monthly
-        </CustomButton>
-      </div>
-      <div className='information'>
-        <h3>Your Information</h3>
-        <FormInput
-          name='fName'
-          type='text'
-          label='First Name'
-          placeholder='First Name'
-          onChange={handleChange}
-        />
-        <FormInput
-          name='lName'
-          type='text'
-          label='Last Name'
-          placeholder='Last Name'
-          onChange={handleChange}
-        />
-        <FormInput
-          name='email'
-          type='email'
-          label='Email'
-          placeholder='Email'
-          onChange={handleChange}
-        />
-        <FormInput
-          name='phone'
-          type='tel'
-          label='Phone Number'
-          placeholder='Phone Number'
-          onChange={handleChange}
-        />
-      </div>
-      <Elements stripe={stripePromise}>
-        <StripeForm />
-      </Elements>
     </div>
   )
 }

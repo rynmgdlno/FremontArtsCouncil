@@ -1,0 +1,29 @@
+@use '../../global/global-styles.scss';
+
+.donate {
+  button {
+    margin-right: 1rem;
+  }
+  .donate-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 1440px;
+    margin: 0 global-styles.$window-margin;
+
+    .other {
+      display: flex;
+      flex-direction: column;
+      margin-top: 1rem;
+      width: 300px;
+    }
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .donate {
+    .donate-container {
+      margin: 0 global-styles.$window-margin-mobile;
+    }
+  }
+}
