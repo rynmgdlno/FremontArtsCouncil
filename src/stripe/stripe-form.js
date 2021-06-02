@@ -1,6 +1,7 @@
 import React from 'react'
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js"
 
+import FormInput from '../components/form-input/form-input'
 import CustomButton from '../components/custom-button/custom-button'
 
 import './stripe-form.scss'
@@ -57,10 +58,20 @@ const StripeForm = ({ isDonation, product, frequency, amount }) => {
   return (
     <div className='stripe-container'>
       <form onSubmit={handleSubmit} className='stripe-form'>
-        <CardElement />
+        <CardElement
+          className='card-element'
+          options={{
+            iconStyle: 'solid',
+            style: {
+              base: {
+                iconColor: 'grey',
+                fontSize: '16px'
+              }
+            }
+          }}
+        />
       </form>
       <CustomButton onClick={handleSubmit} className='custom-button high-emphasis-button green-button'>Pay</CustomButton>
-      <CustomButton onClick={test} className='custom-button high-emphasis-button green-button'>Test</CustomButton>
     </div>
   )
 }

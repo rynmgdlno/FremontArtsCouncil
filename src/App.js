@@ -42,6 +42,8 @@ import Volunteer from './pages/volunteer/volunteer'
 import SponsorUs from './pages/sponsor-us/sponsor-us'
 import Meetings from './pages/meetings/meetings'
 
+import Test from './pages/test'
+
 import FAQ from './pages/faq/faq'
 import Photography from './pages/photography/photography'
 
@@ -96,6 +98,7 @@ const App = () => {
       {/* Misc */}
       <Route exact path='/faq' render={(props) => <Container {...props} page={FAQ}/>} />
       <Route exact path='/photography' render={(props) => <Container {...props} page={Photography}/>} />
+      <Route exact path='/test' render={(props) => <Container {...props} page={Test}/>} />
     </HashRouter>
   );
 }
