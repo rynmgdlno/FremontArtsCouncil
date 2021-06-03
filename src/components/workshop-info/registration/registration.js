@@ -144,7 +144,7 @@ const Registration = ({ isParade }) => {
               Submit
             </CustomButton>
             {
-              fixForm && clicked && submitDisabled && <span className='form-alert'>Please fill out the form correctly.</span>
+              fixForm && clicked && submitDisabled && <span className='form-alert'>Please check the form for errors.</span>
             }
           </>
           :

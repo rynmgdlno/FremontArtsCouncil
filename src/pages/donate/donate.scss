@@ -1,9 +1,12 @@
 @use '../../global/global-styles.scss';
 
 .donate {
+
   button {
     margin-right: 1rem;
+    margin-bottom: 0.5rem;
   }
+
   .donate-container {
     display: flex;
     flex-direction: column;
@@ -18,12 +21,27 @@
       width: 300px;
     }
   }
+
+  .information {
+    .inputs {
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+    }
+  }
+
 }
 
 @media screen and (max-width: 769px) {
   .donate {
     .donate-container {
       margin: 0 global-styles.$window-margin-mobile;
+
+      .information {
+        .inputs {
+          width: 80%;
+        }
+      }
     }
   }
 }

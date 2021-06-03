@@ -1,65 +1,69 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js"
+import * as EmailValidator from 'email-validator'
 
-import FormInput from '../components/form-input/form-input'
 import CustomButton from '../components/custom-button/custom-button'
 
 import './stripe-form.scss'
 
-const StripeForm = ({ isDonation, product, frequency, amount }) => {
+const StripeForm = ({ formData, isDonation, product, clicked, setClicked, fixForm, setFixForm }) => {
   const stripe = useStripe()
   const elements = useElements()
-
-  const testParams = {
-    crossDomain: true,
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      'name': 'ryan',
-      'number': 12345
-    })
-  }
+  const { fName, lName, email, phone, amount, repeat} = formData
+  const [elementDisabled, setElementDisabled] = useState(false)
+  const elementClass = !elementDisabled ? 'card-element' : 'card-element-disabled'
+  const [submitDisabled, setSubmitDisabled] = useState(true)
+  const submitClass = (
+    !submitDisabled ? 'custom-button high-emphasis-button green-button' : 'custom-button high-emphasis-button disabled-button'
+  )
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
-    const { paymentMethod } = await stripe.createPaymentMethod({
-      type: 'card',
-      card: elements.getElement(CardElement)
-    })
-
-    const { id } = paymentMethod
-
-    try {
-      const fetchParams = {
-        crossDomain: true,
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          'id': id,
-          'amount': 12345
-        })
+    setClicked(true)
+    if (!submitDisabled) {
+      setFixForm(false)
+      e.preventDefault()
+      const { paymentMethod } = await stripe.createPaymentMethod({
+        type: 'card',
+        card: elements.getElement(CardElement)
+      })
+      const { id } = paymentMethod
+      try {
+        const fetchParams = {
+          crossDomain: true,
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            'id': id,
+            'amount': amount
+          })
+        }
+        const data = await fetch('http://localhost:5000/stripe', fetchParams)
+        console.log('success')
+        console.log(data)
+      } catch (error) {
+        console.log('fail')
+        console.log(error)
       }
-
-      const data = await fetch('http://localhost:5000/stripe', fetchParams)
-      console.log('success')
-      console.log(data)
-    } catch (error) {
-      console.log('fail')
-      console.log(error)
+    } else {
+      setFixForm(true)
     }
   }
 
-  const test = async (e) => {
-    e.preventDefault()
-    const response = await fetch('http://localhost:5000/test', testParams)
-    console.log(response)
-  }
+  useEffect(() => {
+    if (fName && lName && EmailValidator.validate(email) && phone) {
+      setSubmitDisabled(false)
+    } else {
+      setSubmitDisabled(true)
+    }
+  }, [fName, lName, email, phone])
+
+  console.log(clicked, submitDisabled, fixForm)
 
   return (
     <div className='stripe-container'>
       <form onSubmit={handleSubmit} className='stripe-form'>
         <CardElement
-          className='card-element'
+          className={elementClass}
           options={{
             iconStyle: 'solid',
             style: {
@@ -71,7 +75,11 @@ const StripeForm = ({ isDonation, product, frequency, amount }) => {
           }}
         />
       </form>
-      <CustomButton onClick={handleSubmit} className='custom-button high-emphasis-button green-button'>Pay</CustomButton>
+      <CustomButton onClick={handleSubmit}
+        className={submitClass}>Pay</CustomButton>
+      {
+        clicked && submitDisabled && fixForm && <span className='form-alert'>Please check the form for errors.</span>
+      }
     </div>
   )
 }

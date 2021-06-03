@@ -129,3 +129,10 @@
     transform: scale(1);
   }
 }
+
+.disabled-button-selected {
+  &:hover {
+    cursor: default;
+    transform: scale(1);
+  }
+}

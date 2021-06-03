@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Elements } from "@stripe/react-stripe-js"
 import { loadStripe } from "@stripe/stripe-js"
+import * as EmailValidator from 'email-validator'
 
 import PageHeader from '../../components/page-header/page-header'
 
@@ -23,18 +24,21 @@ const Donate = () => {
     phone: ''
   })
 
+  const [clicked, setClicked] = useState(false)
+  const [buttonDisabled, setButtonDisabled] = useState(true)
+  const [fixForm, setFixForm] = useState(false)
   const userAmount = formData.amount / 100
   const userRepeat = formData.repeat ? 'monthly recurring' : 'one-time'
 
   const buttonClass = (x) => (
     formData.amount === x ?
-      `custom-button high-emphasis-button blue-button` :
+      `custom-button high-emphasis-button blue-button disabled-button-selected` :
       `custom-button high-emphasis-button`
   )
 
   const monthlyButtonClass = {
     unselected: `custom-button high-emphasis-button`,
-    selected: `custom-button high-emphasis-button blue-button`
+    selected: `custom-button high-emphasis-button blue-button disabled-button-selected`
   }
 
   const handleChange = (e) => {
@@ -43,7 +47,6 @@ const Donate = () => {
       ...prevState,
       [name]: value
     }))
-    console.log(formData)
   }
 
   const setAmount = (e) => {
@@ -78,7 +81,6 @@ const Donate = () => {
       }))
     }
   }, [formData.amount])
-
 
   return (
     <div className='donate'>
@@ -124,51 +126,66 @@ const Donate = () => {
         <div>
           <h5>Make it monthly?</h5>
           <CustomButton
-            onClick={() => setRepeat(false)}
-            className={formData.repeat ? monthlyButtonClass.unselected : monthlyButtonClass.selected}>
-            One Time
-          </CustomButton>
-          <CustomButton
             onClick={() => setRepeat(true)}
             className={!formData.repeat ? monthlyButtonClass.unselected : monthlyButtonClass.selected}>
             Monthly
           </CustomButton>
+          <CustomButton
+            onClick={() => setRepeat(false)}
+            className={formData.repeat ? monthlyButtonClass.unselected : monthlyButtonClass.selected}>
+            One Time
+          </CustomButton>
         </div>
         <div className='information'>
           <h3>Your Information</h3>
-          <FormInput
-            name='fName'
-            type='text'
-            label='First Name'
-            placeholder='First Name'
-            onChange={handleChange}
-          />
-          <FormInput
-            name='lName'
-            type='text'
-            label='Last Name'
-            placeholder='Last Name'
-            onChange={handleChange}
-          />
-          <FormInput
-            name='email'
-            type='email'
-            label='Email'
-            placeholder='Email'
-            onChange={handleChange}
-          />
-          <FormInput
-            name='phone'
-            type='tel'
-            label='Phone Number'
-            placeholder='Phone Number'
-            onChange={handleChange}
-          />
+          <div className='inputs'>
+            <FormInput
+              className={clicked && buttonDisabled && fixForm && !formData.fName && 'form-error'}
+              name='fName'
+              type='text'
+              label='First Name'
+              placeholder='First Name'
+              onChange={handleChange}
+            />
+            <FormInput
+              className={clicked && buttonDisabled && fixForm && !formData.lName && 'form-error'}
+              name='lName'
+              type='text'
+              label='Last Name'
+              placeholder='Last Name'
+              onChange={handleChange}
+            />
+            <FormInput
+              className={clicked && buttonDisabled && fixForm && !EmailValidator.validate(formData.email) && 'form-error'}
+              name='email'
+              type='email'
+              label='Email'
+              placeholder='Email'
+              onChange={handleChange}
+            />
+            <FormInput
+              className={clicked && buttonDisabled && fixForm && !formData.phone && 'form-error'}
+              name='phone'
+              type='tel'
+              label='Phone Number'
+              placeholder='Phone Number'
+              onChange={handleChange}
+            />
+            <span>{alert}</span>
+          </div>
         </div>
-        <Elements stripe={stripePromise}>
-          <StripeForm />
-        </Elements>
         <span>{`By clicking "Pay" you agree to a ${userRepeat} payment of $${userAmount}.00`}</span>
+        <Elements stripe={stripePromise}>
+          <StripeForm
+            formData={formData}
+            isDonation={true}
+            product='donation'
+            clicked={clicked}
+            setClicked={setClicked}
+            // buttonDisabled={buttonDisabled}
+            fixForm={fixForm}
+            setFixForm={setFixForm} />
+        </Elements>
       </div>
     </div>
   )

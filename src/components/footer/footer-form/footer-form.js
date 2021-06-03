@@ -84,7 +84,6 @@ const FooterForm = () => {
         onChange={handleChange}
         value={form.email}
         className='email' />
-
       <CustomButton
         type='submit'
         className='custom-button medium-emphasis-button sign-up-button'
