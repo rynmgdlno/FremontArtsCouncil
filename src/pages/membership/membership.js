@@ -176,7 +176,7 @@ const Membership = () => {
           :
           <div className='membership-form'>
             <div className='information'>
-            <h5>{`Fill out the form to purchase a ${living ? 'Living Lightly' : ''} ${level} membership for $${formData.amount / 100}`}</h5>
+              <h5>{`Fill out the form to purchase a ${living ? 'Living Lightly' : ''} ${level} membership for $${formData.amount / 100}`}</h5>
               <h3>Your Information</h3>
               <div className='inputs'>
                 <FormInput
