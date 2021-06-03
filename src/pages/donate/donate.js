@@ -27,17 +27,15 @@ const Donate = () => {
   const [clicked, setClicked] = useState(false)
   const [buttonDisabled, setButtonDisabled] = useState(true)
   const [fixForm, setFixForm] = useState(false)
-  const userAmount = formData.amount / 100
-  const userRepeat = formData.repeat ? 'monthly recurring' : 'one-time'
 
   const buttonClass = (x) => (
     formData.amount === x ?
       `custom-button high-emphasis-button blue-button disabled-button-selected` :
-      `custom-button high-emphasis-button`
+      `custom-button medium-emphasis-button `
   )
 
   const monthlyButtonClass = {
-    unselected: `custom-button high-emphasis-button`,
+    unselected: `custom-button medium-emphasis-button`,
     selected: `custom-button high-emphasis-button blue-button disabled-button-selected`
   }
 
@@ -174,7 +172,6 @@ const Donate = () => {
             <span>{alert}</span>
           </div>
         </div>
-        <span>{`By clicking "Pay" you agree to a ${userRepeat} payment of $${userAmount}.00`}</span>
         <Elements stripe={stripePromise}>
           <StripeForm
             formData={formData}
@@ -182,7 +179,6 @@ const Donate = () => {
             product='donation'
             clicked={clicked}
             setClicked={setClicked}
-            // buttonDisabled={buttonDisabled}
             fixForm={fixForm}
             setFixForm={setFixForm} />
         </Elements>

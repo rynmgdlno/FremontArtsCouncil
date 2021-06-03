@@ -1,11 +1,12 @@
 .stripe-container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
 
   .stripe-form {
     // display: flex;
     // justify-content: center;
-    width: 70%;
+    width: 50%;
 
     .card-element {
       font-size: 16px;
@@ -27,5 +28,9 @@
     margin-top: 1rem;
     font-weight: 500;
     color: red;
+  }
+
+  span {
+    margin: 1rem 0;
   }
 }

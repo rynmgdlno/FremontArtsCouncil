@@ -9,12 +9,15 @@ import './stripe-form.scss'
 const StripeForm = ({ formData, isDonation, product, clicked, setClicked, fixForm, setFixForm }) => {
   const stripe = useStripe()
   const elements = useElements()
-  const { fName, lName, email, phone, amount, repeat} = formData
+  const { fName, lName, email, phone, amount, repeat } = formData
+  const userRepeat = repeat ? 'monthly recurring' : 'one-time'
   const [elementDisabled, setElementDisabled] = useState(false)
-  const elementClass = !elementDisabled ? 'card-element' : 'card-element-disabled'
   const [submitDisabled, setSubmitDisabled] = useState(true)
+  const elementClass = !elementDisabled ? 'card-element' : 'card-element-disabled'
   const submitClass = (
-    !submitDisabled ? 'custom-button high-emphasis-button green-button' : 'custom-button high-emphasis-button disabled-button'
+    !submitDisabled ?
+      'custom-button high-emphasis-button green-button' :
+      'custom-button high-emphasis-button disabled-button'
   )
 
   const handleSubmit = async (e) => {
@@ -57,8 +60,6 @@ const StripeForm = ({ formData, isDonation, product, clicked, setClicked, fixFor
     }
   }, [fName, lName, email, phone])
 
-  console.log(clicked, submitDisabled, fixForm)
-
   return (
     <div className='stripe-container'>
       <form onSubmit={handleSubmit} className='stripe-form'>
@@ -75,6 +76,7 @@ const StripeForm = ({ formData, isDonation, product, clicked, setClicked, fixFor
           }}
         />
       </form>
+      <span>{`By clicking "Pay" you agree to a ${userRepeat} ${isDonation ? 'donation' : 'payment'} of $${amount / 100}.00`}</span>
       <CustomButton onClick={handleSubmit}
         className={submitClass}>Pay</CustomButton>
       {
