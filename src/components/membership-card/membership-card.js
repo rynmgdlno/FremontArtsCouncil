@@ -4,10 +4,10 @@ import CustomButton from '../custom-button/custom-button'
 
 import './membership-card.scss'
 
-const MembershipCard = ({ amount, setAmount, level, setLevel, setForm, setLiving }) => {
-  // const [radio, setRadio] = useState(false)
+const MembershipCard = ({ amount, setAmount, level, setLevel, setForm, living, setLiving }) => {
   const [checked, setChecked] = useState(false)
   const [radioStyle, setRadioStyle] = useState('radio-unchecked')
+  const [newAmount, setNewAmount] = useState(amount)
 
   useEffect(() => {
     if (!checked) {
@@ -15,12 +15,12 @@ const MembershipCard = ({ amount, setAmount, level, setLevel, setForm, setLiving
     } else {
       setRadioStyle('radio-checked')
       setLiving(true)
+      setNewAmount(amount / 2)
     }
-  }, [checked, setLiving])
+  }, [amount, checked, setLiving])
 
   const userAmount = amount / 100
 
-  console.log(checked, radioStyle)
 
   return (
     <div
@@ -30,15 +30,19 @@ const MembershipCard = ({ amount, setAmount, level, setLevel, setForm, setLiving
       <div className='liv-light'>
         <p>{`Select for Living Lightly - $${userAmount / 2}`}</p>
         <div 
-        onClick={() => setChecked(!checked)}
+        onClick={() => {
+          setChecked(!checked)
+          setLiving(!setLiving)
+          }}
         className={radioStyle} />
       </div>
       <CustomButton
         className='custom-button low-emphasis-button'
         onClick={() => {
-          setAmount(amount)
+          setAmount(newAmount)
           setLevel(level)
           setForm(true)
+          console.log(newAmount)
         }}>
         <p className='renew'>Join Or Renew</p>
       </CustomButton>

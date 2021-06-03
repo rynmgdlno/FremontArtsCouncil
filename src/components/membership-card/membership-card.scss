@@ -10,10 +10,6 @@
   text-align: center;
   width: 80%;
   margin-bottom: 2rem;
-  
-  // &:hover {
-  //   box-shadow: 3px 5px 20px rgba(0, 0, 0, .5);
-  // }
 
   .amount {
     font-weight: 200;
@@ -23,14 +19,6 @@
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-
-    // .mem-card-dot {
-    //   width: 18px;
-    //   height: 18px;
-    //   border-radius: 100%;
-    //   background-color: global-styles.$blue;
-    //   box-shadow: 3px 3px 2px rgba(0, 0, 0, .2);
-    // }
 
     .radio-unchecked {
       cursor: pointer;
@@ -53,8 +41,8 @@
       width: 16px;
       height: 16px;
       border-radius: 100%;
-      background-color: global-styles.$red;
-      border: 2px solid global-styles.$red;
+      background-color: global-styles.$purple;
+      border: 2px solid global-styles.$purple;
 
       &:hover {
         transform: scale(1.1);

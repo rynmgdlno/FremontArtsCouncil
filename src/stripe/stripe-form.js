@@ -85,7 +85,7 @@ const StripeForm = ({ formData, isDonation, product, clicked, setClicked, fixFor
           }}
         />
       </form>
-      <span>{`By clicking "Pay" you agree to a ${userRepeat} ${isDonation ? 'donation' : 'payment'} of $${amount / 100}.00`}</span>
+      <span>{`By clicking "Pay" you agree to a ${userRepeat} ${isDonation ? 'donation' : `payment for a ${product}`} of $${amount / 100}.00`}</span>
       <CustomButton onClick={handleSubmit}
         className={submitClass}>Pay</CustomButton>
       {
