@@ -36,10 +36,13 @@
   .donate {
     .donate-container {
       margin: 0 global-styles.$window-margin-mobile;
+      .other {
+        width: 100%;
+      }
 
       .information {
         .inputs {
-          width: 80%;
+          width: 100%;
         }
       }
     }

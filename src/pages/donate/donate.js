@@ -28,10 +28,10 @@ const Donate = () => {
   const [buttonDisabled, setButtonDisabled] = useState(true)
   const [fixForm, setFixForm] = useState(false)
 
-  const buttonClass = (x) => (
-    formData.amount === x ?
+  const buttonClass = (buttonValue) => (
+    formData.amount === buttonValue ?
       `custom-button high-emphasis-button blue-button disabled-button-selected` :
-      `custom-button medium-emphasis-button `
+      `custom-button medium-emphasis-button`
   )
 
   const monthlyButtonClass = {
@@ -85,7 +85,7 @@ const Donate = () => {
       <PageHeader headerID={'6VtsyGKz7dyJi6mHtZH8KI'} />
       <div className='donate-container'>
         <h3>Donate</h3>
-        <span>Donation Amount:</span>
+        <h5>Donation Amount:</h5>
         <div className='donate-button-container'>
           <CustomButton
             onClick={() => setAmount(10000)}

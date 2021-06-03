@@ -37,7 +37,7 @@
   border-radius: 12px;
   height: 3rem;
   min-width: 9rem;
-  margin-left: 1rem;
+  width: 180px;
 
   &:hover {
     transform: scale(1.1);
@@ -90,6 +90,7 @@
   width: 120px;
   border-color: global-styles.$blue;
   color: global-styles.$blue;
+  margin-right: 1rem;
 }
 
 .volunteer-button {

@@ -11,9 +11,9 @@ const StripeForm = ({ formData, isDonation, product, clicked, setClicked, fixFor
   const elements = useElements()
   const { fName, lName, email, phone, amount, repeat } = formData
   const userRepeat = repeat ? 'monthly recurring' : 'one-time'
-  const [elementDisabled, setElementDisabled] = useState(false)
+  const [elementDisabled, setElementDisabled] = useState(true)
   const [submitDisabled, setSubmitDisabled] = useState(true)
-  const elementClass = !elementDisabled ? 'card-element' : 'card-element-disabled'
+  const elementClass = elementDisabled && clicked && submitDisabled ? 'card-element-disabled' : 'card-element'
   const submitClass = (
     !submitDisabled ?
       'custom-button high-emphasis-button green-button' :
@@ -52,19 +52,28 @@ const StripeForm = ({ formData, isDonation, product, clicked, setClicked, fixFor
     }
   }
 
+  const doTest = (e) => {
+    if (e.complete) {
+      setElementDisabled(false)
+    } else {
+      setElementDisabled(true)
+    }
+  }
+
   useEffect(() => {
-    if (fName && lName && EmailValidator.validate(email) && phone) {
+    if (fName && lName && EmailValidator.validate(email) && phone && !elementDisabled) {
       setSubmitDisabled(false)
     } else {
       setSubmitDisabled(true)
     }
-  }, [fName, lName, email, phone])
+  }, [fName, lName, email, phone, elementDisabled])
 
   return (
     <div className='stripe-container'>
       <form onSubmit={handleSubmit} className='stripe-form'>
         <CardElement
           className={elementClass}
+          onChange={doTest}
           options={{
             iconStyle: 'solid',
             style: {
