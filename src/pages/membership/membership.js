@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 
 import useElement from '../../contentful-hooks/use-element'
 
+import MembershipCard from '../../components/membership-card/membership-card'
 import Spinner from '../../component-svgs/spinner'
 import PageHeader from '../../components/page-header/page-header'
 import CustomButton from '../../components/custom-button/custom-button'
@@ -12,12 +13,13 @@ const Membership = () => {
   const [data, isLoading] = useElement('30OC59fYh1zLsGqdXES5mH')
   const [level, setLevel] = useState('')
   const [amount, setAmount] = useState(0)
+  const [living, setLiving] = useState(false)
   const [displayForm, setForm] = useState(false)
   const [confirmation, setConfirmation] = useState(false)
   const [money, setMoney] = useState('money-popup-closed')
-  
+
   if (isLoading) return <Spinner />
-  
+
   const moneyTitle = data.fields.title
   const moneyText = data.fields.content
   return (
@@ -39,7 +41,31 @@ const Membership = () => {
                 <p className='mem-text-line'><span className='mem-text-bold'>Living Lightly.</span> Support us however you can.</p>
               </div>
               <div className='individual-cards'>
-                <div
+                <MembershipCard 
+                  amount={5000}
+                  setAmount={setAmount}
+                  level='Individual'
+                  setLevel={setLevel}
+                  setForm={setForm}
+                  setLiving={setLiving}
+                />
+                <MembershipCard 
+                  amount={10000}
+                  setAmount={setAmount}
+                  level='Family'
+                  setLevel={setLevel}
+                  setForm={setForm}
+                  setLiving={setLiving}
+                />
+                <MembershipCard 
+                  amount={50000}
+                  setAmount={setAmount}
+                  level='Patrons'
+                  setLevel={setLevel}
+                  setForm={setForm}
+                  setLiving={setLiving}
+                />
+                {/* <div
                   onClick={() => {
                     setAmount(50)
                     setLevel('Individual')
@@ -83,7 +109,7 @@ const Membership = () => {
                     <div className='mem-card-dot'></div>
                   </div>
                   <p className='renew'>Join Or Renew</p>
-                </div>
+                </div> */}
               </div>
               <h3 className='mem-header'>Business Patronage</h3>
               <div className='business-cards'>

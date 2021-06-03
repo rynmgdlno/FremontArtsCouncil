@@ -1,0 +1,70 @@
+@use '../../global/global-styles.scss';
+
+.mem-card {
+  transition: all .2s ease-in-out;
+  // cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  box-shadow: 3px 5px 20px rgba(0, 0, 0, .1);
+  text-align: center;
+  width: 80%;
+  margin-bottom: 2rem;
+  
+  // &:hover {
+  //   box-shadow: 3px 5px 20px rgba(0, 0, 0, .5);
+  // }
+
+  .amount {
+    font-weight: 200;
+  }
+  
+  .liv-light {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    // .mem-card-dot {
+    //   width: 18px;
+    //   height: 18px;
+    //   border-radius: 100%;
+    //   background-color: global-styles.$blue;
+    //   box-shadow: 3px 3px 2px rgba(0, 0, 0, .2);
+    // }
+
+    .radio-unchecked {
+      cursor: pointer;
+      transition: all .2s ease-in-out;
+      transform: scale(1);
+      width: 13px;
+      height: 13px;
+      border-radius: 100%;
+      background-color: white;
+      border: 3px solid global-styles.$blue;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+    .radio-checked {
+      cursor: pointer;
+      transition: all .2s ease-in-out;
+      transform: scale(1);
+      width: 16px;
+      height: 16px;
+      border-radius: 100%;
+      background-color: global-styles.$red;
+      border: 2px solid global-styles.$red;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  .renew {
+    color: global-styles.$blue;
+    font-weight: 500;
+    margin-top: 2rem;
+  }
+}
