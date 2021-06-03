@@ -34,46 +34,6 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-
-      // .mem-card {
-      //   transition: all .2s ease-in-out;
-      //   cursor: pointer;
-      //   display: flex;
-      //   flex-direction: column;
-      //   border-radius: 10px;
-      //   box-shadow: 3px 5px 20px rgba(0, 0, 0, .1);
-      //   text-align: center;
-      //   width: 80%;
-      //   margin-bottom: 2rem;
-        
-      //   &:hover {
-      //     box-shadow: 3px 5px 20px rgba(0, 0, 0, .5);
-      //   }
-
-      //   .amount {
-      //     font-weight: 200;
-      //   }
-        
-      //   .liv-light {
-      //     display: flex;
-      //     align-items: center;
-      //     justify-content: space-evenly;
-
-      //     .mem-card-dot {
-      //       width: 18px;
-      //       height: 18px;
-      //       border-radius: 100%;
-      //       background-color: global-styles.$blue;
-      //       box-shadow: 3px 3px 2px rgba(0, 0, 0, .2);
-      //     }
-      //   }
-
-      //   .renew {
-      //     color: global-styles.$blue;
-      //     font-weight: 500;
-      //     margin-top: 2rem;
-      //   }
-      // }
     }
 
     .business-cards {
@@ -156,6 +116,17 @@
   }
 }
 
+.membership-form {
+  margin: 0 global-styles.$window-margin-mobile;
+  .information {
+    .inputs {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+  }
+}
+
 @media screen and (min-width: 769px) {
   .membership {
     margin: 0 global-styles.$window-margin;
@@ -204,6 +175,16 @@
     }
   }
 
+  .membership-form {
+    margin: 0 global-styles.$window-margin;
+    .information {
+      .inputs {
+        display: flex;
+        width: 50%;
+      }
+    }
+  }
+
 
   @media (orientation: portrait) {
     .membership {
@@ -217,6 +198,9 @@
         }
       }
     }
+  }
+  .membership-form {
+    margin: 0 global-styles.$window-margin;
   }
 }
 

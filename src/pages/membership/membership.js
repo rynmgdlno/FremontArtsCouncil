@@ -218,7 +218,7 @@ const Membership = () => {
               <StripeForm
                 formData={formData}
                 isDonation={false}
-                product={living ? `living lightly membership` : `membership`}
+                product={living ? `living lightly ${level} membership` : `${level} membership`}
                 clicked={clicked}
                 setClicked={setClicked}
                 fixForm={fixForm}
