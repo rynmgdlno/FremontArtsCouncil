@@ -4,7 +4,7 @@ import { loadStripe } from "@stripe/stripe-js"
 import * as EmailValidator from 'email-validator'
 
 import PageHeader from '../../components/page-header/page-header'
-
+import Success from '../../component-svgs/success'
 import CustomButton from '../../components/custom-button/custom-button'
 import FormInput from '../../components/form-input/form-input'
 
@@ -27,6 +27,7 @@ const Donate = () => {
   const [clicked, setClicked] = useState(false)
   const [buttonDisabled, setButtonDisabled] = useState(true)
   const [fixForm, setFixForm] = useState(false)
+  const [confirmation, setConfirmation] = useState(false)
 
   const buttonClass = (buttonValue) => (
     formData.amount === buttonValue ?
@@ -83,106 +84,117 @@ const Donate = () => {
   return (
     <div className='donate'>
       <PageHeader headerID={'6VtsyGKz7dyJi6mHtZH8KI'} />
-      <div className='donate-container'>
-        <h3>Donate</h3>
-        <h5>Donation Amount:</h5>
-        <div className='donate-button-container'>
-          <CustomButton
-            onClick={() => setAmount(10000)}
-            className={buttonClass(10000)}>
-            $100
+      {
+        confirmation ?
+          <div className='confirmation'>
+            <div className='confirmation-header'>
+              <Success />
+              <h5>Payment Success!</h5>
+            </div>
+            <p>Thank you for your support! Check your email for a receipt and confirmation.</p>
+          </div> :
+          <div className='donate-container'>
+            <h3>Donate</h3>
+            <h5>Donation Amount:</h5>
+            <div className='donate-button-container'>
+              <CustomButton
+                onClick={() => setAmount(10000)}
+                className={buttonClass(10000)}>
+                $100
             </CustomButton>
-          <CustomButton
-            name={7500}
-            onClick={() => setAmount(7500)}
-            className={buttonClass(7500)}>
-            $75
+              <CustomButton
+                name={7500}
+                onClick={() => setAmount(7500)}
+                className={buttonClass(7500)}>
+                $75
             </CustomButton>
-          <CustomButton
-            name={5000}
-            onClick={() => setAmount(5000)}
-            className={buttonClass(5000)}>
-            $50
+              <CustomButton
+                name={5000}
+                onClick={() => setAmount(5000)}
+                className={buttonClass(5000)}>
+                $50
             </CustomButton>
-          <CustomButton
-            name={2500}
-            onClick={() => setAmount(2500)}
-            className={buttonClass(2500)}>
-            $25
+              <CustomButton
+                name={2500}
+                onClick={() => setAmount(2500)}
+                className={buttonClass(2500)}>
+                $25
             </CustomButton>
-          <CustomButton
-            name={1500}
-            onClick={() => setAmount(1500)}
-            className={buttonClass(1500)}>
-            $15
+              <CustomButton
+                name={1500}
+                onClick={() => setAmount(1500)}
+                className={buttonClass(1500)}>
+                $15
             </CustomButton>
-        </div>
-        <div className='other'>
-          <span>Other:</span>
-          <FormInput type='number' placeholder='$  USD' onChange={setOther} />
-        </div>
-        <div>
-          <h5>Make it monthly?</h5>
-          <CustomButton
-            onClick={() => setRepeat(true)}
-            className={!formData.repeat ? monthlyButtonClass.unselected : monthlyButtonClass.selected}>
-            Monthly
+            </div>
+            <div className='other'>
+              <span>Other:</span>
+              <FormInput type='number' placeholder='$  USD' onChange={setOther} />
+            </div>
+            <div>
+              <h5>Make it monthly?</h5>
+              <CustomButton
+                onClick={() => setRepeat(true)}
+                className={!formData.repeat ? monthlyButtonClass.unselected : monthlyButtonClass.selected}>
+                Monthly
           </CustomButton>
-          <CustomButton
-            onClick={() => setRepeat(false)}
-            className={formData.repeat ? monthlyButtonClass.unselected : monthlyButtonClass.selected}>
-            One Time
+              <CustomButton
+                onClick={() => setRepeat(false)}
+                className={formData.repeat ? monthlyButtonClass.unselected : monthlyButtonClass.selected}>
+                One Time
           </CustomButton>
-        </div>
-        <div className='information'>
-          <h3>Your Information</h3>
-          <div className='inputs'>
-            <FormInput
-              className={clicked && buttonDisabled && fixForm && !formData.fName && 'form-error'}
-              name='fName'
-              type='text'
-              label='First Name'
-              placeholder='First Name'
-              onChange={handleChange}
-            />
-            <FormInput
-              className={clicked && buttonDisabled && fixForm && !formData.lName && 'form-error'}
-              name='lName'
-              type='text'
-              label='Last Name'
-              placeholder='Last Name'
-              onChange={handleChange}
-            />
-            <FormInput
-              className={clicked && buttonDisabled && fixForm && !EmailValidator.validate(formData.email) && 'form-error'}
-              name='email'
-              type='email'
-              label='Email'
-              placeholder='Email'
-              onChange={handleChange}
-            />
-            <FormInput
-              className={clicked && buttonDisabled && fixForm && !formData.phone && 'form-error'}
-              name='phone'
-              type='tel'
-              label='Phone Number'
-              placeholder='Phone Number'
-              onChange={handleChange}
-            />
-            <span>{alert}</span>
+            </div>
+            <div className='information'>
+              <h3>Your Information</h3>
+              <div className='inputs'>
+                <FormInput
+                  className={clicked && buttonDisabled && fixForm && !formData.fName && 'form-error'}
+                  name='fName'
+                  type='text'
+                  label='First Name'
+                  placeholder='First Name'
+                  onChange={handleChange}
+                />
+                <FormInput
+                  className={clicked && buttonDisabled && fixForm && !formData.lName && 'form-error'}
+                  name='lName'
+                  type='text'
+                  label='Last Name'
+                  placeholder='Last Name'
+                  onChange={handleChange}
+                />
+                <FormInput
+                  className={clicked && buttonDisabled && fixForm && !EmailValidator.validate(formData.email) && 'form-error'}
+                  name='email'
+                  type='email'
+                  label='Email'
+                  placeholder='Email'
+                  onChange={handleChange}
+                />
+                <FormInput
+                  className={clicked && buttonDisabled && fixForm && !formData.phone && 'form-error'}
+                  name='phone'
+                  type='tel'
+                  label='Phone Number'
+                  placeholder='Phone Number'
+                  onChange={handleChange}
+                />
+                <span>{alert}</span>
+              </div>
+            </div>
+            <Elements stripe={stripePromise}>
+              <StripeForm
+                formData={formData}
+                isDonation={true}
+                product='donation'
+                clicked={clicked}
+                setClicked={setClicked}
+                fixForm={fixForm}
+                setFixForm={setFixForm}
+                setConfirmation={setConfirmation} />
+            </Elements>
           </div>
-        </div>
-        <Elements stripe={stripePromise}>
-          <StripeForm
-            formData={formData}
-            isDonation={true}
-            product='donation'
-            clicked={clicked}
-            setClicked={setClicked}
-            fixForm={fixForm}
-            setFixForm={setFixForm} />
-        </Elements>
-      </div>
+      }
     </div>
   )
 }
