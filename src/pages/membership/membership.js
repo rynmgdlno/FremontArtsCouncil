@@ -9,6 +9,7 @@ import StripeForm from '../../stripe/stripe-form'
 import FormInput from '../../components/form-input/form-input'
 import MembershipCard from '../../components/membership-card/membership-card'
 import Spinner from '../../component-svgs/spinner'
+import Success from '../../component-svgs/success'
 import PageHeader from '../../components/page-header/page-header'
 import CustomButton from '../../components/custom-button/custom-button'
 
@@ -22,7 +23,7 @@ const Membership = () => {
   const [level, setLevel] = useState('')
   const [living, setLiving] = useState(false)
   const [displayForm, setForm] = useState(false)
-  // const [confirmation, setConfirmation] = useState(false)
+  const [confirmation, setConfirmation] = useState(false)
   const [money, setMoney] = useState('money-popup-closed')
 
   const [formData, setFormData] = useState({
@@ -37,17 +38,10 @@ const Membership = () => {
   const [buttonDisabled, setButtonDisabled] = useState(true)
   const [fixForm, setFixForm] = useState(false)
 
-  if (isLoading) return <Spinner className='spinner-standard'/>
+  if (isLoading) return <Spinner className='spinner-standard' />
 
   const moneyTitle = data.fields.title
   const moneyText = data.fields.content
-
-
-  // const buttonClass = (buttonValue) => (
-  //   formData.amount === buttonValue ?
-  //     `custom-button high-emphasis-button blue-button disabled-button-selected` :
-  //     `custom-button medium-emphasis-button`
-  // )
 
   const handleChange = (e) => {
     const { name, value } = e.target
@@ -165,7 +159,7 @@ const Membership = () => {
                 }}
                 className='custom-button low-emphasis-button close-money'>X</CustomButton>
               {
-                isLoading ? <Spinner className='spinner-standard'/> :
+                isLoading ? <Spinner className='spinner-standard' /> :
                   <div>
                     <h4>{moneyTitle}</h4>
                     <p>{moneyText}</p>
@@ -174,57 +168,67 @@ const Membership = () => {
             </div>
           </div>
           :
-          <div className='membership-form'>
-            <div className='information'>
-              <h5>{`Fill out the form to purchase a ${living ? 'Living Lightly' : ''} ${level} membership for $${formData.amount / 100}`}</h5>
-              <h3>Your Information</h3>
-              <div className='inputs'>
-                <FormInput
-                  className={clicked && buttonDisabled && fixForm && !formData.fName && 'form-error'}
-                  name='fName'
-                  type='text'
-                  label='First Name'
-                  placeholder='First Name'
-                  onChange={handleChange}
-                />
-                <FormInput
-                  className={clicked && buttonDisabled && fixForm && !formData.lName && 'form-error'}
-                  name='lName'
-                  type='text'
-                  label='Last Name'
-                  placeholder='Last Name'
-                  onChange={handleChange}
-                />
-                <FormInput
-                  className={clicked && buttonDisabled && fixForm && !EmailValidator.validate(formData.email) && 'form-error'}
-                  name='email'
-                  type='email'
-                  label='Email'
-                  placeholder='Email'
-                  onChange={handleChange}
-                />
-                <FormInput
-                  className={clicked && buttonDisabled && fixForm && !formData.phone && 'form-error'}
-                  name='phone'
-                  type='tel'
-                  label='Phone Number'
-                  placeholder='Phone Number'
-                  onChange={handleChange}
-                />
-                <span>{alert}</span>
+          confirmation ?
+            <div className='confirmation'>
+              <div className='confirmation-header'>
+                <Success />
+                <h5>Payment Success!</h5>
               </div>
+              <p>Thank you for your support! Check your email for a receipt and confirmation.</p>
             </div>
-            <Elements stripe={stripePromise}>
-              <StripeForm
-                formData={formData}
-                isDonation={false}
-                product={living ? `living lightly ${level} membership` : `${level} membership`}
-                clicked={clicked}
-                setClicked={setClicked}
-                fixForm={fixForm}
-                setFixForm={setFixForm} />
-            </Elements>
-          </div>
+            :
+            <div className='membership-form'>
+              <div className='information'>
+                <h5>{`Fill out the form to purchase a ${living ? 'Living Lightly' : ''} ${level} membership for $${formData.amount / 100}`}</h5>
+                <h3>Your Information</h3>
+                <div className='inputs'>
+                  <FormInput
+                    className={clicked && buttonDisabled && fixForm && !formData.fName && 'form-error'}
+                    name='fName'
+                    type='text'
+                    label='First Name'
+                    placeholder='First Name'
+                    onChange={handleChange}
+                  />
+                  <FormInput
+                    className={clicked && buttonDisabled && fixForm && !formData.lName && 'form-error'}
+                    name='lName'
+                    type='text'
+                    label='Last Name'
+                    placeholder='Last Name'
+                    onChange={handleChange}
+                  />
+                  <FormInput
+                    className={clicked && buttonDisabled && fixForm && !EmailValidator.validate(formData.email) && 'form-error'}
+                    name='email'
+                    type='email'
+                    label='Email'
+                    placeholder='Email'
+                    onChange={handleChange}
+                  />
+                  <FormInput
+                    className={clicked && buttonDisabled && fixForm && !formData.phone && 'form-error'}
+                    name='phone'
+                    type='tel'
+                    label='Phone Number'
+                    placeholder='Phone Number'
+                    onChange={handleChange}
+                  />
+                  <span>{alert}</span>
+                </div>
+              </div>
+              <Elements stripe={stripePromise}>
+                <StripeForm
+                  formData={formData}
+                  isDonation={false}
+                  product={living ? `living lightly ${level} membership` : `${level} membership`}
+                  clicked={clicked}
+                  setClicked={setClicked}
+                  fixForm={fixForm}
+                  setFixForm={setFixForm}
+                  setConfirmation={setConfirmation} />
+              </Elements>
+            </div>
       }
     </div>
   )

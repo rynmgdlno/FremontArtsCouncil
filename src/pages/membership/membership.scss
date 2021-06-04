@@ -116,6 +116,27 @@
   }
 }
 
+.confirmation {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 global-styles.$window-margin-mobile;
+
+  .confirmation-header {
+    display: flex;
+    align-items: center;
+
+    h5 {
+      margin-left: 1rem;
+    }
+  }
+
+  p {
+    margin-bottom: 4rem;
+  }
+}
+
 .membership-form {
   margin: 0 global-styles.$window-margin-mobile;
   .information {

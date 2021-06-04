@@ -8,13 +8,14 @@ import CustomButton from '../components/custom-button/custom-button'
 
 import './stripe-form.scss'
 
-const StripeForm = ({ formData, isDonation, product, clicked, setClicked, fixForm, setFixForm }) => {
+const StripeForm = ({ formData, isDonation, product, clicked, setClicked, fixForm, setFixForm, setConfirmation }) => {
   const stripe = useStripe()
   const elements = useElements()
   const { fName, lName, email, phone, amount, repeat } = formData
   const userRepeat = repeat ? 'monthly recurring' : 'one-time'
   const [elementDisabled, setElementDisabled] = useState(true)
   const [submitDisabled, setSubmitDisabled] = useState(true)
+  const [paymentStatus, setPaymentStatus] = useState('waiting')
   const elementClass = elementDisabled && clicked && submitDisabled ? 'card-element-disabled' : 'card-element'
   const submitClass = (
     !submitDisabled ?
@@ -23,6 +24,7 @@ const StripeForm = ({ formData, isDonation, product, clicked, setClicked, fixFor
   )
 
   const handleSubmit = async (e) => {
+    setPaymentStatus('pending')
     setClicked(true)
     if (!submitDisabled) {
       setFixForm(false)
@@ -45,7 +47,10 @@ const StripeForm = ({ formData, isDonation, product, clicked, setClicked, fixFor
           })
         }
         const data = await fetch('http://localhost:5000/stripe', fetchParams)
-        console.log(data.json())
+        const result = await data.json()
+        setPaymentStatus(result.status)
+        setConfirmation(true)
+        console.log(result.status)
       } catch (error) {
         console.log(error)
         return error
@@ -87,12 +92,16 @@ const StripeForm = ({ formData, isDonation, product, clicked, setClicked, fixFor
             }
           }}
         />
-        <Spinner className='spinner-payment'/>
       </form>
       <span>{`By clicking "Pay" you agree to a ${userRepeat} ${isDonation ? 'donation' : `payment for a ${product}`} of $${amount / 100}.00`}</span>
+      {
+        paymentStatus === 'waiting' ? 
       <CustomButton onClick={handleSubmit}
-        className={submitClass}>Pay</CustomButton>
-        {/* <Success /> */}
+        className={submitClass}>Pay</CustomButton> :
+        paymentStatus === 'pending' ?
+        <Spinner className='spinner-payment'/> :
+        <Success />
+      }
       {
         clicked && submitDisabled && fixForm && <span className='form-alert'>Please check the form for errors.</span>
       }

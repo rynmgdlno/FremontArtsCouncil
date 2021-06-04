@@ -14,14 +14,14 @@
 
 .spinner-payment {
   display: flex;
-  justify-content: center;
+  // justify-content: center;
   align-items: center;
   // width: 100vw;
   // height: 100vh;
   
   .spinner {
     animation: rotate .7s infinite;
-    width: 30px;
+    width: 32px;
     opacity: .7;
   }
 }
