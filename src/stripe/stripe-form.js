@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js"
 import * as EmailValidator from 'email-validator'
 
+import Spinner from '../component-svgs/spinner'
+import Success from '../component-svgs/success'
 import CustomButton from '../components/custom-button/custom-button'
 
 import './stripe-form.scss'
@@ -37,7 +39,9 @@ const StripeForm = ({ formData, isDonation, product, clicked, setClicked, fixFor
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             'id': id,
-            'amount': amount
+            'amount': amount,
+            'description': product,
+            'receipt_email': formData.email
           })
         }
         const data = await fetch('http://localhost:5000/stripe', fetchParams)
@@ -83,10 +87,12 @@ const StripeForm = ({ formData, isDonation, product, clicked, setClicked, fixFor
             }
           }}
         />
+        <Spinner className='spinner-payment'/>
       </form>
       <span>{`By clicking "Pay" you agree to a ${userRepeat} ${isDonation ? 'donation' : `payment for a ${product}`} of $${amount / 100}.00`}</span>
       <CustomButton onClick={handleSubmit}
         className={submitClass}>Pay</CustomButton>
+        {/* <Success /> */}
       {
         clicked && submitDisabled && fixForm && <span className='form-alert'>Please check the form for errors.</span>
       }

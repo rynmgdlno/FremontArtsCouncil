@@ -9,7 +9,7 @@ import './page-header.scss'
 const PageHeader = ({headerID}) => {
   const [header, isloading] = useHeader(headerID)
 
-  if (isloading) return <Spinner />
+  if (isloading) return <Spinner className='spinner-standard'/>
   // console.log(header)
   return (
     <div className='page-header'>

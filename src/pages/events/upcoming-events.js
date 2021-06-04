@@ -29,7 +29,7 @@ const UpcomingEvents = () => {
           :
           <div>
             {
-              isLoading ? <Spinner /> :
+              isLoading ? <Spinner className='spinner-standard'/> :
                 events.map((event) => (
                   <EventCard
                     key={event.sys.id}

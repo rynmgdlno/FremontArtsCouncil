@@ -37,7 +37,7 @@ const Membership = () => {
   const [buttonDisabled, setButtonDisabled] = useState(true)
   const [fixForm, setFixForm] = useState(false)
 
-  if (isLoading) return <Spinner />
+  if (isLoading) return <Spinner className='spinner-standard'/>
 
   const moneyTitle = data.fields.title
   const moneyText = data.fields.content
@@ -165,7 +165,7 @@ const Membership = () => {
                 }}
                 className='custom-button low-emphasis-button close-money'>X</CustomButton>
               {
-                isLoading ? <Spinner /> :
+                isLoading ? <Spinner className='spinner-standard'/> :
                   <div>
                     <h4>{moneyTitle}</h4>
                     <p>{moneyText}</p>

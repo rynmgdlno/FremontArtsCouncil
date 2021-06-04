@@ -11,7 +11,7 @@ const GetInspired = () => {
   const [element, isLoading] = useElement('5rbK1d3d9GPmNY4pmCu9eJ')
   const [currentImage, setImage] = useState(null)
 
-  if (isLoading) return <Spinner />
+  if (isLoading) return <Spinner className='spinner-standard'/>
 
   const inspiredGallery = element.fields.gallery
   const gallery = []

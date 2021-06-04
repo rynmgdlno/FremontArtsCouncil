@@ -22,7 +22,7 @@ const Event = ({ isParade, eventID }) => {
   const [isOpen, setIsOpen] = useState(false)
   const [currentImage, setImage] = useState(null)
 
-  if (isLoading) return <Spinner />
+  if (isLoading) return <Spinner className='spinner-standard'/>
 
   const {
     appleCalendar,

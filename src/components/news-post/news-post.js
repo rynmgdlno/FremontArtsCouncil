@@ -11,7 +11,7 @@ import './news-post.scss'
 const NewsPost = ({ postID }) => {
   const [news, isLoading] = useElement(postID)
 
-  if (isLoading) return <Spinner />
+  if (isLoading) return <Spinner className='spinner-standard'/>
 
   const {
     newsTitle,

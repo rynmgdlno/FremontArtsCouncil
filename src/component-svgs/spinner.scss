@@ -1,4 +1,4 @@
-.spinner-container {
+.spinner-standard {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -8,6 +8,20 @@
   .spinner {
     animation: rotate 1.5s infinite;
     width: 40px;
+    opacity: .7;
+  }
+}
+
+.spinner-payment {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // width: 100vw;
+  // height: 100vh;
+  
+  .spinner {
+    animation: rotate .7s infinite;
+    width: 30px;
     opacity: .7;
   }
 }

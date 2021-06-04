@@ -22,7 +22,7 @@ const Gallery = () => {
     window.scrollTo(0, 0)
   }, [photos])
 
-  if (isLoading) return <Spinner />
+  if (isLoading) return <Spinner className='spinner-standard'/>
 
   const photoList = photos.photos.photo
   const pages = photos.photos.pages

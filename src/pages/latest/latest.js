@@ -42,7 +42,7 @@ const Latest = () => {
           news ?
             <div className='news-card-container'>
               {
-                isLoading ? <Spinner /> :
+                isLoading ? <Spinner className='spinner-standard'/> :
                   newNews.map((entry) => (
                     <NewsCard
                       key={entry.sys.id}

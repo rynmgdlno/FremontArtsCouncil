@@ -10,7 +10,7 @@ import './press.scss'
 const Press = () => {
   const [press, isLoading] = usePress()
 
-  if (isLoading) return <Spinner />
+  if (isLoading) return <Spinner className='spinner-standard'/>
 
   return (
     <div className='press'>

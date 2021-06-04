@@ -11,7 +11,7 @@ import './general-page.scss'
 const GeneralPage = ({ id }) => {
 
   const [data, isLoading] = useElement(id)
-  if (isLoading) return <Spinner />
+  if (isLoading) return <Spinner className='spinner-standard'/>
   const {
     title,
     headerImage,

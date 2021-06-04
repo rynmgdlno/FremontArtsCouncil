@@ -11,7 +11,7 @@ const FAQ = () => {
   const [paradeFaq, paradeIsLoading] = useElement('4Kiav87xAYbWddFKLcTfRS')
   const [workshopFaq, workshopIsLoading] = useElement('35tPHhoV7c9dVis9j0VPTH')
 
-  if (paradeIsLoading || workshopIsLoading) return <Spinner />
+  if (paradeIsLoading || workshopIsLoading) return <Spinner className='spinner-standard'/>
 
   console.log(paradeFaq, workshopFaq)
 

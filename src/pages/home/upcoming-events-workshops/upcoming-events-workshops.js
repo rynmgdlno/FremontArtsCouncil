@@ -33,7 +33,7 @@ const UpcomingEventsWorkshops = () => {
       <h2>Upcoming Events and Workshops</h2>
       <div className='home-event-card-container' ref={container}>
         {
-          isLoading ? <Spinner /> :
+          isLoading ? <Spinner className='spinner-standard'/> :
             events.map((event) => (
               <HomeEventCard
                 key={event.sys.id}

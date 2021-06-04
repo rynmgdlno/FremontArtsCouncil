@@ -4,7 +4,7 @@ import './spinner.scss'
 
 const Spinner = ({ className }) => {
   return (
-    <div className='spinner-container'>
+    <div className={className}>
       <svg className={` spinner`} id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 101.32 113.34">
         <circle cx="50.65" cy="12.65" r="12.65" fill="#077fa4" />
         <circle cx="12.65" cy="34.45" r="12.65" fill="#ef303a" />

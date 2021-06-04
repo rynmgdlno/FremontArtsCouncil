@@ -11,7 +11,7 @@ import './info-page.scss'
 const InfoPage = ({ elementID }) => {
   const [element, isLoading] = useElement(elementID)
 
-  if (isLoading) return <Spinner />
+  if (isLoading) return <Spinner className='spinner-standard'/>
 
   const {
     infoTextOne,
