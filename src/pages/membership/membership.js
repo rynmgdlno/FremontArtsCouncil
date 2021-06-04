@@ -43,11 +43,11 @@ const Membership = () => {
   const moneyText = data.fields.content
 
 
-  const buttonClass = (buttonValue) => (
-    formData.amount === buttonValue ?
-      `custom-button high-emphasis-button blue-button disabled-button-selected` :
-      `custom-button medium-emphasis-button`
-  )
+  // const buttonClass = (buttonValue) => (
+  //   formData.amount === buttonValue ?
+  //     `custom-button high-emphasis-button blue-button disabled-button-selected` :
+  //     `custom-button medium-emphasis-button`
+  // )
 
   const handleChange = (e) => {
     const { name, value } = e.target

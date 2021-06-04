@@ -41,18 +41,17 @@ const StripeForm = ({ formData, isDonation, product, clicked, setClicked, fixFor
           })
         }
         const data = await fetch('http://localhost:5000/stripe', fetchParams)
-        console.log('success')
-        console.log(data)
+        console.log(data.json())
       } catch (error) {
-        console.log('fail')
         console.log(error)
+        return error
       }
     } else {
       setFixForm(true)
     }
   }
 
-  const doTest = (e) => {
+  const cardChange = (e) => {
     if (e.complete) {
       setElementDisabled(false)
     } else {
@@ -73,7 +72,7 @@ const StripeForm = ({ formData, isDonation, product, clicked, setClicked, fixFor
       <form onSubmit={handleSubmit} className='stripe-form'>
         <CardElement
           className={elementClass}
-          onChange={doTest}
+          onChange={cardChange}
           options={{
             iconStyle: 'solid',
             style: {
