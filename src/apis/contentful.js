@@ -1,6 +1,8 @@
+require('dotenv').config()
+
 const client = require('contentful').createClient({
-  space: 'dcyhjsq3puzc',
-  accessToken: '5BzBRNo222hmrBt-eorsI6BRCj2hs25MIIj5dknkTzM'
+  space: process.env.SPACE,
+  accessToken: process.env.ACCESS_TOKEN
 })
 
 // TODO: To Do: Delete this function once all pages are connected //
