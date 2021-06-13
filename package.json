@@ -32,7 +32,7 @@
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "scp -r -i /Users/ryanmagdaleno/.ssh/zola ./build/* root@143.198.96.69:/var/www/fremontartscouncil/frontend",
-    "deploy-production": "react-scripts build && scp -ir /Users/ryanmagdaleno/.ssh/zola ./build/* root@143.198.96.69:/var/www/fremontartscouncil/frontend",
+    "deploy-production": "react-scripts build && scp -ir /Users/ryanmagdaleno/.ssh/zola ./build/* root@165.232.128.4:/var/www/fremontartscouncil/frontend",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
