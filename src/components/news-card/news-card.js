@@ -5,10 +5,11 @@ import './news-card.scss'
 
 const NewsCard = ({ image, title, date, text, id }) => {
   const bgStyle = {
-    backgroundImage: `url(${image})`,
+    backgroundImage: `url(https:${image})`,
     backgroundSize: 'cover',
     backgroundPosition: 'center'
   }
+
   return (
     <div>
       <Link to={`/post/${id}`} className='news-card'>
