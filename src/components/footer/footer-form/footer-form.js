@@ -46,10 +46,11 @@ const FooterForm = () => {
 
   const sendForm = async () => {
     try {
-      let response = await fetch('http://localhost:5000/mail', fetchParams)
+      let response = await fetch('http://api.rnmtest.com/mail', fetchParams)
       if (response.ok === true) {
         clearForm()
         setSuccess(true)
+        console.log(response)
       }
     } catch (error) {
       console.log(error)

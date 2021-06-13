@@ -1,6 +1,6 @@
 {
   "name": "fremont-arts-council",
-  "homepage": "https://rynmgdlno.github.io/FremontArtsCouncil",
+  "homepage": ".",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -11,7 +11,6 @@
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
     "contentful": "^8.2.0",
-    "dotenv": "^10.0.0",
     "email-validator": "^2.0.4",
     "hamburger-react": "^2.4.0",
     "prop-types": "^15.7.2",
@@ -32,7 +31,8 @@
   },
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "scp -r -i /Users/ryanmagdaleno/.ssh/zola ./build/* root@143.198.96.69:/var/www/fremontartscouncil/frontend",
+    "deploy-production": "react-scripts build && scp -ir /Users/ryanmagdaleno/.ssh/zola ./build/* root@143.198.96.69:/var/www/fremontartscouncil/frontend",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

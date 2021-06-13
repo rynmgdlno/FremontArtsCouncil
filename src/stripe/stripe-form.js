@@ -46,7 +46,7 @@ const StripeForm = ({ formData, isDonation, product, clicked, setClicked, fixFor
             'receipt_email': formData.email
           })
         }
-        const data = await fetch('http://localhost:5000/stripe', fetchParams)
+        const data = await fetch('api.rnmtest.com/stripe', fetchParams)
         const result = await data.json()
         setPaymentStatus(result.status)
         setConfirmation(true)

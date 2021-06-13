@@ -1,11 +1,13 @@
-require('dotenv').config()
+require('dotenv').config({
+  path: '../../.env'
+})
+const accessToken = process.env.REACT_APP_ACCESS_TOKEN
+const space = process.env.REACT_APP_SPACE
 
 const client = require('contentful').createClient({
-  space: process.env.SPACE,
-  accessToken: process.env.ACCESS_TOKEN
+  space: space,
+  accessToken: accessToken
 })
-
-// TODO: To Do: Delete this function once all pages are connected //
 
 export const getHeader = async (headerID) => {
   const stuff = await client.getEntry(headerID)
