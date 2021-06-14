@@ -74,7 +74,7 @@ const Volunteer = () => {
     if (!submitDisabled) {
       setFixForm(false)
       try {
-        let response = await fetch('api.rnmtest.com/mail', fetchParams)
+        let response = await fetch('http://api.rnmtest.com/mail', fetchParams)
         if (response.ok === true) {
           clearForm()
           setSuccess(true)
