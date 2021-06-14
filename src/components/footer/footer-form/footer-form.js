@@ -40,7 +40,7 @@ const FooterForm = () => {
       'email': form.email,
       'subject': 'Newsletter Signup Request',
       'message': 'N/A',
-      'recipient': 'ryannmagdaleno@icloud.com'
+      'recipient': 'henrylarspeterson@gmail.com'
     })
   }
 

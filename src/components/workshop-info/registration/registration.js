@@ -56,7 +56,7 @@ const Registration = ({ isParade }) => {
       'email': regForm.email,
       'subject': `Workshop Registration - ${regForm.workshop}`,
       'message': regForm.phone,
-      'recipient': 'ryannmagdaleno@icloud.com'
+      'recipient': 'henrylarspeterson@gmail.com'
     })
   }
 
