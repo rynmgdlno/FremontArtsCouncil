@@ -25,7 +25,3 @@ const NewsCard = ({ image, title, date, text, id }) => {
 }
 
 export default NewsCard
-
-  // < Link to = {`/events/${id}`}>
-  //   <CustomButton className='custom-button high-emphasis-button blue-button event-card-button'>Learn More</CustomButton>
-  //           </ >
