@@ -29,12 +29,12 @@ const MembershipCard = ({ amount, setAmount, level, setLevel, setForm, living, s
       <h1 className='amount'>{`$${userAmount}`}</h1>
       <div className='liv-light'>
         <p>{`Select for Living Lightly - $${userAmount / 2}`}</p>
-        <div 
-        onClick={() => {
-          setChecked(!checked)
-          setLiving(!setLiving)
+        <div
+          onClick={() => {
+            setChecked(!checked)
+            setLiving(!setLiving)
           }}
-        className={radioStyle} />
+          className={radioStyle} />
       </div>
       <CustomButton
         className='custom-button low-emphasis-button'
@@ -42,7 +42,6 @@ const MembershipCard = ({ amount, setAmount, level, setLevel, setForm, living, s
           setAmount(newAmount)
           setLevel(level)
           setForm(true)
-          console.log(newAmount)
         }}>
         <p className='renew'>Join Or Renew</p>
       </CustomButton>

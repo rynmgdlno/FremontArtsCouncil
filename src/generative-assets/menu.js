@@ -148,22 +148,22 @@ const menuTree = [
         link: '/workshops'
       },
       {
-        id: 1,
+        id: 2,
         name: 'Luminary Lantern Workshops',
         link: '/workshops/luminary-lantern-workshops'
       },
       {
-        id: 1,
+        id: 3,
         name: 'Large Luminary Workshop',
         link: '/workshops/large-luminary-workshop'
       },
       {
-        id: 1,
+        id: 4,
         name: 'Upcoming Events & Workshops',
         link: '/events'
       },
       {
-        id: 2,
+        id: 5,
         name: 'Teach a Workshop',
         link: '/workshops/teach-a-workshop'
       }

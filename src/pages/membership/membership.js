@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { Elements } from "@stripe/react-stripe-js"
 import { loadStripe } from "@stripe/stripe-js"
 import * as EmailValidator from 'email-validator'
@@ -35,7 +35,6 @@ const Membership = () => {
   })
 
   const [clicked, setClicked] = useState(false)
-  const [buttonDisabled, setButtonDisabled] = useState(true)
   const [fixForm, setFixForm] = useState(false)
 
   if (isLoading) return <Spinner className='spinner-standard' />
@@ -155,7 +154,6 @@ const Membership = () => {
               <CustomButton
                 onClick={() => {
                   setMoney('money-popup-closed')
-                  console.log('test')
                 }}
                 className='custom-button low-emphasis-button close-money'>X</CustomButton>
               {
@@ -183,7 +181,7 @@ const Membership = () => {
                 <h3>Your Information</h3>
                 <div className='inputs'>
                   <FormInput
-                    className={clicked && buttonDisabled && fixForm && !formData.fName && 'form-error'}
+                    className={clicked && fixForm && !formData.fName ? 'form-error' : ''}
                     name='fName'
                     type='text'
                     label='First Name'
@@ -191,7 +189,7 @@ const Membership = () => {
                     onChange={handleChange}
                   />
                   <FormInput
-                    className={clicked && buttonDisabled && fixForm && !formData.lName && 'form-error'}
+                    className={clicked && fixForm && !formData.lName ? 'form-error' : ''}
                     name='lName'
                     type='text'
                     label='Last Name'
@@ -199,7 +197,7 @@ const Membership = () => {
                     onChange={handleChange}
                   />
                   <FormInput
-                    className={clicked && buttonDisabled && fixForm && !EmailValidator.validate(formData.email) && 'form-error'}
+                    className={clicked && fixForm && !EmailValidator.validate(formData.email) ? 'form-error' : ''}
                     name='email'
                     type='email'
                     label='Email'
@@ -207,7 +205,7 @@ const Membership = () => {
                     onChange={handleChange}
                   />
                   <FormInput
-                    className={clicked && buttonDisabled && fixForm && !formData.phone && 'form-error'}
+                    className={clicked && fixForm && !formData.phone ? 'form-error' : ''}
                     name='phone'
                     type='tel'
                     label='Phone Number'

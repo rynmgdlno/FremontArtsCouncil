@@ -26,6 +26,7 @@ const StripeForm = ({ formData, isDonation, product, clicked, setClicked, fixFor
   const handleSubmit = async (e) => {
     setPaymentStatus('pending')
     setClicked(true)
+    console.log(submitDisabled)
     if (!submitDisabled) {
       setFixForm(false)
       e.preventDefault()
@@ -95,12 +96,15 @@ const StripeForm = ({ formData, isDonation, product, clicked, setClicked, fixFor
       </form>
       <span>{`By clicking "Pay" you agree to a ${userRepeat} ${isDonation ? 'donation' : `payment for a ${product}`} of $${amount / 100}.00`}</span>
       {
-        paymentStatus === 'waiting' ? 
-      <CustomButton onClick={handleSubmit}
-        className={submitClass}>Pay</CustomButton> :
-        paymentStatus === 'pending' ?
-        <Spinner className='spinner-payment'/> :
-        <Success />
+        paymentStatus === 'waiting' ?
+          <CustomButton
+            onClick={handleSubmit}
+            className={submitClass}>
+            Pay
+          </CustomButton> :
+          paymentStatus === 'pending' ?
+            <Spinner className='spinner-payment' /> :
+            <Success />
       }
       {
         clicked && submitDisabled && fixForm && <span className='form-alert'>Please check the form for errors.</span>

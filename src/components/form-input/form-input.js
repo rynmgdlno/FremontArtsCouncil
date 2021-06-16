@@ -43,7 +43,7 @@ FormInput.defaultProps = {
 FormInput.propTypes = {
   name: PropTypes.string.isRequired,
   placeholder: PropTypes.string.isRequired,
-  type: PropTypes.oneOf(['text', 'number', 'password', 'email']),
+  type: PropTypes.oneOf(['text', 'number', 'password', 'email', 'tel']),
   className: PropTypes.string,
   value: PropTypes.any,
   // onChange: PropTypes.func.isRequired
