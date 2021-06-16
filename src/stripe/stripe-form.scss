@@ -4,6 +4,10 @@
   justify-content: center;
   margin-bottom: 2rem;
 
+  .payment-error {
+    color: red;
+  }
+
   .stripe-form {
     // display: flex;
     // justify-content: center;
