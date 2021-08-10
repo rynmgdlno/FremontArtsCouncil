@@ -39,7 +39,7 @@ const Header = ({ isMobile }) => {
                 classNames='menu-transitions'
                 unmountOnExit
               >
-                <Menu isMobile={isMobile}/>
+                <Menu isMobile={isMobile} />
               </CSSTransition>
             </div>
             :
@@ -47,15 +47,15 @@ const Header = ({ isMobile }) => {
               <a href='https://myfremont.wildapricot.org/donate'>
                 <CustomButton className='custom-button medium-emphasis-button donate-button'>Donate</CustomButton>
               </a>
-              <Link to='volunteer'>
+              <a href='https://myfremont.wildapricot.org/wp-volunteer'>
                 <CustomButton className='custom-button medium-emphasis-button volunteer-button'>Volunteer</CustomButton>
-              </Link>
+              </a>
             </div>
         }
 
       </div>
       {
-        !isMobile && <Menu /> 
+        !isMobile && <Menu />
       }
       <div className='border'></div>
     </div>

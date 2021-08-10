@@ -14,9 +14,9 @@ const GetInvolved = () => {
     <div className='home-involved'>
       <h2>Get Involved with the Fremont Arts Council</h2>
       <div className='involved-card-container'>
-        <Link to='/membership'><Card title='Membership' subTitle='Join Now' image={Membership}/></Link>
-        <Link to='/donate'><Card title='Support Us' subTitle='Donate' image={SupportUs}/></Link>
-        <Link to='/volunteer'><Card title='Take Action' subTitle='Volunteer' image={TakeAction}/></Link>
+        <a href='https://myfremont.wildapricot.org/page-1564909'><Card title='Membership' subTitle='Join Now' image={Membership}/></a>
+        <a href='https://myfremont.wildapricot.org/donate'><Card title='Support Us' subTitle='Donate' image={SupportUs}/></a>
+        <a href='https://myfremont.wildapricot.org/wp-volunteer'><Card title='Take Action' subTitle='Volunteer' image={TakeAction}/></a>
       </div>
     </div>
   )

@@ -144,8 +144,8 @@ const Event = ({ isParade, eventID }) => {
           <h2>Get Involved</h2>
           <span>Help make the Magic Happen</span>
           <div className='event-involved-card-container'>
-            <InvolvedCard buttonText='Donate Now' text={eventDonateText} bgImage={donateImage} link='/donate' />
-            <InvolvedCard buttonText='Volunteer Now' text={eventVolunteerText} bgImage={volunteerImage} link='/volunteer' />
+            <InvolvedCard buttonText='Donate Now' text={eventDonateText} bgImage={donateImage} link='https://myfremont.wildapricot.org/donate' isExternal={true}/>
+            <InvolvedCard buttonText='Volunteer Now' text={eventVolunteerText} bgImage={volunteerImage} link='https://myfremont.wildapricot.org/wp-volunteer' isExternal={true} />
             {
               isParade && <InvolvedCard buttonText='Register Now' text={registerText} bgImage={regImage} link='/parade/register' />
             }

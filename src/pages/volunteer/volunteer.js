@@ -105,7 +105,10 @@ const Volunteer = () => {
                 <img className='vol-card-image' alt='' src={Events} />
                 <div className='vol-card-content'>
                   <p>Help is always needed on the day of events such as the Fremont Solstice Parade. You can plan and organize these events or provide artistic support. Please consider volunteering year-round!</p>
-                  <CustomButton onClick={() => setRegPage(true)} className='custom-button high-emphasis-button blue-button event-card-button'>Sign Up</CustomButton>
+                  <a href="https://myfremont.wildapricot.org/wp-volunteer">
+                    <CustomButton className='custom-button high-emphasis-button blue-button event-card-button'>Sign Up</CustomButton>
+                  </a>
+                  {/* <CustomButton onClick={() => setRegPage(true)} className='custom-button high-emphasis-button blue-button event-card-button'>Sign Up</CustomButton> */}
                 </div>
               </div>
             </div>
@@ -118,7 +121,10 @@ const Volunteer = () => {
                 <img className='vol-card-image' alt='' src={Workshops} />
                 <div className='vol-card-content'>
                   <p>Want to work on art projects for our events? Have personal passion projects? Want to teach? Come to a workshop.</p>
-                  <CustomButton onClick={() => setRegPage(true)} className='custom-button high-emphasis-button blue-button event-card-button'>Sign Up</CustomButton>
+                  <a href="https://myfremont.wildapricot.org/wp-volunteer">
+                    <CustomButton className='custom-button high-emphasis-button blue-button event-card-button'>Sign Up</CustomButton>
+                  </a>
+                  {/* <CustomButton onClick={() => setRegPage(true)} className='custom-button high-emphasis-button blue-button event-card-button'>Sign Up</CustomButton> */}
                 </div>
               </div>
             </div>
@@ -131,7 +137,10 @@ const Volunteer = () => {
                 <img className='vol-card-image' alt='' src={Opportunities} />
                 <div className='vol-card-content'>
                   <p>Would you like to join our circle of friends who are committed to supporting the FAC year-round? This is your chance to meet a parade of new friends and help make community art happen and thrive.</p>
-                  <CustomButton onClick={() => setRegPage(true)} className='custom-button high-emphasis-button blue-button event-card-button'>Sign Up</CustomButton>
+                  <a href="https://myfremont.wildapricot.org/wp-volunteer">
+                    <CustomButton className='custom-button high-emphasis-button blue-button event-card-button'>Sign Up</CustomButton>
+                  </a>
+                  {/* <CustomButton onClick={() => setRegPage(true)} className='custom-button high-emphasis-button blue-button event-card-button'>Sign Up</CustomButton> */}
                 </div>
               </div>
             </div>
@@ -139,7 +148,7 @@ const Volunteer = () => {
               <p>Any questions?</p>
               <p>Please don’t hesitate to email us!</p>
               <div className='vol-email-container'>
-                <EmailIcon /><span className='vol-email'>volunteer@fremontartscouncil.org</span>
+                <EmailIcon /><a href="mailto:volunteer@fremontartscouncil.org"><span className='vol-email'>volunteer@fremontartscouncil.org</span></a>
               </div>
             </div>
           </div>

@@ -181,7 +181,8 @@ const menuTree = [
       {
         id: 2,
         name: 'Membership',
-        link: '/membership'
+        link: 'https://myfremont.wildapricot.org/page-1564909',
+        isExternal: true
       },
       {
         id: 3,
@@ -191,7 +192,8 @@ const menuTree = [
       {
         id: 4,
         name: 'Donate Now',
-        link: '/donate'
+        link: 'https://myfremont.wildapricot.org/donate',
+        isExternal: true
       },
       {
         id: 5,

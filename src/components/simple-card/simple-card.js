@@ -5,17 +5,24 @@ import CustomButton from '../custom-button/custom-button'
 
 import './simple-card.scss'
 
-const SimpleCard = ({ title, text, link, buttonText, image }) => {
+const SimpleCard = ({ title, text, link, buttonText, image, isExternal }) => {
   return (
     <div className='simple-card'>
       <img className='s-card-image' src={image} alt='' />
-          <div className='s-card-info-container'>
-            <h3 className='s-card-title'>{title}</h3>
-            <p className='s-card-info'>{text}</p>
+      <div className='s-card-info-container'>
+        <h3 className='s-card-title'>{title}</h3>
+        <p className='s-card-info'>{text}</p>
+        {
+          isExternal ?
+            <a href={link} target='blank'>
+              <CustomButton className='custom-button high-emphasis-button blue-button'>{buttonText}</CustomButton>
+            </a>
+            :
             <Link to={link}>
               <CustomButton className='custom-button high-emphasis-button blue-button'>{buttonText}</CustomButton>
             </Link>
-          </div>
+        }
+      </div>
     </div>
   )
 }

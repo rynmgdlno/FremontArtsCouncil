@@ -1,65 +1,72 @@
 import React, { useState } from 'react'
 
-import FormInput from '../../form-input/form-input'
+// import FormInput from '../../form-input/form-input'
 import CustomButton from '../../custom-button/custom-button'
-import Close from '../../../component-svgs/close'
+// import Close from '../../../component-svgs/close'
 
 import './footer-form.scss'
 
 const FooterForm = () => {
-  const [form, setForm] = useState({
-    firstName: '',
-    lastName: '',
-    email: ''
-  })
+  // const [form, setForm] = useState({
+  //   firstName: '',
+  //   lastName: '',
+  //   email: ''
+  // })
 
-  const [success, setSuccess] = useState(false)
+  // const [success, setSuccess] = useState(false)
 
-  const clearForm = () => {
-    setForm({
-      firstName: '',
-      lastName: '',
-      email: ''
-    })
-  }
+  // const clearForm = () => {
+  //   setForm({
+  //     firstName: '',
+  //     lastName: '',
+  //     email: ''
+  //   })
+  // }
 
-  const handleChange = (e) => {
-    const { name, value } = e.target
-    setForm(prevState => ({
-      ...prevState,
-      [name]: value
-    }))
-  }
+  // const handleChange = (e) => {
+  //   const { name, value } = e.target
+  //   setForm(prevState => ({
+  //     ...prevState,
+  //     [name]: value
+  //   }))
+  // }
 
-  const fetchParams = {
-    crossDomain: true,
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      'name': `${form.firstName} ${form.lastName}`,
-      'email': form.email,
-      'subject': 'Newsletter Signup Request',
-      'message': 'N/A',
-      'recipient': 'henrylarspeterson@gmail.com'
-    })
-  }
+  // const fetchParams = {
+  //   crossDomain: true,
+  //   method: 'POST',
+  //   headers: { 'Content-Type': 'application/json' },
+  //   body: JSON.stringify({
+  //     'name': `${form.firstName} ${form.lastName}`,
+  //     'email': form.email,
+  //     'subject': 'Newsletter Signup Request',
+  //     'message': 'N/A',
+  //     'recipient': 'henrylarspeterson@gmail.com'
+  //   })
+  // }
 
-  const sendForm = async () => {
-    try {
-      let response = await fetch('http://api.rnmtest.com/mail', fetchParams)
-      if (response.ok === true) {
-        clearForm()
-        setSuccess(true)
-        console.log(response)
-      }
-    } catch (error) {
-      console.log(error)
-    }
-  }
+  // const sendForm = async () => {
+  //   try {
+  //     let response = await fetch('http://api.rnmtest.com/mail', fetchParams)
+  //     if (response.ok === true) {
+  //       clearForm()
+  //       setSuccess(true)
+  //       console.log(response)
+  //     }
+  //   } catch (error) {
+  //     console.log(error)
+  //   }
+  // }
 
   return (
     <div className='footer-form'>
-      <div className='form-names'>
+      <a href="https://myfremont.wildapricot.org/Subscribe">
+        <CustomButton
+          className='custom-button medium-emphasis-button sign-up-button'
+        >
+          Sign Up
+        </CustomButton>
+      </a>
+      {/* <div className='form-names'>
         <FormInput
           name='firstName'
           type='text'
@@ -102,7 +109,7 @@ const FooterForm = () => {
           </CustomButton>
           <h2>Thank You!</h2>
         </div>
-      }
+      } */}
     </div>
   )
 }

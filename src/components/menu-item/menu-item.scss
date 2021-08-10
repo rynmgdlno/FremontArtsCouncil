@@ -27,15 +27,22 @@
       font-weight: 200;
       text-decoration: underline;
     }
-  }
-
-  .sub-menu-item {
-    p {
-      font-size: 16px;
-      margin-bottom: .5rem;
-      color: global-styles.$green;
+    
+    .sub-menu-item {
+      
+      p, a {
+        font-size: 16px;
+        margin-bottom: .5rem;
+        color: global-styles.$green;
+      }
+  
+      a {
+        margin-top: 1rem;
+        // font-size: 6rem;
+      }
     }
   }
+
 }
 
 .sub-menu-transitions-enter {
@@ -58,7 +65,6 @@
 
 @media screen and (min-width: 769px) {
   .sub-menu {
-    // position: static;
     width: auto;
 
     .sub-menu-list {
@@ -67,12 +73,7 @@
       width: auto;
       height: auto;
 
-      // .sub-menu-title {
-      //   text-decoration: none;
-      // }
-
       .sub-menu-item {
-        // position: absolute;
         top: 0;
         display: flex;
         align-items: center;
@@ -83,8 +84,9 @@
         border: 1px solid global-styles.$light-grey;
         border-top: none;
         transition: all .2s ease-in-out;
+        
 
-        p {
+        p, a {
           transition: all .2s ease-in-out;
           font-size: 13px;
           color: global-styles.$grey;
@@ -92,7 +94,7 @@
       }
 
       .sub-menu-item:hover {
-        p {
+        p, a {
           color: global-styles.$blue;
           transform: scale(1.1);
         }

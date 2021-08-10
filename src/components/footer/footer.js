@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-// import FooterForm from './footer-form/footer-form'
+import FooterForm from './footer-form/footer-form'
 
 import FooterImage from './footer-images/footer-image'
 import YellowTwo from './footer-images/yellow-two'
@@ -9,7 +9,7 @@ import Facebook from '../../component-svgs/facebook'
 import Instagram from '../../component-svgs/instagram'
 
 import './footer.scss'
-import CustomButton from '../custom-button/custom-button'
+// import CustomButton from '../custom-button/custom-button'
 
 const Footer = ({ isMobile }) => {
   return (
@@ -22,8 +22,8 @@ const Footer = ({ isMobile }) => {
       <div className='get-involved footer-section'>
         <h4>Get Involved</h4>
         <Link to='/volunteer'><h5>Volunteer with us</h5></Link>
-        <Link to='/membership'><h5>Become a member</h5></Link>
-        <Link to='/donate'><h5>Donate Here</h5></Link>
+        <a href='https://myfremont.wildapricot.org/page-1564909'><h5>Become a Member</h5></a>
+        <a href='https://myfremont.wildapricot.org/donate'><h5>Donate Here</h5></a>
         <Link to='/sponsor-us'><h5>Sponsor us</h5></Link>
       </div>
       <div className='contact-us footer-section'>
@@ -37,14 +37,14 @@ const Footer = ({ isMobile }) => {
       </div>
       <div className='footer-form-container footer-section'>
         <h4>Get Our Newsletter</h4>
-        <a href="https://myfremont.wildapricot.org/Subscribe">
+        {/* <a href="https://myfremont.wildapricot.org/Subscribe">
           <CustomButton
             className='custom-button medium-emphasis-button sign-up-button'
           >
             Sign Up
           </CustomButton>
-        </a>
-        {/* <FooterForm /> */}
+        </a> */}
+        <FooterForm />
       </div>
       {
         !isMobile &&

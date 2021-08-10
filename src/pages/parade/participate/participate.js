@@ -52,7 +52,8 @@ const Participate = () => {
         <SimpleCard
           title='Volunteer at the Parade'
           text="Don't want to be in the parade but still want to help? We want to hear from you!"
-          link='/volunteer'
+          link='https://myfremont.wildapricot.org/wp-volunteer'
+          isExternal={true}
           buttonText='Volunteer'
           image={volunteer} />
         <SimpleCard

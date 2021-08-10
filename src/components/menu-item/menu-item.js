@@ -5,7 +5,7 @@ import CustomButton from '../custom-button/custom-button'
 
 import './menu-item.scss'
 
-const MenuItem = ({ isMobile, title, subMenu, menuToggle, setMenuToggle }) => {
+const MenuItem = ({ isMobile, title, subMenu }) => {
   const dropdownRef = useRef(null)
   const [isOpen, setIsOpen] = useState(false)
 
@@ -23,6 +23,7 @@ const MenuItem = ({ isMobile, title, subMenu, menuToggle, setMenuToggle }) => {
     }
   }, [isOpen, setIsOpen])
 
+
   return (
     <div className='sub-menu' ref={dropdownRef}>
       <CustomButton
@@ -35,15 +36,20 @@ const MenuItem = ({ isMobile, title, subMenu, menuToggle, setMenuToggle }) => {
         classNames='sub-menu-transitions'
         unmountOnExit>
         <div className='sub-menu-list'>
-        {
-          isMobile && <p className='title'>{title}</p>
-        }
+          {
+            isMobile && <p className='title'>{title}</p>
+          }
           {subMenu.map((item) => (
-            <Link key={item.id} to={`${item.link}`}>
+            item.isExternal ?
               <div className='sub-menu-item'>
-                <p>{item.name}</p>
+                <a key={item.id} href={item.link}>{item.name}</a>
               </div>
-            </Link>
+              :
+              <Link key={item.id} to={`${item.link}`}>
+                <div className='sub-menu-item'>
+                  <p>{item.name}</p>
+                </div>
+              </Link>
           ))}
           {
             isMobile &&
@@ -52,7 +58,6 @@ const MenuItem = ({ isMobile, title, subMenu, menuToggle, setMenuToggle }) => {
               onClick={() => setIsOpen(!isOpen)}>❮
             </CustomButton>
           }
-
         </div>
       </CSSTransition>
     </div>

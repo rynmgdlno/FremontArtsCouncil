@@ -46,11 +46,13 @@ const WorkshopInfo = ({ id, isTeach, isParade }) => {
           {
             !isParade ?
               <>
-                <CustomButton
-                  onClick={() => setReg(!reg)}
-                  className='custom-button high-emphasis-button blue-button'>
-                  Register
-                </CustomButton>
+                <a href="https://myfremont.wildapricot.org/wp-volunteer">
+                  <CustomButton
+                    // onClick={() => setReg(!reg)}
+                    className='custom-button high-emphasis-button blue-button'>
+                    Register
+                  </CustomButton>
+                </a>
                 {
                   reg && <Registration />
                 }
@@ -62,11 +64,13 @@ const WorkshopInfo = ({ id, isTeach, isParade }) => {
               </>
               :
               <>
-                <CustomButton
-                  onClick={() => setReg(!reg)}
-                  className='custom-button medium-emphasis-button'>
-                  Register
-                </CustomButton>
+                <a href="https://myfremont.wildapricot.org/wp-volunteer">
+                  <CustomButton
+                    // onClick={() => setReg(!reg)}
+                    className='custom-button medium-emphasis-button'>
+                    Register
+                  </CustomButton>
+                </a>
                 {
                   reg && <Registration isParade={isParade}/>
                 }
