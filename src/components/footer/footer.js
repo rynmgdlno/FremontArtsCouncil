@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-import FooterForm from './footer-form/footer-form'
+// import FooterForm from './footer-form/footer-form'
 
 import FooterImage from './footer-images/footer-image'
 import YellowTwo from './footer-images/yellow-two'
@@ -9,6 +9,7 @@ import Facebook from '../../component-svgs/facebook'
 import Instagram from '../../component-svgs/instagram'
 
 import './footer.scss'
+import CustomButton from '../custom-button/custom-button'
 
 const Footer = ({ isMobile }) => {
   return (
@@ -36,14 +37,21 @@ const Footer = ({ isMobile }) => {
       </div>
       <div className='footer-form-container footer-section'>
         <h4>Get Our Newsletter</h4>
-        <FooterForm />
+        <a href="https://myfremont.wildapricot.org/Subscribe">
+          <CustomButton
+            className='custom-button medium-emphasis-button sign-up-button'
+          >
+            Sign Up
+          </CustomButton>
+        </a>
+        {/* <FooterForm /> */}
       </div>
       {
-        !isMobile && 
-      <>
-        <YellowTwo className='yellow-two'/>
-        <FooterImage />
-      </>
+        !isMobile &&
+        <>
+          <YellowTwo className='yellow-two' />
+          <FooterImage />
+        </>
       }
     </div>
   )

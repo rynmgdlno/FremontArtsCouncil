@@ -44,9 +44,9 @@ const Header = ({ isMobile }) => {
             </div>
             :
             <div className='header-button-container'>
-              <Link to='/donate'>
+              <a href='https://myfremont.wildapricot.org/donate'>
                 <CustomButton className='custom-button medium-emphasis-button donate-button'>Donate</CustomButton>
-              </Link>
+              </a>
               <Link to='volunteer'>
                 <CustomButton className='custom-button medium-emphasis-button volunteer-button'>Volunteer</CustomButton>
               </Link>
